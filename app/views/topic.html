@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  {{ title }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="app-c-back-link-inverse">
+    <a class="govuk-back-link" href="/">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+      <header class=" app-c-inverse-header app-c-inverse-header--full-width app-c-inverse-header--padding-top">
+        <h1 class="page-heading govuk-heading-xl app-c-title--inverse">
+          {{ title }}
+        </h1>
+
+        <p class="lede govuk-body-l app-c-lead-paragraph--inverse">{{ description }}</p>
+      </header>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      {% set topicsHtml %}
+      <ul class="topics-list govuk-list">
+        {% for topic in subtopics %}
+        <li class="topic-link">
+          <a class="govuk-link" href="{{ topic.link }}">{{ topic.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endset -%}
+
+      {% set governmentHtml %}
+      <h2 class="govuk-heading-l">Latest news</h2>
+      <p class="lede govuk-body-l">News and communications about {{ title.toLowerCase() }}</p>
+
+      <a href="{{ latest_news.url}}"><image src="{{latest_news.image_url}}" alt="{{latest_news.title}}" />
+      <h3>{{latest_news.title}}</h3></a>
+      <p class="govuk-body govuk-!-margin-bottom-6">{{ latest_news.description }}</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-9">
+        <a href="/search/news-and-communications?parent=%2Fwelfare&topic=dded88e2-f92e-424f-b73e-6ad24a839c51">See all news</a>
+      </p>
+
+      <div class="govuk-footer pad-stuff">
+        <h2 class="govuk-heading-l">Publications</h2>
+        <p class="lede govuk-body-l">Regulation, research, policy and data in this topic</p>
+        <p class=govuk-body>
+          <a href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&order=updated-newest">Policy papers and consultations</a>
+        </p>
+        <p class=govuk-body>
+          <a href="/search/guidance-and-regulation?{{ taxon_search_filter }}&order=most-viewed">Guidance and regulation</a>
+        </p>
+        <p class=govuk-body>
+          <a href="/search/research-and-statistics?content_store_document_type=statistics_published&{{ taxon_search_filter }}&order=updated-newest">Research and statistics</a>
+        </p>
+        <p class=govuk-body>
+          <a href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&order=updated-newest">Transparency and freedom of information releases</a>
+        </p>
+      </div>
+      {% endset -%}
+
+
+      {{ govukTabs({
+        items: [
+          {
+            label: "Topics",
+            id: "topics",
+            panel: {
+              html: topicsHtml
+            }
+          },
+          {
+            label: "Government activity",
+            id: "government-activity",
+            panel: {
+              html: governmentHtml
+            }
+          }
+        ]
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}
