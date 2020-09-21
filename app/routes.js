@@ -25,12 +25,38 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
   })
 })
 
-router.get('/*', function(req,res) {
+// Home page
+router.get('/', function(req,res) {
   //modify the url in any way you want
   var url_parts = url.parse(req.url, false);
   var query = url_parts.query;
   var newurl = 'https://www.gov.uk' + req.path + '?' + query;
-  request(newurl).pipe(res);
-});
+  request(newurl, (error, response, body) => {
+      if (error) throw error;
+      const newBody = replaceHeader(body);
+      res.send(newBody);
+    })
+  });
+
+// All other URLs (including css and js)
+  router.get('/*', function(req,res) {
+    //modify the url in any way you want
+    var url_parts = url.parse(req.url, false);
+    var query = url_parts.query;
+    var newurl = 'https://www.gov.uk' + req.path + '?' + query;
+    request(newurl).pipe(res);
+  });
+
+
+// Inject menu code in the body of the home page
+const replaceHeader = body => {
+  const oldHeader = /<\/header>/s;
+  const newHeader = `
+  <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
+</header>
+<script src="/public/javascripts/newmenu.js"></script>`; 
+  return body.replace(oldHeader, newHeader).replace(/<\/head>/,'<link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css"></head>');
+}
+
 
 module.exports = router

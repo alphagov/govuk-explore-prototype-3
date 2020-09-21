@@ -2010,7 +2010,6 @@ Header.prototype.handleClick = function (event) {
     this.toggleClass($toggleButton, 'govuk-header__menu-button--open');
     $toggleButton.innerText = 
       $toggleButton.classList.contains('govuk-header__menu-button--open') ? 'Close' : 'Menu';
-    console.log($toggleButton.classList)
     $toggleButton.setAttribute('aria-expanded', $toggleButton.getAttribute('aria-expanded') !== 'true');
     $target.setAttribute('aria-hidden', $target.getAttribute('aria-hidden') === 'false');
   }
@@ -2516,5 +2515,5 @@ if (window.console && window.console.info) {
 }
 
 $(document).ready(function () {
-  window.GOVUKFrontend.initAll()
+  window.GOVUKFrontend.initAll();
 })
