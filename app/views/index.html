@@ -6,22 +6,40 @@
 {% endblock %}
 
 {% block content %}
+  <div class="govuk-grid-row xpl-hero">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Welcome to GOV.UK
+      </h1>
+      <p>The best place to find government services and information</p>
+      <p>Simpler, clearer, faster</p>
+      <form action="/search" method="get" role="search">
+        <div class="gem-c-search  gem-c-search--on-govuk-blue" data-module="gem-toggle-input-class-on-focus">
+          <div class="gem-c-search__item-wrapper">
+            <input type="search" value="" id="search-main-22453f74" name="q" title="Search" aria-controls="" class="gem-c-search__item gem-c-search__input js-class-toggle">
+            <div class="gem-c-search__item gem-c-search__submit-wrapper">
+              <button type="submit" class="gem-c-search__submit">Search</button>
+            </div>
+          </div>
+        </div>  
+      </form>
+
+      <div class="home-top__links">
+        <h2 class="home-top__links-title">Popular on GOV.UK</h2>
+        <ul class="home-top__links-list">
+          <li class="home-top__links-item"><a href="/coronavirus" class="home-top__links-link">Coronavirus (COVID‑19): guidance and support</a></li>
+          <li class="home-top__links-item"><a href="/guidance/travel-advice-novel-coronavirus" class="home-top__links-link">Travel advice: coronavirus (COVID‑19)</a></li>
+          <li class="home-top__links-item"><a href="/transition" class="home-top__links-link">The UK has left the EU: check the new rules for January 2021</a></li>
+          <li class="home-top__links-item"><a href="/jobsearch" class="home-top__links-link">Find a job</a></li>
+          <li class="home-top__links-item"><a href="/sign-in-universal-credit" class="home-top__links-link">Sign in to your Universal Credit account</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
-
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
+      <h2 class="govuk-heading-l">Topics</h2>
 
       <p>We recommend you add links to your prototype to this page, rather than delete it.
         You'll find this page in the kit at '/app/views/index.html'.</p>
@@ -40,5 +58,215 @@
       </ul>
     </div>
   </div>
+
+  <div id="homepage" class="govuk-width-container">
+    <section class="home-services" aria-labelledby="services-and-information-label" id="services-and-information">
+      <div class="govuk-grid-row">
+        <h2 id="services-and-information-label" class="govuk-visually-hidden">Services and information</h2>
+        <div class="govuk-grid-column-one-third">
+  <ul class="govuk-list">
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/benefits" class="govuk-link">Benefits</a></h3>
+      <p class="home-services__para">Includes eligibility, appeals, tax credits and Universal Credit</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/births-deaths-marriages" class="govuk-link">Births, deaths, marriages and care</a></h3>
+      <p class="home-services__para">Parenting, civil partnerships, divorce and Lasting Power of Attorney</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/business" class="govuk-link">Business and self-employed</a></h3>
+      <p class="home-services__para">Tools and guidance for businesses</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/childcare-parenting" class="govuk-link">Childcare and parenting</a></h3>
+      <p class="home-services__para">Includes giving birth, fostering, adopting, benefits for children, childcare and schools</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/citizenship" class="govuk-link">Citizenship and living in the UK</a></h3>
+      <p class="home-services__para">Voting, community participation, life in the UK, international projects</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/justice" class="govuk-link">Crime, justice and the law</a></h3>
+      <p class="home-services__para">Legal processes, courts and the police</p>
+    </li>
+  </ul>
+</div>
+<div class="govuk-grid-column-one-third">
+  <ul class="govuk-list">
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/disabilities" class="govuk-link">Disabled people</a></h3>
+      <p class="home-services__para">Includes carers, your rights, benefits and the Equality Act</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/driving" class="govuk-link">Driving and transport</a></h3>
+      <p class="home-services__para">Includes vehicle tax, MOT and driving licences</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/education" class="govuk-link">Education and learning</a></h3>
+      <p class="home-services__para">Includes student loans, admissions and apprenticeships</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/employing-people" class="govuk-link">Employing people</a></h3>
+      <p class="home-services__para">Includes pay, contracts and hiring</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/environment-countryside" class="govuk-link">Environment and countryside</a></h3>
+      <p class="home-services__para">Includes flooding, recycling and wildlife</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/housing-local-services" class="govuk-link">Housing and local services</a></h3>
+      <p class="home-services__para">Owning or renting and council services</p>
+    </li>
+  </ul>
+</div>
+<div class="govuk-grid-column-one-third">
+  <ul class="govuk-list">
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/tax" class="govuk-link">Money and tax</a></h3>
+      <p class="home-services__para">Includes debt and Self Assessment</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/abroad" class="govuk-link">Passports, travel and living abroad</a></h3>
+      <p class="home-services__para">Includes renewing passports and travel advice by country</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/visas-immigration" class="govuk-link">Visas and immigration</a></h3>
+      <p class="home-services__para">Visas, asylum and sponsorship</p>
+    </li>
+    <li>
+      <h3 class="home-services__heading"><a href="/browse/working" class="govuk-link">Working, jobs and pensions</a></h3>
+      <p class="home-services__para">Includes holidays and finding a job</p>
+    </li>
+  </ul>
+</div>
+
+      </div>
+    </section>
+
+    <hr class="home-divider" id="departments-and-policy" aria-hidden="true">
+
+    <section class="departments-and-policy" aria-labelledby="departments-and-policy-label">
+      <div class="govuk-grid-row home-numbers-and-info">
+        <h2 id="departments-and-policy-label" class="govuk-visually-hidden">Departments and&nbsp;policy</h2>
+        <div class="govuk-grid-column-one-third">
+          <ul class="home-numbers">
+            <li>
+              <a href="/government/organisations#ministerial_departments" class="home-numbers__link home-numbers__link--first govuk-link">
+                <strong class="home-numbers__large">23</strong>
+                Ministerial departments
+              </a>
+            </li>
+            <li>
+              <a href="/government/organisations#agencies_and_other_public_bodies" class="home-numbers__link govuk-link">
+                <strong class="home-numbers__large">412</strong>
+                Other agencies and public&nbsp;bodies
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          <p class="home-info">
+            The websites of all <a href="/government/organisations" class="govuk-link">government
+            departments</a> and many other agencies and public bodies have
+            been merged into GOV.UK.
+          </p>
+          <p class="home-info">
+            Here you can see all <a href="/search/news-and-communications" class="govuk-link">news and communications</a>,
+            <a href="/search/research-and-statistics" class="govuk-link">statistics</a>
+            and
+            <a href="/search/policy-papers-and-consultations?content_store_document_type%5B%5D=open_consultations&amp;amp;content_store_document_type%5B%5D=closed_consultations" class="govuk-link">consultations</a>.
+          </p>
+          <p class="home-info">
+            Find out <a href="/performance" class="govuk-link">how government services are performing</a>
+            and how satisfied users are.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <a href="/coronavirus" aria-hidden="true" tabindex="-1">
+            <img alt="" class="home-promo__image" loading="lazy" src="/assets/frontend/homepage/coronavirus-stay-alert-9d37ae99bbd5ccb0d4cc6b1ac9b0b5953653c6455b47ab3bc830fde7921d0a60.png" width="600" height="400">
+          </a>
+          <h3>
+            <a href="/coronavirus" class="govuk-link home-promo__link">
+              Coronavirus (COVID-19)
+            </a>
+          </h3>
+          <p class="home-promo__text">
+            Find information on coronavirus including guidance, support and announcements.
+          </p>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <a href="/transition" aria-hidden="true" tabindex="-1">
+            <img alt="" class="home-promo__image" loading="lazy" src="/assets/frontend/homepage/transition-period-65bc5562bd68dbb4b6597fda8f2fe39c82cc0d820d1f9212df34d28592ab2f06.png" width="600" height="400">
+          </a>
+          <h3>
+            <a href="/transition" class="govuk-link home-promo__link">
+              The UK has left the EU
+            </a>
+          </h3>
+          <p class="home-promo__text">
+            Prepare for the end of the transition period and check the new rules for January 2021.
+          </p>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <a href="/government/topical-events/a-plan-for-jobs-2020" aria-hidden="true" tabindex="-1">
+            <img alt="" class="home-promo__image" loading="lazy" sizes="(max-width: 640px) 100vw, (max-width: 1020px) 33vw, 300px" srcset="/assets/frontend/homepage/plan-for-jobs-2020--600w-e2758a743eadf574265f4a68c6b82d36eb8b729317cbd14f9a8240d5707c6862.png 600w, /assets/frontend/homepage/plan-for-jobs-2020--480w-47d29d20118839e92fbc15f7eccfa05b938f3e43365b1b072ab528986462da57.png 480w, /assets/frontend/homepage/plan-for-jobs-2020--320w-2032b6207fc0632c2c92246eb2bb6bb539d9d595fa8a627d6309ab352f4febb5.png 320w, /assets/frontend/homepage/plan-for-jobs-2020--240w-8db55d339b0ec92895e4de65e8dd5bf0f613d5f6fad719707680adff202428d1.png 240w, /assets/frontend/homepage/plan-for-jobs-2020--170w-e53e8310b1a9c6f7e13f12d8e913196715cc56927b662f3b5fda55f834db2b51.png 170w" src="/assets/frontend/homepage/plan-for-jobs-2020--480w-47d29d20118839e92fbc15f7eccfa05b938f3e43365b1b072ab528986462da57.png" width="600" height="400">
+          </a>
+          <h3>
+            <a href="/government/topical-events/a-plan-for-jobs-2020" class="govuk-link home-promo__link">
+              A Plan for Jobs 2020
+            </a>
+          </h3>
+          <p class="home-promo__text">
+            Find out the latest information on the Plan for Jobs update.
+          </p>
+        </div>
+      </div>
+    <section>
+
+    <hr class="home-divider" id="more-on-govuk" aria-hidden="true">
+
+    <section aria-labelledby="more-on-govuk-label">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <h2 id="more-on-govuk-label" class="home-more__title">More on GOV.UK</h2>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <h3 class="home-more__subtitle">Most active</h3>
+          <ul class="govuk-list home-more__list">
+            <li><a href="/jobsearch" class="govuk-link">Find a job</a></li>
+            <li><a href="/student-finance-register-login" class="govuk-link">Log in to student finance</a></li>
+            <li><a href="/passport-fees" class="govuk-link">Passport fees</a></li>
+            <li><a href="/jobseekers-allowance" class="govuk-link">Jobseeker's Allowance</a></li>
+            <li><a href="/council-tax-bands" class="govuk-link">Council Tax bands</a></li>
+            <li><a href="/running-a-limited-company" class="govuk-link">Running a limited company</a></li>
+            <li><a href="/book-a-driving-theory-test" class="govuk-link">Driving theory test</a></li>
+            <li><a href="/calculate-vehicle-tax-rates" class="govuk-link">Vehicle tax rates</a></li>
+            <li><a href="/vehicle-tax" class="govuk-link">Renew vehicle tax</a></li>
+            <li><a href="/vat-rates" class="govuk-link">VAT rates</a></li>
+          </ul>
+        </div>
+
+        <div class="govuk-grid-column-one-third" id="promo">
+          <h3>
+            <a href="/bank-holidays" class="govuk-link home-more-promo" tabindex="-1">
+              <span class="home-more-promo__link-content">UK bank holidays</span>
+            </a>
+          </h3>
+          <p class="home-promo__text">Check the dates for <a href="/bank-holidays" class="govuk-link">bank holidays</a> in England, Wales, Scotland and Northern Ireland.</p>
+        </div>
+      </div>
+    </section>
+  </section></section>
+</div>
+
 
 {% endblock %}

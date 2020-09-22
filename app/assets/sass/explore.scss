@@ -1,0 +1,51 @@
+//---- menu ---- 
+.govuk-header__menu-button {
+    right: 40px;
+    top: 0;
+    padding: 20px;
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
+    font-size: 18px;
+    line-height: 10px;
+    &::after {
+      border: none;
+      clip-path: none;
+    }
+    &.govuk-header__menu-button--open {
+      background: white;
+      color: black;
+    }
+  }
+
+
+
+  //--- header 
+  .govuk-header__container {
+    border-bottom: none;
+    height: 52px;
+}
+
+.govuk-header {
+    border-bottom: none;
+}
+
+.xpl-hero {
+    padding-bottom: 20px;
+    background: #1d70b8;
+    h1, p {
+      color: white;
+    }
+}
+
+main#main-content {
+  padding: 0;
+}
+
+.home-top__links {
+    &-title {
+        color: white;
+    }
+    &-link:link {
+        text-decoration: none;
+    }
+}
