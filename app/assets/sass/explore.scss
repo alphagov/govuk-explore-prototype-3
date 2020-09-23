@@ -18,11 +18,17 @@
   }
 
 
-
   //--- header 
   .govuk-header__container {
     border-bottom: none;
     height: 52px;
+}
+
+
+@media (min-width: 40.0625em) {
+  .home-top__links {
+    position: static;
+  }
 }
 
 .govuk-header {
@@ -35,8 +41,8 @@
     padding-top: 15px;
     background: #1d70b8;
     &.govuk-grid-row {
-      margin-left: -35px;
-      margin-right: -35px;
+      margin-left: -45px;
+      margin-right: -45px;
       padding-left: 20px;
       padding-right: 20px;
     }
@@ -87,12 +93,14 @@ main#main-content {
   margin-bottom: 30px;
   h3 {
     float: left;
+    width: 80%;
   }
   p { 
     clear: both;
   }
   .xpl-chevron {
     float: right;
+    width: 20%;
     margin-top: 20px;
     font-size: 35px;
     color: black;
