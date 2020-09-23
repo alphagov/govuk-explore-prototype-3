@@ -57,6 +57,7 @@ main#main-content {
 
 .home-divider {
   border: .5px solid black;
+  margin-top: 30px;
 }
 
 .home-top__links {
@@ -66,11 +67,23 @@ main#main-content {
 }
 
 .govuk-heading-l {
+  margin-top: 30px;
   font-size: 22px;
+  margin-bottom: 30px;
+}
+
+
+.home-services {
+  &__heading {
+    margin-top: 30px;
+    font-size: 22px;
+  }
+  &__para {
+    font-size: 16px;
+  }
 }
 
 .xpl-topics {
-  margin-top: 30px;
   margin-bottom: 30px;
   h3 {
     float: left;
@@ -88,10 +101,45 @@ main#main-content {
     li {  
       min-height: 180px;
       border-top: 1px solid black;
-      .home-services__heading {
-        margin-top: 30px;
-        font-size: 22px;
-      }
     }
+  }
+}
+
+.home-promo {
+  &__link {
+    font-size: 22px;
+  }
+  &__text {
+    font-size: 16px;
+  }
+}
+
+.xpl-featured {
+  p {
+    margin-bottom: 60px;
+  }
+}
+
+.xpl-activity {
+  h3.home-services__heading {
+    font-size: 18px;
+    margin-top: 0;
+  }
+  p.home-services__para {
+    margin-bottom: 0;
+  }
+  p.xpl-activity__intro {
+    font-size: 22px;
+  }
+}
+
+
+.home-numbers {
+  &__large {
+    font-size: 88px;
+  }
+  &__link {
+    font-size: 18px;
+    font-weight: bold;
   }
 }
