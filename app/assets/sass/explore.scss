@@ -29,16 +29,24 @@
     border-bottom: none;
 }
 
+
 .xpl-hero {
     padding-bottom: 20px;
+    padding-top: 15px;
     background: #1d70b8;
+    &.govuk-grid-row {
+      margin-left: -35px;
+      margin-right: -35px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
     h1, p {
       color: white;
     }
 }
 
 main#main-content {
-  padding: 0;
+  padding: 0 15px 0 15px;
 }
 
 .home-top__links {
@@ -47,5 +55,6 @@ main#main-content {
     }
     &-link:link {
         text-decoration: none;
+        font-weight: normal;
     }
 }
