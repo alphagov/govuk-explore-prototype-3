@@ -5,7 +5,12 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+
+
+{% block main %}
+<div class="{{ containerClasses }}">
+  {% block beforeContent %}{% endblock %}
+  <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
   <div class="govuk-grid-row xpl-hero">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
@@ -239,4 +244,6 @@
       </div>
     </div>
   </section>
+</main>
+</div>
 {% endblock %}
