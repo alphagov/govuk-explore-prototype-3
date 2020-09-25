@@ -1,8 +1,15 @@
+@import "lib/extensions/extensions";
+@include govuk-exports("govuk/component/header") {};
+
 //---- menu ---- 
-.govuk-header__menu-button {
+.govuk-header {
+  border-bottom: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  &__menu-button {
     right: 40px;
     top: 0;
-    padding: 20px;
+    padding: 19.5px;
     border-left: 1px solid #666;
     border-right: 1px solid #666;
     font-size: 18px;
@@ -16,13 +23,40 @@
       color: black;
     }
   }
-
-
-  //--- header 
-  .govuk-header__container {
+  &__navigation-item {
+    border: none;
+    color: black;
+    > a:link, a:visited {
+      font-size: 22px;
+      color: #1d70b8;
+    }
+    &-2 {
+      margin-bottom: 28px;
+      a:link, a:visited {
+        font-size: 18px;
+      }
+    }
+  }
+  &__container {
     border-bottom: none;
-    height: 52px;
+    padding-bottom: 11px;  
+  }
+  nav {
+    background: white;
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
+
+@media (min-width: 48.0625em) {
+  .govuk-header__content nav{
+    background: black;
+  }
+}
+
+
 
 
 @media (min-width: 40.0625em) {
@@ -36,11 +70,6 @@
   }
 }
 
-.govuk-header {
-    border-bottom: none;
-    padding-left: 10px;
-    padding-right: 10px;
-}
 
 .govuk-main-wrapper--auto-spacing:first-child {
   padding: 0;
