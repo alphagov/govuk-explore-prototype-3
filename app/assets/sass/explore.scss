@@ -18,9 +18,14 @@
       border: none;
       clip-path: none;
     }
-    &.govuk-header__menu-button--open {
-      background: white;
-      color: black;
+    &.govuk-header__menu-button {
+      &--open {
+        background: white;
+        color: black;
+      }
+      &:focus {
+        box-shadow: none;
+      }
     }
   }
   &__navigation-item {
@@ -33,8 +38,13 @@
     &-2 {
       margin-bottom: 28px;
       a:link, a:visited {
+        color: #1d70b8;
         font-size: 18px;
       }
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: bold;
     }
   }
   &__container {
@@ -182,6 +192,23 @@ main#main-content {
   }
 }
 
+.xpl-menu__button {
+  background: none;
+  border: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: $govuk-link-colour;
+}
+
+.xpl-menu__button-back {
+  border: 0;
+  background: none;
+  &::before {
+    content: "< "
+  }
+  font-size: 18px;
+  color: govuk-colour("mid-grey");
+}
 
 .home-numbers {
   &__large {
@@ -190,5 +217,18 @@ main#main-content {
   &__link {
     font-size: 18px;
     font-weight: bold;
+  }
+}
+
+.xpl-frame2__list-3 {
+  list-style-type: none;
+  padding: 0;
+  li {
+    margin-bottom: 40px;
+    a:link, a:visited {
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
   }
 }

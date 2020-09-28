@@ -57,19 +57,47 @@
       </a>
     </div>
     <div class="govuk-header__content">
-      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle govuk-header__menu-button--open" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="true">Close</button>
+      <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="true">Menu</button>
         <nav>
-          <ul id="navigation" class="govuk-header__navigation  govuk-header__navigation--open" aria-label="Navigation menu" aria-hidden="false">
+          <ul id="navigation" class="govuk-header__navigation  govuk-header__navigation" aria-label="Navigation menu" aria-hidden="false">
             <li class="govuk-header__navigation-item govuk-header__navigation-item--active">              
-                <a class="govuk-header__link" href="#1">Topics</a>
+              <button class="xpl-menu__button">Topics</button>
+              <div class="xpl-menu__frame2" style="display:none">
+                <button class="xpl-menu__button-back">Back</button>
+                <h3>Topics</h3>
+                <ul class="xpl-frame2__list-3">
+                  <li><a href="">Benefits</a></li>
+                  <li><a href="">Births, death, marriages and care</a></li>
+                  <li><a href="">Business and self-employed</a></li>
+                  <li><a href="">Childcare and parenting</a></li>
+                  <li>...</li>
+                </ul>
+              </div>
             </li>
 
             <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="#2">Departments</a>
+              <button class="xpl-menu__button">Departments</button>
+              <div class="xpl-menu__frame2" style="display:none">
+                <button class="xpl-menu__button-back">Back</button>
+                <h3>Departments</h3>
+                <ul class="xpl-frame2__list-3">
+                  <li><a href="">Attorney General's Office</a></li>
+                  <li><a href="">Cabinet Office</a></li>
+                  <li><a href="">Department for Business, Energy &amp; Industrial Strategy</a></li>
+                  <li>...</li>
+                </ul>
+              </div>
             </li>
           
             <li class="govuk-header__navigation-item">
-                <a class="govuk-header__link" href="#3">Help around the world</a>
+              <button class="xpl-menu__button">Help around the world</button>
+              <div class="xpl-menu__frame2" style="display:none">
+                <button class="xpl-menu__button-back">Back</button>
+                <h3>Help around the world</h3>
+                <ul class="xpl-frame2__list-3">
+                  <li>...</li>
+                </ul>
+              </div>
             </li>
 
             <li class="govuk-header__navigation-item">
