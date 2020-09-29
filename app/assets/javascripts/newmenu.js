@@ -1,10 +1,12 @@
 
 $('.xpl-menu__button').on('click', event => {
-  $('.xpl-menu__button').hide();
-  $(event.target).next().show();
+  $(event.target).hide();
+  $('.xpl-menu__frame2').show();
+  $(event.target).parent().nextAll('li').hide();
 });
 
 $('.xpl-menu__button-back').on('click', event => {
+  $(event.target).parent().prev('button').show();
   $('.xpl-menu__frame2').hide();
-  $('.xpl-menu__button').show();
+  $('.govuk-header__navigation-item').show();
 });

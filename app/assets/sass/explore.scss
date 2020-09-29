@@ -31,9 +31,10 @@
   &__navigation-item {
     border: none;
     color: black;
-    > a:link, a:visited {
+     a:link, a:visited {
       font-size: 22px;
       color: #1d70b8;
+      text-decoration: none;
     }
     &-2 {
       margin-bottom: 28px;
