@@ -10,55 +10,55 @@
     right: 40px;
     width: 50px;
     top: 0;
-    padding: 19.5px;
     border-left: 1px solid #666;
+    padding: 21px 5px 18px 10px;
     font-size: 18px;
-    line-height: 10px;
+    line-height: 12px;
     &::after {
       border: none;
       clip-path: none;
     }
+    &:focus {
+      box-shadow: none;
+    }
     &.govuk-js-header-toggle {
       width: 105px;
-      padding: 21px 5px 18px 10px;
-      right: 46px;
+      right: 40px;
       &.govuk-header__menu-button {
         &--open {
           background: white;
           color: black;
         }
-        &:focus {
-          box-shadow: none;
-        }
+        
       }
     }
-    &.govuk-js-search-toggle {
-      width: 46px;
-    }
+    
   }
   &__navigation-item {
     border: none;
+    padding: 30px 0 0 0;
     color: black;
      a:link, a:visited {
       font-size: 22px;
       color: #1d70b8;
       text-decoration: none;
     }
-    &-2 {
-      margin-bottom: 28px;
+    .govuk-list &-2 {
+      padding-bottom: 28px;
       a:link, a:visited {
         color: #1d70b8;
         font-size: 18px;
       }
     }
-    h3 {
+    h2 {
+      margin: 30px 0 30px 0;
       font-size: 22px;
       font-weight: bold;
     }
   }
   &__container {
     border-bottom: none;
-    padding-bottom: 11px;  
+    min-height: 50px;
   }
   nav {
     background: white;
@@ -74,13 +74,19 @@
     }
 
     .govuk-js-search-toggle {
-      right: 0px;
       background-image: url(/assets/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
-      background-position: 80% 50%;
+      background-position: 105% 50%;
       background-size: 70px auto;
       text-indent: -5000px;
+      right: -10px;
+      width: 50px;
+      height: 50px;
+      &.govuk-js-search-toggle--open {
+        background-color: white;
+        color: black;
+        text-indent: 0;
+      }
     }
-
   }
 }
 
@@ -134,9 +140,8 @@ main#main-content {
 }
 
 .govuk-heading-l {
-  margin-top: 30px;
   font-size: 22px;
-  margin: 30px;
+  margin: 30px 0 30px 0;
 }
 
 
@@ -158,10 +163,10 @@ main#main-content {
   }
   p { 
     clear: both;
+    margin-right: 30px;
   }
   .xpl-chevron {
     float: right;
-    width: 20%;
     margin-top: 20px;
     font-size: 35px;
     color: black;
@@ -172,6 +177,10 @@ main#main-content {
       border-top: 1px solid black;
     }
   }
+}
+
+#xpl-topics-button {
+  padding-left: 0;
 }
 
 .home-promo {
@@ -211,6 +220,7 @@ main#main-content {
 .xpl-menu__button {
   background: none;
   border: 0;
+  padding: 0;
   font-size: 22px;
   font-weight: bold;
   color: $govuk-link-colour;
@@ -237,7 +247,7 @@ main#main-content {
   }
 }
 
-.xpl-frame2__list-3 {
+.xpl-frame2 {
   ul {
     padding: 0;
     list-style-type: none;
@@ -253,10 +263,11 @@ main#main-content {
 }
 
 #xpl-search-box {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 30px 0 60px 0;
   h2 {
     color: black;
+    margin: 0;
+    margin-bottom: 30px;
   }
   button {
     background-color: #1d70b8;

@@ -26,5 +26,7 @@ $('#xpl-activity-button-desktop').on('click', event => {
 });
 
 $('.govuk-js-search-toggle').on('click', event => {
+  $(event.target).toggleClass('govuk-js-search-toggle--open')
+  $(event.target).text('╳')
   $('#xpl-search-box').toggle();
 });
