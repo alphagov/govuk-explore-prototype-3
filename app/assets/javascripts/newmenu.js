@@ -24,3 +24,7 @@ $('#xpl-activity-button-desktop').on('click', event => {
   $('#xpl-frame2-activity').toggle();
   $('#xpl-frame2-topics').hide();
 });
+
+$('.govuk-js-search-toggle').on('click', event => {
+  $('#xpl-search-box').toggle();
+});

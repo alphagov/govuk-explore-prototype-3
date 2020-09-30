@@ -128,6 +128,7 @@
       </nav>
       <nav class="xpl-nav">
         <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="true">Menu</button>
+        <button type="button" class="govuk-header__menu-button govuk-js-search-toggle" aria-controls="navigation" aria-label="Show or hide search box" aria-expanded="true">Search</button>
         <ul id="navigation" class="govuk-header__navigation" aria-label="Navigation menu" aria-hidden="false">
           <li class="govuk-header__navigation-item">
             <button id="xpl-topics-button" class="xpl-menu__button">Topics</button>
@@ -191,6 +192,17 @@
             </ul>
           </li>      
         </ul>
+        <div id="xpl-search-box" style="display: none">
+          <h2>Search</h2>
+          <form action="/search" method="get" role="search">
+            <div class="gem-c-search__item-wrapper">
+              <input type="search" value="" id="search-main-22453f74" name="q" title="Search" aria-controls="" class="gem-c-search__item gem-c-search__input js-class-toggle">
+              <div class="gem-c-search__item gem-c-search__submit-wrapper">
+                <button type="submit" class="gem-c-search__submit">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </nav>  
     </div>
   </div>
