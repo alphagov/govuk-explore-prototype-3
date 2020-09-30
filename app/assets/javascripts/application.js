@@ -2009,7 +2009,7 @@ Header.prototype.handleClick = function (event) {
     this.toggleClass($target, 'govuk-header__navigation--open');
     this.toggleClass($toggleButton, 'govuk-header__menu-button--open');
     $toggleButton.innerText = 
-      $toggleButton.classList.contains('govuk-header__menu-button--open') ? 'Close' : 'Menu';
+      $toggleButton.classList.contains('govuk-header__menu-button--open') ? '╳' : 'Menu';
     $toggleButton.setAttribute('aria-expanded', $toggleButton.getAttribute('aria-expanded') !== 'true');
     $target.setAttribute('aria-hidden', $target.getAttribute('aria-hidden') === 'false');
   }

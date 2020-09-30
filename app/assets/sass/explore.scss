@@ -8,6 +8,7 @@
   padding-right: 10px;
   &__menu-button {
     right: 40px;
+    width: 50px;
     top: 0;
     padding: 19.5px;
     border-left: 1px solid #666;
@@ -17,14 +18,22 @@
       border: none;
       clip-path: none;
     }
-    &.govuk-header__menu-button {
-      &--open {
-        background: white;
-        color: black;
+    &.govuk-js-header-toggle {
+      width: 105px;
+      padding: 21px 5px 18px 10px;
+      right: 46px;
+      &.govuk-header__menu-button {
+        &--open {
+          background: white;
+          color: black;
+        }
+        &:focus {
+          box-shadow: none;
+        }
       }
-      &:focus {
-        box-shadow: none;
-      }
+    }
+    &.govuk-js-search-toggle {
+      width: 46px;
     }
   }
   &__navigation-item {
@@ -58,6 +67,12 @@
     padding-left: 20px;
     padding-right: 20px;
 
+    .govuk-js-header-toggle .arrow {
+      vertical-align: 4px;
+      font-weight: bold;
+      padding-left: 3px;
+    }
+
     .govuk-js-search-toggle {
       right: 0px;
       background-image: url(/assets/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
@@ -75,20 +90,26 @@
 }
 
 .xpl-hero {
-    margin: 0;
-    padding-bottom: 20px;
-    padding-top: 15px;
-    background: #1d70b8;
-    &.govuk-grid-row {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    h1, p {
-      color: white;
-    }
-    a:link {
-      font-weight: normal;
-    }
+  margin: 0;
+  padding-bottom: 20px;
+  padding-top: 15px;
+  background: #1d70b8;
+  &.govuk-grid-row {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  h1, p {
+    color: white;
+  }
+  a:link {
+    font-weight: normal;
+  }
+  .home-top__links-item, .home-top__intro {
+    margin-bottom: 10px;
+  }
+  .gem-c-search {
+    margin-top: 30px;
+  }
 }
 
 main#main-content {
@@ -115,7 +136,7 @@ main#main-content {
 .govuk-heading-l {
   margin-top: 30px;
   font-size: 22px;
-  margin-bottom: 30px;
+  margin: 30px;
 }
 
 
