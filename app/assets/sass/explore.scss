@@ -173,6 +173,11 @@ main#main-content {
   }
 }
 
+.xpl-nav-menu--open {
+  > * {
+    display: block;
+  }
+}
 
 .xpl-menu__button {
   background: none;
@@ -180,6 +185,7 @@ main#main-content {
   font-size: 22px;
   font-weight: bold;
   color: $govuk-link-colour;
+  display: block;
 }
 
 .xpl-menu__button-back {
@@ -203,14 +209,16 @@ main#main-content {
 }
 
 .xpl-frame2__list-3 {
-  list-style-type: none;
-  padding: 0;
-  li {
-    margin-bottom: 40px;
-    a:link, a:visited {
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
+  ul {
+    padding: 0;
+    list-style-type: none;
+    li {
+      margin-bottom: 40px;
+      a:link, a:visited {
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+      }
     }
   }
 }
@@ -218,33 +226,103 @@ main#main-content {
 
 // Desktop
 
+.xpl-nav--desktop {
+  display: none;
+}
 
 @include govuk-media-query ($from: desktop) {
   .govuk-header {
+    .xpl-nav--desktop {
+      display: block;
+      background: black;
+      button, a:link, a:visited {
+        color: white;
+        font-size: 16px;
+      }
+      .xpl-frame2 {
+        position: absolute;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        box-shadow: 3px 5px 5px #999;
+        background: white;
+        a:link, a:visited, li {
+          color: black;
+        }
+        ul, p {
+          display: inline-block;
+          vertical-align: top;
+          width: 25%;
+        }
+      }
+      button::after  {
+        content: " v";
+      }
+    }
+    .xpl-nav {
+      display: none;
+    }
+  }
+  .home-top__links {
+    display: none;
+  }
+}
+/*
+  .govuk-header {
+    &__logo {
+      width: 25%;
+    }
+    &__content {
+      width: 75%;
+    }
     &__navigation-item {
-      ul {
+      margin-right: 30px;
+      .xpl-gov-activity {
           display: none;
+      }
+      ul {
+        background: #ddd;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: 500px;
+        li {
+          display: block;
+        }
+
       }
     }
     nav {
       background: black;
+      > ul > li {
+        display: inline-block;
+        hr {
+          display: none;
+        }
+      }
     }
-    ul li hr {
-      display: none;
+    h2, h3 {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
     }
     .xpl-menu__button {
       &, a:link, a:visited {
         color: white;
-      }
+        font-size: 16px;
+        font-weight: bold;
+        }
     }
-    .home-top__links {
+  }
+  .home-top__links {
+    display: none;
+  }
+  .xpl-hero {
+    p, form {
       display: none;
-    }
-    .xpl-hero {
-      p, form {
-        display: none;
-      }
     }
   }
 }
-
+*/

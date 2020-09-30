@@ -1,12 +1,26 @@
-
-$('.xpl-menu__button').on('click', event => {
+$('#xpl-topics-button').on('click', event => {
   $(event.target).hide();
-  $('.xpl-menu__frame2').show();
+  $(event.target).next('.xpl-frame2').show();
   $(event.target).parent().nextAll('li').hide();
 });
 
-$('.xpl-menu__button-back').on('click', event => {
+
+$('#xpl-topics-back-button').on('click', event => {
+  $(event.target).parent().hide();
   $(event.target).parent().prev('button').show();
-  $('.xpl-menu__frame2').hide();
-  $('.govuk-header__navigation-item').show();
+  $(event.target).parents('li').nextAll('li').show();
+});
+
+
+
+
+$('#xpl-topics-button-desktop').on('click', event => {
+  $('#xpl-frame2-topics').toggle();
+  $('#xpl-frame2-activity').hide();
+
+});
+
+$('#xpl-activity-button-desktop').on('click', event => {
+  $('#xpl-frame2-activity').toggle();
+  $('#xpl-frame2-topics').hide();
 });
