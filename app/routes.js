@@ -17,15 +17,17 @@ router.get('/browse/:topicSlug', function (req, res) {
   })
 })
 
+
 router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
   subTopicSlug = req.params.subTopicSlug
 
-  request(BASE_URL + 'browse/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
-    console.log(JSON.stringify(body, null, 2))
-    res.render('sub_topic', body)
-  })
-})
+  request(BASE_URL + 'browse/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, bodySubtopic) => {
+    request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
+      res.render('sub_topic', { ...bodySubtopic, parent: bodyTopic.title });
+    });
+  });
+});
 
 router.get('/', function (req, res) {
   res.render('index');
