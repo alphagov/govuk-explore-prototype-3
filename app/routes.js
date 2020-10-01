@@ -29,6 +29,11 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
   });
 });
 
+
+router.get('/topics', function( req, res ) {
+  res.render('topics');
+});
+
 router.get('/', function (req, res) {
   res.render('index');
 });
