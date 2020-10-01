@@ -300,6 +300,12 @@ li.govuk-tabs__list-item {
 
 @include govuk-media-query ($from: desktop) {
   .govuk-header {
+    &__logo {
+      width: 25%;
+    }
+    &__navigation-item {
+      margin-right: 40px;
+    }
     .xpl-nav--desktop {
       display: block;
       background: govuk-colour("black");
@@ -341,8 +347,24 @@ li.govuk-tabs__list-item {
           font-size: 22px;
         }
       }
+      button {
+        position: relative;
+      }
       button::after  {
-        content: " v";
+        content: "";
+        display: block;
+        position: absolute;
+        top: 3px;
+        bottom: 0;
+        right: -22px;
+        width: 7px;
+        height: 7px;
+        -webkit-transform: rotate(137deg);
+        -ms-transform: rotate(137deg);
+        transform: rotate(137deg);
+        border: solid;
+        border-width: 3px 3px 0 0;
+        border-color: white;
       }
     }
     .xpl-nav {
