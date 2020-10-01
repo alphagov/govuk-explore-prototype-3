@@ -1,7 +1,7 @@
 @import "lib/extensions/extensions";
 @include govuk-exports("govuk/component/header") {};
 
-//---- menu ---- 
+//---- menu ----
 .govuk-header {
   border-bottom: 10px solid #1d70b8;
   padding-left: 10px;
@@ -29,10 +29,10 @@
           background: govuk-colour("white");
           color: govuk-colour("black");
         }
-        
+
       }
     }
-    
+
   }
   &__navigation-item {
     border: none;
@@ -161,7 +161,7 @@ main#main-content {
     float: left;
     width: 80%;
   }
-  p { 
+  p {
     clear: both;
     margin-right: 30px;
   }
@@ -172,7 +172,7 @@ main#main-content {
     color: govuk-colour("black");
   }
   ul.govuk-list {
-    li {  
+    li {
       min-height: 180px;
       border-top: 1px solid govuk-colour("black");
     }
@@ -255,7 +255,7 @@ main#main-content {
       margin-bottom: 40px;
       a:link, a:visited {
         text-decoration: none;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
       }
     }
@@ -308,19 +308,37 @@ li.govuk-tabs__list-item {
         font-size: 16px;
       }
       .xpl-frame2 {
+
         position: absolute;
         left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 990px;
+        top: 60px;
         z-index: 10;
         width: 100%;
         box-shadow: 3px 5px 5px #999;
         background: govuk-colour("white");
         a:link, a:visited, li {
-          color: govuk-colour("black");
+          color: govuk-colour("blue");
+          font-size: 16px;
         }
         ul, p {
+          padding: 30px;
+          margin: 0;
           display: inline-block;
           vertical-align: top;
           width: 25%;
+          li {
+            margin-bottom: 30px;
+          }
+          li div {
+            color: govuk-colour("black");
+          }
+        }
+        p {
+          font-size: 22px;
         }
       }
       button::after  {
@@ -332,6 +350,19 @@ li.govuk-tabs__list-item {
     }
     &__navigation-item {
       padding-top: 10px;
+      button:focus {
+        outline: none;
+      }
+      &.menu-item-open {
+        background-color: govuk-colour("white");
+        position: relative;
+        button {
+          color: govuk-colour("black");
+          &::after {
+            content: " ^";
+          }
+        }
+      }
     }
   }
   .home-top__links {

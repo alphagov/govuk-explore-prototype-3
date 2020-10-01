@@ -15,12 +15,14 @@ $('#xpl-topics-back-button').on('click', event => {
 
 
 $('#xpl-topics-button-desktop').on('click', event => {
+  $(event.target).parent().toggleClass('menu-item-open');
   $('#xpl-frame2-topics').toggle();
   $('#xpl-frame2-activity').hide();
 
 });
 
 $('#xpl-activity-button-desktop').on('click', event => {
+  $(event.target).parent().toggleClass('menu-item-open');
   $('#xpl-frame2-activity').toggle();
   $('#xpl-frame2-topics').hide();
 });

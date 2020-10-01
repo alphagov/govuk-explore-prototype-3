@@ -12,7 +12,6 @@ router.get('/browse/:topicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
 
   request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, body) => {
-    console.log(body)
     res.render('topic', body)
   })
 })
