@@ -3,7 +3,7 @@
 
 //---- menu ---- 
 .govuk-header {
-  border-bottom: none;
+  border-bottom: 10px solid #1d70b8;
   padding-left: 10px;
   padding-right: 10px;
   &__menu-button {
@@ -278,7 +278,12 @@ li.govuk-tabs__list-item {
   margin-left: 0;
 }
 
-.app-c-back-link-inverse, .app-c-inverse-header {
+.app-c-back-link-inverse {
+  margin-top: 0;
+  background-color: #283135;
+}
+
+.app-c-inverse-header {
   background-color: #283135;
 }
 
@@ -320,6 +325,9 @@ li.govuk-tabs__list-item {
     }
     .xpl-nav {
       display: none;
+    }
+    &__navigation-item {
+      padding-top: 10px;
     }
   }
   .home-top__links {
