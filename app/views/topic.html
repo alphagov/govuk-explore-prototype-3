@@ -24,7 +24,15 @@
 
 
       {% set topicsHtml %}
-      <ul class="topics-list govuk-list">
+      <h2 class="govuk-heading-l">Featured</h2>
+      <ul class="featured-list govuk-list">
+        {% for feature in featured %}
+          <li><a href="{{feature.link}}">{{ feature.title }}</a></li>
+        {% endfor %}
+      </ul>
+
+      <h2 class="govuk-heading-l">Sub-topics</h2>
+      <ul class="govuk-list subtopic-list">
         {% for topic in subtopics %}
         <li class="topic-link">
           <a class="govuk-link" href="{{ topic.link }}">{{ topic.title }}</a>
@@ -34,8 +42,7 @@
       {% endset -%}
 
       {% set governmentHtml %}
-      <h2 class="govuk-heading-l">Latest news</h2>
-      <p class="lede govuk-body-l">News and communications about {{ title.toLowerCase() }}</p>
+      <h2 class="govuk-heading-l">Latest activity in this topic</h2>
 
       <a href="{{ latest_news.url}}"><image src="{{latest_news.image_url}}" alt="{{latest_news.title}}" />
       <h3>{{latest_news.title}}</h3></a>

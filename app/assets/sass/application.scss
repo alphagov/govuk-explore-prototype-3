@@ -171,24 +171,20 @@ $govuk-assets-path: '/govuk/assets/';
   padding-top: 0;
 }
 
-// .pad-stuff {
-//   padding: govuk-spacing(3);
-// }
-
 .govuk-header__container {
   // margin: 0
 }
 
 .topic-link {
   position: relative;
-  padding: govuk-spacing(6);
-  border-bottom: solid 1px  $govuk-border-colour;
+  padding: 30px 0 30px 0;
+  border-top: solid 1px  $govuk-border-colour;
 }
 
 .topic-link::after {
-  content: "˃";
+  content: url('/public/images/chevron-right.svg');
   position: absolute;
-  right: 0;
+  right: 0px;
 }
 
 
@@ -212,6 +208,10 @@ $govuk-assets-path: '/govuk/assets/';
 
 .sub-topic-header {
   background-color: #03579F;
+  h1 {
+    margin-bottom: 120px;
+  }
+
 }
 .app-c-inverse-header--full-width {
   padding-bottom: 55px;
@@ -281,27 +281,25 @@ $govuk-assets-path: '/govuk/assets/';
 
 /* Topic tabs */
 
-// Sub-topics list
-.topics-list {
+// subtopics-list
+.subtopic-list {
   font-size: 22px;
-  font-weight: 700;
-  margin-left: -15px;
-  margin-right: -15px;
+  font-weight: bold;
 }
 
-.topics-list a {
+.featured-list {
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 700;
+  list-style-type: disc;
+}
+
+.featured-list a {
   text-decoration: none;
 }
 
-.topic-link::after {
-    content: url('/public/images/chevron-right.svg');
-    position: absolute;
-    right: 25px;
-  }
 
-.govuk-link  {
 
-}
 // Tabs
 .govuk-tabs {
     margin-top: -75px;
