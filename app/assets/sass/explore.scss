@@ -1,6 +1,11 @@
 @import "lib/extensions/extensions";
 @include govuk-exports("govuk/component/header") {};
 
+.govuk-template__body {
+  overflow-x: hidden;
+}
+
+
 //---- menu ----
 .govuk-header {
   border-bottom: 10px solid govuk-colour("blue");
@@ -61,6 +66,7 @@
   }
   &__container {
     min-height: 50px;
+    z-index: 3;
   }
   nav {
     background: govuk-colour("white");
@@ -92,9 +98,9 @@
   }
 }
 
-//.govuk-width-container {
-//  max-width: none;
-//}
+.govuk-width-container {
+//  margin-top: 10px;
+}
 
 
 .govuk-main-wrapper--auto-spacing:first-child {
@@ -286,7 +292,7 @@ li.govuk-tabs__list-item {
 
 
 .app-c-back-link-inverse {
-//  margin-top: 0;
+  margin-top: -10px;
   width: 100vw;
   position: relative;
   left: 50%;
