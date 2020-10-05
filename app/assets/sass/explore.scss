@@ -34,6 +34,9 @@
     }
 
   }
+  &__navigation {
+    min-height: 100vh;
+  }
   &__navigation-item {
     border: none;
     padding: 30px 0 0 0;
@@ -302,6 +305,9 @@ li.govuk-tabs__list-item {
   .govuk-header {
     &__logo {
       width: 25%;
+    }
+    &__navigation {
+      min-height: unset;
     }
     &__navigation-item {
       margin-right: 40px;
