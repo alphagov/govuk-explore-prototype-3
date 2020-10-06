@@ -13,12 +13,12 @@
   padding-right: 10px;
   &__menu-button {
     right: 40px;
-    width: 50px;
     top: 0;
     border-left: 1px solid #666;
-    padding: 21px 5px 18px 10px;
+    padding: 18px 5px 18px 20px;
     font-size: 18px;
     line-height: 12px;
+    font-weight: bold;
     &::after {
       border: none;
       clip-path: none;
@@ -27,12 +27,14 @@
       box-shadow: none;
     }
     &.govuk-js-header-toggle {
-      width: 105px;
-      right: 40px;
+      right: 30px;
+      width: 95px;
+      height: 50px;
       &.govuk-header__menu-button {
         &--open {
           background: govuk-colour("white");
           color: govuk-colour("black");
+          padding-right: 13px;
         }
 
       }
@@ -63,6 +65,12 @@
       font-size: 22px;
       font-weight: bold;
     }
+    hr {
+      margin-left: -20px;
+      margin-right: -20px;
+      border-color:  govuk-colour("black");
+      border-width: 1px 0 0 0;
+    }
   }
   &__container {
     border-bottom: none;
@@ -87,7 +95,7 @@
       background-position: 105% 50%;
       background-size: 70px auto;
       text-indent: -5000px;
-      right: -10px;
+      right: -20px;
       width: 50px;
       height: 50px;
       &.govuk-js-search-toggle--open {
@@ -134,8 +142,8 @@
 
 main#main-content {
   section {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
   *:link {
     text-decoration: none;
@@ -276,6 +284,28 @@ main#main-content {
   }
 }
 
+#xpl-popup-menu {
+  width: 100vw;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: govuk-colour("white");
+
+  #navigation {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+}
+
+.govuk-header__navigation, #xpl-search-box {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 990px;
+}
+
 #xpl-search-box {
   padding: 30px 0 60px 0;
   h2 {
@@ -336,6 +366,12 @@ li.govuk-tabs__list-item {
 }
 
 @include govuk-media-query ($from: tablet) {
+  .home-top__links {
+    display: none;
+  }
+}
+
+@include govuk-media-query ($from: desktop) {
   .govuk-header {
     border-bottom: 10px solid govuk-colour("white");
 
