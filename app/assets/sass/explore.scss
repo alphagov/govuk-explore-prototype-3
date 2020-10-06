@@ -372,6 +372,11 @@ li.govuk-tabs__list-item {
 }
 
 @include govuk-media-query ($from: desktop) {
+  .govuk-main-wrapper {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .govuk-header {
     border-bottom: 10px solid govuk-colour("white");
 
