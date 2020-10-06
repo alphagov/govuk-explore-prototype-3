@@ -65,6 +65,7 @@
     }
   }
   &__container {
+    border-bottom: none;
     min-height: 50px;
     z-index: 3;
   }
@@ -100,6 +101,7 @@
 
 .govuk-width-container {
 //  margin-top: 10px;
+  border-bottom: none;
 }
 
 
@@ -292,15 +294,19 @@ li.govuk-tabs__list-item {
 
 
 .app-c-back-link-inverse {
-  margin-top: -10px;
+  margin-top: 0;
   width: 100vw;
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-
   background-color: #283135;
+  &-inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+  }
 }
 
 .app-c-inverse-header {
@@ -327,8 +333,12 @@ li.govuk-tabs__list-item {
   .govuk-header {
     border-bottom: 10px solid govuk-colour("white");
 
+    & + div.govuk-width-container {
+      margin-top: -10px;
+    }
+
     &__container {
-      border-bottom: 10px solid govuk-colour("blue");
+      border-bottom: 10px solid #1d70b8;
     }
     &__logo {
       width: 25%;
