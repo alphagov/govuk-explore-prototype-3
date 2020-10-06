@@ -195,8 +195,10 @@ main#main-content {
   }
   ul.govuk-list {
     li {
-      min-height: 180px;
       border-top: 1px solid govuk-colour("black");
+      > a > div {
+        min-height: 180px;
+      }
     }
   }
 }
