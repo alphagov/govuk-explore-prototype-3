@@ -110,7 +110,7 @@
 }
 
 .xpl-hero {
-  margin: 0;
+  margin: -10px 0 0 0;
   padding-bottom: 20px;
   padding-top: 15px;
   background: govuk-colour("blue");
@@ -305,7 +305,7 @@ li.govuk-tabs__list-item {
   &-inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 960px;
+    max-width: 990px;
   }
 }
 
@@ -319,6 +319,12 @@ li.govuk-tabs__list-item {
   margin-right: -50vw;
 }
 
+.header-inner {
+  max-width: 990px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #topics h2 {
   font-size: 22px;
 }
@@ -329,7 +335,7 @@ li.govuk-tabs__list-item {
   display: none;
 }
 
-@include govuk-media-query ($from: desktop) {
+@include govuk-media-query ($from: tablet) {
   .govuk-header {
     border-bottom: 10px solid govuk-colour("white");
 
