@@ -60,6 +60,19 @@
         font-size: 18px;
       }
     }
+    &.xpl-minor-nav-item {
+      background: #f3f2f1;
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-bottom: 0;
+      &:last-of-type {
+        padding-bottom: 60px;
+      }
+      a {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
     h2 {
       margin: 30px 0 30px 0;
       font-size: 22px;
@@ -416,7 +429,6 @@ li.govuk-tabs__list-item {
         font-size: 16px;
       }
       .xpl-frame2 {
-
         position: absolute;
         left: 0;
         right: 0;
@@ -432,8 +444,19 @@ li.govuk-tabs__list-item {
           color: govuk-colour("blue");
           font-size: 16px;
         }
+        .xpl-minor-item {
+          background: #f3f2f1;
+          ul {
+            width: 100%;
+            padding-left: 35%;
+            li {
+              display: inline-block;
+              width: 32%;
+            }
+          }
+        }
         ul, p {
-          padding: 30px;
+          padding: 30px 30px 0 30px;
           margin: 0;
           display: inline-block;
           vertical-align: top;
