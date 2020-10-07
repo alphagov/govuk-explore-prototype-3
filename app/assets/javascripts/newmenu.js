@@ -15,16 +15,25 @@ $('#xpl-topics-back-button').on('click', event => {
 
 
 $('#xpl-topics-button-desktop').on('click', event => {
-  $(event.target).parent().toggleClass('menu-item-open');
+  if ($(event.target).parent().hasClass('menu-item-open')) {
+    $(event.target).closest('ul').children('li').removeClass('menu-item-open');
+  } else {
+    $(event.target).closest('ul').children('li').removeClass('menu-item-open');
+    $(event.target).parent('li').addClass('menu-item-open');
+  }
   $('#xpl-frame2-topics').toggle();
   $('#xpl-frame2-activity').hide();
-
 });
 
 $('#xpl-activity-button-desktop').on('click', event => {
-  $(event.target).parent().toggleClass('menu-item-open');
-  $('#xpl-frame2-activity').toggle();
+  if ($(event.target).parent().hasClass('menu-item-open')) {
+    $(event.target).closest('ul').children('li').removeClass('menu-item-open');
+  } else {
+    $(event.target).closest('ul').children('li').removeClass('menu-item-open');
+    $(event.target).parent('li').addClass('menu-item-open');
+  }
   $('#xpl-frame2-topics').hide();
+  $('#xpl-frame2-activity').toggle();
 });
 
 $('.govuk-js-search-toggle').on('click', event => {
