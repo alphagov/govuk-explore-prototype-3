@@ -15,26 +15,44 @@
     right: 40px;
     top: 0;
     border-left: 1px solid #666;
-    padding: 18px 5px 18px 20px;
+    padding: 18px 20px 18px 0px;
     font-size: 18px;
     line-height: 12px;
     font-weight: bold;
     &::after {
-      border: none;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 19px;
+      bottom: 0;
+      right: 18px;
+      width: 7px;
+      height: 7px;
+      -webkit-transform: rotate(137deg);
+      -ms-transform: rotate(137deg);
+      transform: rotate(137deg);
+      border: solid;
+      border-width: 3px 3px 0 0;
+      border-color: white;
       clip-path: none;
     }
     &:focus {
       box-shadow: none;
     }
+    &:hover {
+      text-decoration: none;
+    }
     &.govuk-js-header-toggle {
       right: -25px;
-      width: 95px;
+      width: 100px;
       height: 50px;
       &.govuk-header__menu-button {
         &--open {
           background: govuk-colour("white");
           color: govuk-colour("black");
-          padding-right: 13px;
+          padding-right: 0px;
+          font-size: 40px;
+          font-weight: 100;
         }
 
       }
