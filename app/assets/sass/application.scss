@@ -47,6 +47,9 @@ $govuk-assets-path: '/govuk/assets/';
     &::before {
       content: none;
     }
+    .govuk-tabs__tab {
+      text-decoration: none;
+    }
   }
 
   .govuk-tabs__list-item--selected {
@@ -68,9 +71,6 @@ $govuk-assets-path: '/govuk/assets/';
 
     background-color: $govuk-body-background-colour;
 
-    .govuk-tabs__tab {
-      text-decoration: none;
-    }
   }
 
   .govuk-tabs__tab {
