@@ -176,9 +176,6 @@ main#main-content {
     margin-left: 25px;
     margin-right: 25px;
   }
-  *:link {
-    text-decoration: none;
-  }
 }
 
 .home-divider {
@@ -187,9 +184,12 @@ main#main-content {
 }
 
 .home-top__links {
-    &-title {
-        color: govuk-colour("white");
-    }
+  *:link {
+    text-decoration: none;
+  }
+  &-title {
+    color: govuk-colour("white");
+  }
 }
 
 .govuk-heading-l {
@@ -210,6 +210,9 @@ main#main-content {
 
 .xpl-topics {
   margin-bottom: 30px;
+  *:link {
+    text-decoration: none;
+  }
   h3 {
     float: left;
     width: 80%;
@@ -407,10 +410,6 @@ li.govuk-tabs__list-item {
 }
 
 @include govuk-media-query ($from: tablet) {
-  .home-top__links {
-    display: none;
-  }
-
   .js-enabled .govuk-tabs__list-item {
     padding: 20px 20px 19px 20px;
     margin-top: -20px;
@@ -422,6 +421,21 @@ li.govuk-tabs__list-item {
 }
 
 @include govuk-media-query ($from: desktop) {
+  .home-top__links {
+    position: unset;
+    margin-top: 0;
+    &-item {
+      a:visited, a:link {
+        text-decoration: underline;
+        font-weight: 700;
+      }
+    }
+  }
+  .xpl-hero {
+    padding-bottom: 0;
+    padding-top: 0;
+
+  }
   .govuk-main-wrapper {
     max-width: 960px;
     margin-left: auto;
