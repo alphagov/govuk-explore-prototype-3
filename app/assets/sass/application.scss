@@ -288,10 +288,26 @@ $govuk-assets-path: '/govuk/assets/';
 }
 
 .featured-list {
-  margin-left: 20px;
   font-size: 18px;
   font-weight: 700;
-  list-style-type: disc;
+  list-style-type: none;
+  padding-left: 40px;
+  li {
+    text-indent: -40px;
+    padding-bottom: 10px;
+  }
+  li::before {
+    content: '';
+    display: inline-block;
+    vertical-align: -11px;
+    padding: 7px 20px 0 0;
+    height: 39px;
+    width: 10px;
+    background-image: url('/public/images/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: 0 18px;
+    background-size: 21px;
+  }
 }
 
 .featured-list a {
