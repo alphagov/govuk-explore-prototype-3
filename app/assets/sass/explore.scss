@@ -457,9 +457,12 @@ li.govuk-tabs__list-item {
     }
     &__navigation {
       min-height: unset;
+      position: absolute;
+      margin: 5px 0 0 0;
     }
     &__navigation-item {
-      margin-right: 40px;
+      padding: 10px 20px 0 20px;
+      margin-right: 0;
       button {
         font-family: "GDS Transport", Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -469,6 +472,9 @@ li.govuk-tabs__list-item {
         font-size: 0.875rem;
         line-height: 1.14286;
         white-space: nowrap;
+        &:focus {
+          outline: none;
+        }
       }
     }
     .xpl-nav--desktop {
@@ -545,15 +551,7 @@ li.govuk-tabs__list-item {
     .xpl-nav {
       display: none;
     }
-    &__navigation {
-      position: absolute;
-    }
     &__navigation-item {
-      padding: 10px 20px 0 20px;
-      margin-right: 0;
-      button:focus {
-        outline: none;
-      }
       &.menu-item-open {
         background-color: govuk-colour("white");
         position: relative;
