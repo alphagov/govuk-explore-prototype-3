@@ -47,11 +47,24 @@
       {% set governmentHtml %}
       <h2 class="govuk-heading-l">Latest activity in this topic</h2>
 
-      <p class="govuk-body">To be completed</p>
+
+      {% for activity in activities %}
+        <div class="xpl-topic-activity-frame">
+          <div class="xpl-topic-activity-inner">
+            <h2 class="govuk-heading-l"><a class="govuk-link" href="{{activity.url}}">{{activity.title}}</a></h2>
+            <p class="govuk-body">
+              {{activity.type}},
+              Published {{activity.published}}
+            </p>
+            <p class="govuk-body xpl-topic-activity-footer">{{activity.category}}</p>
+          </div>
+        </div>
+      {% endfor %}
+
 
       <h2 class="govuk-heading-l">Browse by publication type</h2>
 
-      <h3 class="govuk-heading-m"><a href="/search/news-and-communications?parent={{topicSlug}}&{{taxon_search_filter}}">News</a></h3>
+      <h3 class="govuk-heading-m"><a class="govuk-link" href="/search/news-and-communications?parent={{topicSlug}}&{{taxon_search_filter}}">News</a></h3>
       <p class="govuk-body">News articles, speeches and correspondence</p>
 
 
