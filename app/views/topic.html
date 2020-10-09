@@ -47,33 +47,46 @@
       {% set governmentHtml %}
       <h2 class="govuk-heading-l">Latest activity in this topic</h2>
 
+      <p class="govuk-body">To be completed</p>
+
+      <h2 class="govuk-heading-l">Browse by publication type</h2>
+
+      <h3 class="govuk-heading-m"><a href="/search/news-and-communications?parent={{topicSlug}}&{{taxon_search_filter}}">News</a></h3>
+      <p class="govuk-body">News articles, speeches and correspondence</p>
+
+
+      {#
       {% for news in latest_news %}
-        <a href="{{news.url}}"><image src="{{news.image_url}}" alt="{{news.title}}" />
-          <h3>{{news.title}}</h3>
-        </a>
-        <p class="govuk-body govuk-!-margin-bottom-6">{{ news.description }}</p>
+      <a href="{{news.url}}"><image src="{{news.image_url}}" alt="{{news.title}}" />
+      <h3>{{news.title}}</h3>
+      </a>
+      <p class="govuk-body govuk-!-margin-bottom-6">{{ news.description }}</p>
 
-        <p class="govuk-body govuk-!-margin-bottom-9">
-          <a href="/search/news-and-communications?parent=%2Fwelfare&topic=dded88e2-f92e-424f-b73e-6ad24a839c51">See all news</a>
-        </p>
+      <p class="govuk-body govuk-!-margin-bottom-9">
+      <a href="/search/news-and-communications?parent=%2Fwelfare&topic=dded88e2-f92e-424f-b73e-6ad24a839c51">See all news</a>
+      </p>
       {% endfor %}
+      #}
 
-      <div class="govuk-footer pad-stuff">
-        <h2 class="govuk-heading-l">Publications</h2>
-        <p class="lede govuk-body-l">Regulation, research, policy and data in this topic</p>
-        <p class=govuk-body>
-          <a href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&order=updated-newest">Policy papers and consultations</a>
-        </p>
-        <p class=govuk-body>
-          <a href="/search/guidance-and-regulation?{{ taxon_search_filter }}&order=most-viewed">Guidance and regulation</a>
-        </p>
-        <p class=govuk-body>
-          <a href="/search/research-and-statistics?content_store_document_type=statistics_published&{{ taxon_search_filter }}&order=updated-newest">Research and statistics</a>
-        </p>
-        <p class=govuk-body>
-          <a href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&order=updated-newest">Transparency and freedom of information releases</a>
-        </p>
-      </div>
+
+
+      <h3 class="govuk-heading-m"><a href="/search/guidance-and-regulation?{{ taxon_search_filter }}&order=most-viewed">Guidance and regulation</a></h3>
+      <p class="govuk-body">Detailed guidance, rules and regulation</p>
+
+      <h3 class="govuk-heading-m"><a href="/search/research-and-statistics?content_store_document_type=statistics_published&{{ taxon_search_filter }}&order=updated-newest">Research and statistics</a></h3>
+      <p class="govuk-body">Research, analysis and official statistics</p>
+
+      <h3 class="govuk-heading-m"><a href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&order=updated-newest">Policy papers and consultations</a></h3>
+      <p class="govuk-body">Consultations and strategy</p>
+
+      <h3 class="govuk-heading-m"><a href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&order=updated-newest">Transparency</a></h3>
+      <p class="govuk-body">Government data, freedom of information releases and corporate reports</p>
+
+
+      <h2 class="govuk-heading-l">Departments and organisations</h2>
+
+      <p class="govuk-body">To be completed</p>
+
       {% endset -%}
 
 

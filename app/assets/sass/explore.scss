@@ -192,6 +192,10 @@ main#main-content {
   }
 }
 
+a.govuk-link:link {
+  text-decoration: none;
+}
+
 .govuk-heading-l {
   font-size: 22px;
   margin: 30px 0 30px 0;
