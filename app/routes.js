@@ -12,6 +12,30 @@ router.get('/browse/:topicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
 
   request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, body) => {
+    body.topicSlug = topicSlug;
+    body.activities = [
+      {
+        title: "Statement of changes to the Immigration Rules: HC 707, 10 September 2020",
+        url: "/",
+        type: "Speech",
+        category: "Policy papers and consultation",
+        published: "12 August 2020"
+      },
+      {
+        title: "Criminal investigations: use of interpreters",
+        url: "/",
+        type: "Guidance",
+        category: "Guidance and regulation",
+        published: "12 August 2020"
+      },
+      {
+        title: "Home Secretary annouces details of the Hong Kong BN(O) Visa",
+        url: "/",
+        type: "Speech",
+        category: "News and communications",
+        published: "12 August 2020"
+      }
+    ];
     res.render('topic', body)
   })
 })
