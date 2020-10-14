@@ -214,6 +214,19 @@ a.govuk-link:link {
   }
 }
 
+
+.xpl-topic-browse {
+  margin: 40px 0 40px 0;
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 30px 0 0 0;
+  }
+  p {
+    font-size: 16px;
+  }
+}
+
 .xpl-topics {
   margin-bottom: 30px;
   *:link {
@@ -484,6 +497,7 @@ li.govuk-tabs__list-item {
     }
   }
 }
+
 
 // Desktop
 
