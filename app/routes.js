@@ -5,14 +5,18 @@ const request = require('request');
 const url = require('url');
 // Add your routes here - above the module.exports line
 
-const BASE_URL = 'https://govuk-explore-api-prototype.herokuapp.com/'
-//const BASE_URL = 'http://localhost:3010/'
+//const BASE_URL = 'https://govuk-explore-api-prototype.herokuapp.com/'
+const BASE_URL = 'http://localhost:3000/'
 
 router.get('/browse/:topicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
 
   request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
+
+    body.organisations = body.organisations.slice(0,5);
+    console.log(JSON.stringify(body.organisations, null, 2));
+
     body.activities = [
       {
         title: "Statement of changes to the Immigration Rules: HC 707, 10 September 2020",
@@ -36,6 +40,7 @@ router.get('/browse/:topicSlug', function (req, res) {
         published: "12 August 2020"
       }
     ];
+    console.log('requesting', BASE_URL + 'browse/' + topicSlug);
     res.render('topic', body)
   })
 })

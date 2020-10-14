@@ -1,5 +1,6 @@
 @import "lib/extensions/extensions";
 @include govuk-exports("govuk/component/header") {};
+@import "colour-organisations";
 
 .govuk-template__body {
   overflow-x: hidden;
@@ -450,6 +451,37 @@ li.govuk-tabs__list-item {
     position: absolute;
     bottom: 0;
     color: #555;
+  }
+}
+
+
+.xpl-organisation {
+  border-bottom: 1px solid $govuk-border-colour;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  a {
+    text-decoration: none;
+  }
+
+  .xpl-organisation__inner {
+    border-left: 3px solid black;
+    padding-left: 15px;
+    img {
+      max-width: 60px;
+    }
+
+    p {
+      font-size: 22px;
+      margin-bottom: 0;
+      position: relative;
+      padding-right: 20px;
+      &:after {
+        content: url(/public/images/chevron-right.svg);
+        position: absolute;
+        right: 0px;
+      }
+    }
   }
 }
 
