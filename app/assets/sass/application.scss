@@ -181,7 +181,7 @@ $govuk-assets-path: '/govuk/assets/';
   border-top: solid 1px  $govuk-border-colour;
 }
 
-.topic-link::after {
+.topic-link-inner::after {
   content: url('/public/images/chevron-right.svg');
   position: absolute;
   right: 0px;

@@ -38,7 +38,11 @@
       <ul class="govuk-list subtopic-list">
         {% for topic in subtopics %}
           <li class="topic-link">
-            <a class="govuk-link" href="{{ topic.link }}">{{ topic.title }}</a>
+            <a class="govuk-link" href="{{ topic.link }}">
+              <div class="topic-link-inner">
+                {{ topic.title }}
+              </div>
+            </a>
           </li>
         {% endfor %}
       </ul>
