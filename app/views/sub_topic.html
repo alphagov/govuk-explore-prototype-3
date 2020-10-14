@@ -47,33 +47,53 @@
       {% endset -%}
 
       {% set governmentHtml %}
-      <h2 class="govuk-heading-l">Latest news</h2>
-      <p class="govuk-body-l">News and communications about {{ title.toLowerCase() }}</p>
+      <h2 class="govuk-heading-l">Latest activity in this topic</h2>
 
-      <a href="{{ latest_news.url}}"><image src="{{latest_news.image_url}}" alt="{{latest_news.title}}" />
-      <h3>{{latest_news.title}}</h3></a>
-      <p class="govuk-body govuk-!-margin-bottom-6">{{ latest_news.description }}</p>
+      {% for activity in latest_news %}
+        <div class="xpl-topic-activity-frame">
+          <div class="xpl-topic-activity-inner">
+            <h2 class="govuk-heading-l"><a class="govuk-link" href="{{activity.url}}">{{activity.title}}</a></h2>
+            <p class="govuk-body">
+              {{activity.subtopic|title}}{% if activity.subtopic %},{% endif %}
+              Published {{activity.date}}
+            </p>
+            <p class="govuk-body xpl-topic-activity-footer">{{activity.topic|title}}</p>
+          </div>
+        </div>
+      {% endfor %}
 
-      <p class="govuk-body govuk-!-margin-bottom-9">
-        <a href="/search/news-and-communications?{{ taxon_search_filter }}&order=updated-newest">See all news</a>
-      </p>
+      <h2 class="govuk-heading-l">Browse by publication type</h2>
 
-      <div class="publications govuk-footer pad-stuff">
-        <h2 class="govuk-heading-l">Publications</h2>
-        <p class="govuk-body-l">Regulation, research, policy and data in this topic</p>
-        <p class=govuk-body>
-          <a href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&order=updated-newest">Policy papers and consultations</a>
-        </p>
-        <p class=govuk-body>
-          <a href="/search/guidance-and-regulation?{{ taxon_search_filter }}&order=most-viewed">Guidance and regulation</a>
-        </p>
-        <p class=govuk-body>
-          <a href="/search/research-and-statistics?content_store_document_type=statistics_published&{{ taxon_search_filter }}&order=updated-newest">Research and statistics</a>
-        </p>
-        <p class=govuk-body>
-          <a href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&order=updated-newest">Transparency and freedom of information releases</a>
-        </p>
-      </div>
+      <h3 class="govuk-heading-m"><a class="govuk-link" href="/search/news-and-communications?parent={{topicSlug}}&amp;{{taxon_search_filter}}">News</a></h3>
+      <p class="govuk-body">News articles, speeches and correspondence</p>
+
+      <h3 class="govuk-heading-m"><a class="govuk-link" href="/search/guidance-and-regulation?{{ taxon_search_filter }}&amp;order=most-viewed">Guidance and regulation</a></h3>
+      <p class="govuk-body">Detailed guidance, rules and regulation</p>
+
+      <h3 class="govuk-heading-m"><a class="govuk-link" href="/search/research-and-statistics?content_store_document_type=statistics_published&amp;{{ taxon_search_filter }}&amp;order=updated-newest">Research and statistics</a></h3>
+      <p class="govuk-body">Research, analysis and official statistics</p>
+
+      <h3 class="govuk-heading-m"><a class="govuk-link" href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&amp;order=updated-newest">Policy papers and consultations</a></h3>
+      <p class="govuk-body">Consultations and strategy</p>
+
+      <h3 class="govuk-heading-m"><a class="govuk-link" href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&amp;order=updated-newest">Transparency</a></h3>
+      <p class="govuk-body">Government data, freedom of information releases and corporate reports</p>
+
+
+      <h2 class="govuk-heading-l">Departments and organisations</h2>
+
+      <ul class="govuk-list">
+        {% for organisation in organisations %}
+          <li class="xpl-organisation">
+            <a href="https://www.gov.uk{{organisation.url}}">
+              <div class="xpl-organisation__inner xpl-org {{organisation.slug}}">
+                <img src="/public/images/org_logos/{{organisation.crest}}_crest_18px_x2.png" alt=organisation logo"/>
+                <p class="govuk-body">{{organisation.title}}</p>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
       {% endset -%}
 
 
