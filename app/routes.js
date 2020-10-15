@@ -14,6 +14,7 @@ router.get('/browse/:topicSlug', function (req, res) {
   request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     body.organisations = body.organisations.slice(0,5);
+    body.latest_news = body.latest_news.slice(0,3);
     body.latest_news.forEach(news => {
       const d = new Date(news.public_timestamp);
       news.date = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
@@ -33,6 +34,7 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
     request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
       body.topicSlug = topicSlug;
       body.organisations = body.organisations.slice(0,5);
+      body.latest_news = body.latest_news.slice(0,3);
       body.latest_news.forEach(news => {
         const d = new Date(news.public_timestamp);
         news.date = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
