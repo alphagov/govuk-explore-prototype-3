@@ -409,23 +409,25 @@ img {
 }
 
 /* Topic tags */
-.topic-tags ul {
-  padding-left: 0;
-  font-family: "GDS Transport", Arial, sans-serif;
-}
+.topic-tags {
+  ul {
+    padding-left: 0;
+    font-family: "GDS Transport", Arial, sans-serif;
+  }
 
-.topic-tags li {
-  display: inline-block;
-  padding: 15px;
-  border: 1px solid #1d70b8;
-  border-bottom: 5px solid #1d70b8;
-  margin-right: 15px;
-  margin-bottom: 15px;
-  text-decoration: none;
-}
+  li {
+    display: inline-block;
+    padding: 15px;
+    border: 1px solid #1d70b8;
+    border-bottom: 5px solid #1d70b8;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    text-decoration: none;
+  }
 
-.topic-tags a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
 
 // Accordion icons
