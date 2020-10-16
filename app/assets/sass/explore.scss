@@ -468,6 +468,9 @@ li.govuk-tabs__list-item {
     z-index: 9;
     &:hover {
       background: #f3f2f1;
+      h2 {
+        color: #003078;
+      }
     }
 
   }
