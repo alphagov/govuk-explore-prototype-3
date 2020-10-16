@@ -53,14 +53,16 @@
 
       {% for activity in latest_news %}
         <div class="xpl-topic-activity-frame">
-          <div class="xpl-topic-activity-inner">
-            <h2 class="govuk-heading-l"><a class="govuk-link" href="{{activity.url}}">{{activity.title}}</a></h2>
-            <p class="govuk-body">
-              {{activity.subtopic|title}}{% if activity.subtopic %},{% endif %}
-              Published {{activity.date}}
-            </p>
-            <p class="govuk-body xpl-topic-activity-footer">{{activity.topic|title}}</p>
-          </div>
+          <a class="govuk-link" href="{{activity.url}}">
+            <div class="xpl-topic-activity-inner">
+              <h2 class="govuk-heading-l">{{activity.title}}</h2>
+              <p class="govuk-body">
+                {{activity.subtopic|title}}{% if activity.subtopic %},{% endif %}
+                Published {{activity.date}}
+              </p>
+              <p class="govuk-body xpl-topic-activity-footer">{{activity.topic|title}}</p>
+            </div>
+          </a>
         </div>
       {% endfor %}
 
