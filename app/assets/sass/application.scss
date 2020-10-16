@@ -423,9 +423,17 @@ img {
     margin-right: 15px;
     margin-bottom: 15px;
     text-decoration: none;
+    &:hover {
+      background: #f3f2f1;
+      border-bottom: 5px solid #003078;
+      a {
+        color: #003078;
+      }
+    }
   }
 
   a {
+    font-weight: bold;
     text-decoration: none;
   }
 }
