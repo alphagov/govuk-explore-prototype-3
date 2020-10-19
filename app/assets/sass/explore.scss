@@ -555,7 +555,6 @@ li.govuk-tabs__list-item {
     margin-right: auto;
   }
 
-
   .home-top__links {
     position: unset;
     margin-top: 0;
@@ -566,6 +565,11 @@ li.govuk-tabs__list-item {
       }
     }
   }
+
+  #xpl-topics-button-desktop {
+    margin-right: 10px;
+  }
+
   .xpl-hero {
     padding-bottom: 0;
     padding-top: 0;
