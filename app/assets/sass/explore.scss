@@ -409,6 +409,14 @@ li.govuk-tabs__list-item {
         margin-right: 0;
         padding-left: 0;
         padding-right: 0;
+        border-top-color: #b1b4b6;
+        box-shadow: none;
+        .govuk-accordion__section {
+          button {
+            text-decoration: none;
+            color: govuk-colour("black");
+          }
+        }
       }
     }
   }
@@ -559,6 +567,10 @@ li.govuk-tabs__list-item {
 }
 
 @include govuk-media-query ($from: desktop) {
+
+  .govuk-accordion__section:hover {
+    background-color: #f3f2f1;
+  }
 
   .header-inner {
     padding-left: 0;
