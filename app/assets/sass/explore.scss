@@ -71,7 +71,6 @@
     border: none;
     padding: 30px 0 0 0;
     color: govuk-colour("black");
-    pointer: pointer;
      a:link, a:visited {
       font-size: 22px;
       color: govuk-colour("blue");
@@ -314,6 +313,7 @@ a.govuk-link:link {
   font-weight: bold;
   color: $govuk-link-colour;
   display: block;
+  cursor: pointer;
 }
 
 .xpl-menu__button-back {
