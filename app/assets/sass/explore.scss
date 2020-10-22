@@ -2,6 +2,9 @@
 @include govuk-exports("govuk/component/header") {};
 @import "colour-organisations";
 
+$link-hover-colour: #003078;
+
+
 .govuk-template__body {
   overflow-x: hidden;
 }
@@ -336,21 +339,6 @@ a.govuk-link:link {
   }
 }
 
-.xpl-frame2 {
-  ul {
-    padding: 0;
-    list-style-type: none;
-    li {
-      margin-bottom: 40px;
-      a:link, a:visited {
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: bold;
-      }
-    }
-  }
-}
-
 #xpl-popup-menu {
   width: 100vw;
   position: absolute;
@@ -504,7 +492,7 @@ li.govuk-tabs__list-item {
     &:hover {
       background: #f3f2f1;
       h2 {
-        color: #003078;
+        color: $link-hover-colour;
       }
     }
 
@@ -681,9 +669,18 @@ li.govuk-tabs__list-item {
         width: 100%;
         box-shadow: 3px 5px 5px #999;
         background: govuk-colour("white");
-        a:link, a:visited, li {
+        ul {
+          padding: 0;
+          list-style-type: none;
+        }
+        a:link, a:visited {
           color: govuk-colour("blue");
           font-size: 16px;
+          text-decoration: none;
+          font-weight: bold;
+        }
+        a:hover {
+          color: $link-hover-colour;
         }
         .xpl-minor-item {
           background: #f3f2f1;
