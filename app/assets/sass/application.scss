@@ -90,7 +90,7 @@ $govuk-assets-path: '/govuk/assets/';
 
   .govuk-tabs__panel {
     @include govuk-responsive-margin(0, "bottom");
-    padding: govuk-spacing(6) govuk-spacing(4);
+    padding: govuk-spacing(4) govuk-spacing(4);
     border: 1px solid $govuk-border-colour;
     border-top: 0;
 
@@ -299,9 +299,9 @@ li.topic-link {
   font-size: 18px;
   font-weight: 700;
   list-style-type: none;
-  padding-left: 40px;
-  li {
-    text-indent: -40px;
+  margin-bottom: 30px;
+  ul li {
+    text-indent: -30px;
     padding-bottom: 10px;
   }
   li::before {
