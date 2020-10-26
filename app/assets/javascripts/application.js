@@ -1979,7 +1979,7 @@ Header.prototype.init = function () {
   }
 
   // Handle $toggleButton click events
-  $toggleButton.addEventListener('click', this.handleClick.bind(this));
+//  $toggleButton.addEventListener('click', this.handleClick.bind(this));
 };
 
 /**
@@ -1999,6 +1999,8 @@ Header.prototype.toggleClass = function (node, className) {
 * An event handler for click event on $toggleButton
 * @param {object} event event
 */
+
+
 Header.prototype.handleClick = function (event) {
   var $module = this.$module;
   var $toggleButton = event.target || event.srcElement;
@@ -2008,12 +2010,11 @@ Header.prototype.handleClick = function (event) {
   if ($toggleButton && $target) {
     this.toggleClass($target, 'govuk-header__navigation--open');
     this.toggleClass($toggleButton, 'govuk-header__menu-button--open');
-    $toggleButton.innerText =
-      $toggleButton.classList.contains('govuk-header__menu-button--open') ? '×' : 'Menu';
     $toggleButton.setAttribute('aria-expanded', $toggleButton.getAttribute('aria-expanded') !== 'true');
     $target.setAttribute('aria-hidden', $target.getAttribute('aria-hidden') === 'false');
   }
 };
+
 
 function Radios ($module) {
   this.$module = $module;

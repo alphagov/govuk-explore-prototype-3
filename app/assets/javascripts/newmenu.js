@@ -41,3 +41,11 @@ $('.govuk-js-search-toggle').on('click', event => {
   $(event.target).text('×')
   $('#xpl-search-box').toggle();
 });
+
+
+
+$('.govuk-js-header-toggle').on('click', event => {
+  event.target.classList.toggle('govuk-header__menu-button--open');
+  event.target.innerText = event.target.classList.contains('govuk-header__menu-button--open') ? '×' : 'Menu';
+  $('#navigation').toggleClass('govuk-header__navigation--open');
+});

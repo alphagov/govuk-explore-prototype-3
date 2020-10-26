@@ -1,12 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
+const fs = require('fs')
 const request = require('request');
 const url = require('url');
 // Add your routes here - above the module.exports line
 
-const BASE_URL = 'https://govuk-explore-api-prototype.herokuapp.com/'
-//const BASE_URL = 'http://localhost:3050/'
+//const BASE_URL = 'https://govuk-explore-api-prototype.herokuapp.com/'
+const BASE_URL = 'http://localhost:3050/'
+
 
 router.get('/browse/:topicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
@@ -56,13 +58,35 @@ router.get('/', function (req, res) {
   res.render('index');
 });
 
-// All other URLs (including css and js)
+
+// All other URLs (including css, js, etc.)
   router.get('/*', function(req,res) {
+    console.log(req.url);
     //modify the url in any way you want
     var url_parts = url.parse(req.url, false);
     var query = url_parts.query;
     var newurl = 'https://www.gov.uk' + req.path + '?' + query;
-    request(newurl).pipe(res);
+
+    request(newurl, function (error, response, body) {
+      if (error) throw error;
+
+      const headerString = fs.readFileSync('app/views/header.html', 'utf8');
+      const headerStringWithCss = `
+  <link href="/public/css/govuk.css" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
+  ` + headerString;
+
+
+      // Make all src and ref attributes absolute, or the server will try to
+      // fetch its own version
+      const newBody = body
+        .replace(/(href|src)="\//g, '$1="https://www.gov.uk/')
+        .replace(/<header[^]+<\/header>/, headerStringWithCss)
+        .replace(/<\/body>/,'<script src="/public/javascripts/newmenu.js"></script>\n</body>');
+
+      res.send(newBody);
+
+    });
   });
 
 
