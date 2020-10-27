@@ -13,10 +13,9 @@ $link-hover-colour: #003078;
       padding-top: 0;
     }
   }
-}
-
-.govuk-breadcrumbs--collapse-on-mobile .govuk-breadcrumbs__list-item:before {
-  top: 18px;
+  .govuk-breadcrumbs__list-item:before {
+    top: 18px;
+  }
 }
 
 
@@ -584,6 +583,12 @@ li.govuk-tabs__list-item {
 }
 
 @include govuk-media-query ($from: desktop) {
+
+  .govuk-breadcrumbs {
+    .govuk-breadcrumbs__list-item:before {
+      top: 0;
+    }
+  }
 
   .govuk-accordion__section:hover {
     background-color: #f3f2f1;

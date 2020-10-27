@@ -2665,6 +2665,8 @@
  top:-1px;
  bottom:1px
 }
+
+/*
 .govuk-breadcrumbs {
  font-family:"GDS transport",Arial,sans-serif;
  -webkit-font-smoothing:antialiased;
@@ -2832,6 +2834,7 @@
   bottom:0
  }
 }
+*/
 .govuk-button,
 .gem-c-govspeak .gem-c-button {
  font-family:"GDS transport",Arial,sans-serif;

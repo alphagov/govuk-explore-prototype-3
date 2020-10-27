@@ -72,7 +72,6 @@ router.get('/', function (req, res) {
 
       const headerString = fs.readFileSync('app/views/header.html', 'utf8');
       const headerStringWithCss = `
-  <link href="/public/css/govuk.css" rel="stylesheet" type="text/css" />
   <link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
   ` + headerString;
 
