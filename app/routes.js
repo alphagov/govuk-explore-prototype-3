@@ -6,8 +6,7 @@ const request = require('request');
 const url = require('url');
 // Add your routes here - above the module.exports line
 
-const BASE_URL = 'https://govuk-explore-api-prototype.herokuapp.com/'
-//const BASE_URL = 'http://localhost:3050/'
+const BASE_URL = process.env.BASE_URL
 
 
 router.get('/browse/:topicSlug', function (req, res) {
