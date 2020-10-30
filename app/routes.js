@@ -6,13 +6,13 @@ const request = require('request');
 const url = require('url');
 // Add your routes here - above the module.exports line
 
-const BASE_URL = process.env.BASE_URL
+const API_URL = process.env.API_URL
 
 
 router.get('/browse/:topicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
 
-  request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, body) => {
+  request(API_URL + 'browse/' + topicSlug, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     body.organisations = body.organisations.slice(0,5);
     body.latest_news = body.latest_news.slice(0,3);
@@ -31,8 +31,8 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
   subTopicSlug = req.params.subTopicSlug
 
-  request(BASE_URL + 'browse/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
-    request(BASE_URL + 'browse/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
+  request(API_URL + 'browse/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
+    request(API_URL + 'browse/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
       body.topicSlug = topicSlug;
       body.organisations = body.organisations.slice(0,5);
       body.latest_news = body.latest_news.slice(0,3);
