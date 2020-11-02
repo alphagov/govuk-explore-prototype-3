@@ -9,6 +9,8 @@ const url = require('url');
 const API_URL = process.env.API_URL
 
 
+//---- Mainstream topics
+
 router.get('/browse/:topicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
 
@@ -48,6 +50,22 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
   });
 });
 
+
+//---- Specialist topics
+
+
+router.get('/topic/:topicSlug', function (req, res) {
+  topicSlug = req.params.topicSlug
+  request(API_URL + 'topic/' + topicSlug, { json: true }, (error, result, body) => {
+    body.topicSlug = topicSlug;
+    res.render('topic', body)
+  });
+});
+
+
+
+
+//----------------------
 
 router.get('/topics', function( req, res ) {
   res.render('topics');
