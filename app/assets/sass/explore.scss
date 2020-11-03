@@ -349,7 +349,7 @@ a.govuk-link:link {
     content: "< "
   }
   font-size: 18px;
-  color: govuk-colour("mid-grey");
+  color: #8c8c8c;
 }
 
 .home-numbers {
@@ -564,8 +564,23 @@ li.govuk-tabs__list-item {
   }
 }
 
+
+.xpl-frame2 ul {
+  list-style-type: none;
+  padding: 0;
+  li {
+    margin-bottom: 40px;
+    a:link, a:visited {
+      font-weight: bold;
+      font-size: 18px;
+    }
+  }
+}
+
+
 .xpl-nav--desktop {
   display: none;
+
 }
 
 
@@ -698,10 +713,6 @@ li.govuk-tabs__list-item {
         width: 100%;
         box-shadow: 3px 5px 5px #999;
         background: govuk-colour("white");
-        ul {
-          padding: 0;
-          list-style-type: none;
-        }
         a:link, a:visited {
           color: govuk-colour("blue");
           font-size: 16px;
