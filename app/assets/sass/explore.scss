@@ -637,8 +637,6 @@ li.govuk-tabs__list-item {
   }
 
   .xpl-hero {
-    padding-bottom: 0;
-    padding-top: 0;
     width: 100vw;
     position: relative;
     left: 50%;
@@ -646,19 +644,31 @@ li.govuk-tabs__list-item {
     margin-left: -50vw;
     margin-right: -50vw;
     margin-top: -10px;
+    &.govuk-grid-row {
+      padding: 0;
+    }
     .xpl-hero-inner {
       max-width: 960px;
       margin-left: auto;
       margin-right: auto;
+      .govuk-grid-column-two-thirds {
+        padding: 0;
+      }
       h1 {
         margin-top: 30px;
       }
     }
   }
-  .govuk-main-wrapper {
+
+  main#main-content.xpl-home {
     max-width: 960px;
     margin-left: auto;
     margin-right: auto;
+    section.xpl-topics {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
   }
   .govuk-header {
     &__logo {
