@@ -599,6 +599,7 @@ li.govuk-tabs__list-item {
 
 @include govuk-media-query ($from: desktop) {
 
+
   .govuk-breadcrumbs {
     .govuk-breadcrumbs__list-item:before {
       top: 0;
@@ -672,17 +673,37 @@ li.govuk-tabs__list-item {
   }
   .govuk-header {
     &__logo {
-      width: 25%;
+      width: 180px;
       margin-top: 14px;
       margin-bottom: 14px;
+    }
+    &__content {
+      float: right;
+      width: 76%;
     }
     &__navigation {
       min-height: unset;
       position: absolute;
     }
     &__navigation-item {
-      padding: 15px 20px 0 20px;
+      padding: 23px 35px 0 20px;
       margin-right: 0;
+      &#xpl-topics-menu-item, &#xpl-activity-menu-item {
+        padding-right: 45px;
+      }
+      &.menu-item-open {
+        button:after {
+          -webkit-transform: rotate(317deg);
+          -ms-transform: rotate(317deg);
+          transform: rotate(317deg);
+          border: solid;
+          border-width: 2.5px 2.5px 0 0;
+          border-color: black;
+          clip-path: none;
+          top: 7px;
+
+        }
+      }
       button {
         font-family: "GDS Transport", Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
@@ -690,14 +711,24 @@ li.govuk-tabs__list-item {
         font-weight: 700;
         font-size: 14px;
         font-size: 0.875rem;
-        line-height: 1.14286;
+//        line-height: 1.14286;
         white-space: nowrap;
-        .xpl-menu-symbol {
-          font-size: 22px;
-          vertical-align: 3px;
-          display: inline-block;
-          margin-left: 10px;
-          transform:scale(1.2,1);
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 4px;
+          right: -24px;
+          width: 6px;
+          height: 6px;
+          -webkit-transform: rotate(137deg);
+          -ms-transform: rotate(137deg);
+          transform: rotate(137deg);
+          border: solid;
+          border-width: 2.5px 2.5px 0 0;
+          border-color: white;
+          clip-path: none;
         }
         &:focus {
           outline: none;
@@ -782,7 +813,6 @@ li.govuk-tabs__list-item {
         background-color: govuk-colour("white");
         padding-bottom: 42px;
         button {
-          top: 11px;
           color: govuk-colour("black");
         }
       }
