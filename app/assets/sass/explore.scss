@@ -3,7 +3,7 @@
 @import "colour-organisations";
 
 $link-hover-colour: #003078;
-
+$menu-hover-colour: #005ff8;
 
 
 .govuk-breadcrumbs {
@@ -95,7 +95,7 @@ $link-hover-colour: #003078;
     border: none;
     padding: 30px 0 0 0;
     color: govuk-colour("black");
-     a:link, a:visited {
+    a:link, a:visited {
       font-size: 22px;
       color: govuk-colour("blue");
       text-decoration: none;
@@ -711,7 +711,6 @@ li.govuk-tabs__list-item {
         font-weight: 700;
         font-size: 14px;
         font-size: 0.875rem;
-//        line-height: 1.14286;
         white-space: nowrap;
         position: relative;
         &:after {
@@ -809,11 +808,25 @@ li.govuk-tabs__list-item {
       display: none;
     }
     &__navigation-item {
+      &:hover {
+        button, a:link, a:visited {
+          color: $menu-hover-colour;
+          &:after {
+            border-color: $menu-hover-colour;
+          }
+        }
+      }
       &.menu-item-open {
         background-color: govuk-colour("white");
         padding-bottom: 42px;
         button {
           color: govuk-colour("black");
+          &:hover {
+            color: $menu-hover-colour;
+            &:after {
+              border-color: $menu-hover-colour;
+            }
+          }
         }
       }
     }
