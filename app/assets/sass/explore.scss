@@ -314,6 +314,28 @@ a.govuk-link:link {
   }
 }
 
+
+.featured-list {
+  font-size: 18px;
+  font-weight: 700;
+  list-style-type: none;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  li::before {
+    margin-left: -30px;
+    content: '';
+    display: inline-block;
+    vertical-align: -11px;
+    padding: 7px 20px 0 0;
+    height: 39px;
+    width: 10px;
+    background-image: url('/public/images/arrow.svg');
+    background-repeat: no-repeat;
+    background-position: 0 18px;
+    background-size: 21px;
+  }
+}
+
 .xpl-activity {
   h3.home-services__heading {
     font-size: 18px;

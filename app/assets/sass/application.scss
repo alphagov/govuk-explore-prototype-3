@@ -295,34 +295,6 @@ li.topic-link {
   font-weight: bold;
 }
 
-.featured-list {
-  font-size: 18px;
-  font-weight: 700;
-  list-style-type: none;
-  margin-bottom: 30px;
-  ul li {
-    text-indent: -30px;
-    padding-bottom: 10px;
-  }
-  li::before {
-    content: '';
-    display: inline-block;
-    vertical-align: -11px;
-    padding: 7px 20px 0 0;
-    height: 39px;
-    width: 10px;
-    background-image: url('/public/images/arrow.svg');
-    background-repeat: no-repeat;
-    background-position: 0 18px;
-    background-size: 21px;
-  }
-}
-
-.featured-list a {
-  text-decoration: none;
-}
-
-
 
 // Tabs
 .govuk-tabs {
