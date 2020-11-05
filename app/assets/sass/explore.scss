@@ -112,15 +112,15 @@ $menu-hover-colour: #005ff8;
     }
     &.xpl-minor-nav-item {
       background: #f3f2f1;
-      margin-left: -20px;
-      margin-right: -20px;
+      margin-left: -25px;
+      margin-right: -25px;
       padding-bottom: 0;
       &:last-of-type {
         padding-bottom: 60px;
       }
       a {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 25px;
+        margin-right: 25px;
       }
     }
     h2 {
@@ -129,8 +129,8 @@ $menu-hover-colour: #005ff8;
       font-weight: bold;
     }
     hr {
-      margin-left: -20px;
-      margin-right: -20px;
+      margin-left: -25px;
+      margin-right: -25px;
       border-color:  govuk-colour("black");
       border-width: 1px 0 0 0;
     }
@@ -172,8 +172,8 @@ $menu-hover-colour: #005ff8;
 }
 
 .govuk-header__container.govuk-width-container {
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
   margin-left: 0;
   margin-right: 0;
 
@@ -401,6 +401,7 @@ a.govuk-link:link {
 #xpl-popup-menu {
   width: 100vw;
   position: absolute;
+  top: 50px;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
@@ -408,8 +409,8 @@ a.govuk-link:link {
   background: govuk-colour("white");
 
   #navigation {
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
   }
 
 }
