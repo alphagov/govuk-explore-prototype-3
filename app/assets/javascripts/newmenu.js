@@ -12,7 +12,8 @@ $('#xpl-topics-back-button').on('click', event => {
 });
 
 
-$('#xpl-topics-button-desktop').on('click', event => {
+$('#xpl-topics-menu-item, #xpl-topics-button-desktop').on('click', event => {
+  event.stopPropagation();
   const menuLabel = $('#xpl-topics-button-desktop');
   if (menuLabel.parent().hasClass('menu-item-open')) {
     menuLabel.closest('ul').children('li').removeClass('menu-item-open');
@@ -25,7 +26,8 @@ $('#xpl-topics-button-desktop').on('click', event => {
 });
 
 
-$('#xpl-activity-button-desktop').on('click', event => {
+$('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => {
+  event.stopPropagation();
   const menuLabel = $('#xpl-activity-button-desktop');
   if (menuLabel.parent().hasClass('menu-item-open')) {
     menuLabel.closest('ul').children('li').removeClass('menu-item-open');

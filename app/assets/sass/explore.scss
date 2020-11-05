@@ -339,7 +339,6 @@ a.govuk-link:link {
   font-weight: bold;
   color: $govuk-link-colour;
   display: block;
-  cursor: pointer;
 }
 
 .xpl-menu__button-back {
@@ -688,6 +687,8 @@ li.govuk-tabs__list-item {
     &__navigation-item {
       padding: 23px 35px 0 20px;
       margin-right: 0;
+      cursor: pointer;
+
       &#xpl-topics-menu-item, &#xpl-activity-menu-item {
         padding-right: 45px;
       }
@@ -701,7 +702,7 @@ li.govuk-tabs__list-item {
           border-color: black;
           clip-path: none;
           top: 7px;
-
+          cursor: pointer;
         }
       }
       button {
@@ -713,6 +714,7 @@ li.govuk-tabs__list-item {
         font-size: 0.875rem;
         white-space: nowrap;
         position: relative;
+        cursor: pointer;
         &:after {
           content: "";
           display: block;
@@ -819,7 +821,10 @@ li.govuk-tabs__list-item {
       &.menu-item-open {
         background-color: govuk-colour("white");
         padding-bottom: 42px;
+        color: $menu-hover-colour;
         button {
+          cursor: pointer;
+
           color: govuk-colour("black");
           &:hover {
             color: $menu-hover-colour;
