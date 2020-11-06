@@ -71,9 +71,6 @@ $menu-hover-colour: #005ff8;
     &:focus {
       box-shadow: none;
     }
-    &:hover {
-      text-decoration: none;
-    }
     &.govuk-js-header-toggle {
       right: 0;
       width: 100px;
@@ -101,7 +98,6 @@ $menu-hover-colour: #005ff8;
     a:link, a:visited {
       font-size: 22px;
       color: govuk-colour("blue");
-      text-decoration: none;
     }
     .govuk-list &-2 {
       padding-bottom: 28px;
@@ -237,16 +233,9 @@ main#main-content {
 }
 
 .home-top__links {
-  *:link {
-    text-decoration: none;
-  }
   &-title {
     color: govuk-colour("white");
   }
-}
-
-a.govuk-link:link {
-  text-decoration: none;
 }
 
 .govuk-heading-l {
@@ -280,9 +269,6 @@ a.govuk-link:link {
 
 .xpl-topics {
   margin-bottom: 30px;
-  *:link {
-    text-decoration: none;
-  }
   h3 {
     float: left;
     width: 80%;
@@ -458,7 +444,6 @@ li.govuk-tabs__list-item {
         box-shadow: none;
         .govuk-accordion__section {
           button {
-            text-decoration: none;
             color: govuk-colour("black");
           }
         }
@@ -574,9 +559,6 @@ li.govuk-tabs__list-item {
   padding-bottom: 30px;
   margin-bottom: 30px;
   margin-top: 30px;
-  a {
-    text-decoration: none;
-  }
 
   .xpl-organisation__inner {
     border-left: 3px solid black;
@@ -634,6 +616,15 @@ li.govuk-tabs__list-item {
 
 @include govuk-media-query ($from: desktop) {
 
+  .explore-page {
+    a {
+      text-decoration: none;
+    }
+    .govuk-accordion li {
+      padding-bottom: 30px;
+      margin-bottom: 0;
+    }
+  }
 
   .govuk-breadcrumbs {
     .govuk-breadcrumbs__list-item:before {
@@ -666,7 +657,6 @@ li.govuk-tabs__list-item {
     margin-top: 10px;
     &-item {
       a:visited, a:link {
-        text-decoration: underline;
         font-weight: 700;
       }
     }
@@ -794,7 +784,6 @@ li.govuk-tabs__list-item {
         a:link, a:visited {
           color: govuk-colour("blue");
           font-size: 16px;
-          text-decoration: none;
           font-weight: bold;
         }
         a:hover {
