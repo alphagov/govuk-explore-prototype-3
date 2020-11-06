@@ -37,21 +37,24 @@
             <li><a href="{{feature.link}}">{{ feature.title }}</a></li>
           {% endfor %}
         </ul>
-
-        <h2 class="govuk-heading-l">Sub-topics</h2>
-        <ul class="govuk-list subtopic-list">
-          {% for topic in subtopics %}
-            <li class="topic-link">
-              <a class="govuk-link" href="{{ topic.link }}">
-                <div class="topic-link-inner">
-                  {{ topic.title }}
-                </div>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
       </div>
     </div>
+
+    <section class="xpl-topics">
+      <h2 class="govuk-heading-l">Sub-topics</h2>
+      <ul class="govuk-list">
+        {% for topic in subtopics %}
+          <li>
+            <a class="govuk-link" href="{{ topic.link }}">
+              <div>
+                <div class="xpl-chevron" aria-hidden="true">›</div>
+                <h3 class="home-services__heading">{{ topic.title }}</h3>
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
   {% endset -%}
 
   {% set governmentHtml %}
