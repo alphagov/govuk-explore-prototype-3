@@ -36,13 +36,7 @@ $menu-hover-colour: #005ff8;
 
 //---- menu ----
 .govuk-header {
-//  border-bottom: 10px solid govuk-colour("blue");
-//  padding-left: 10px;
-//  padding-right: 10px;
   border-bottom: 0;
-  &__logo {
-    margin-bottom: 0;
-  }
   &__menu-button {
     right: 40px;
     top: 0;
@@ -360,8 +354,7 @@ main#main-content {
 
 #xpl-popup-menu {
   width: 100vw;
-  position: absolute;
-  top: 50px;
+  position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
