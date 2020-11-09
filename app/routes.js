@@ -6,6 +6,14 @@ const request = require('request');
 const url = require('url');
 // Add your routes here - above the module.exports line
 
+if (!process.env.API_URL) {
+  console.log('\n\n=== ERROR ============================');
+  console.log('You must set API_URL to specify the URL of the backend API');
+  console.log('for instance: API_URL=http://localhost:3050 npm start');
+  console.log('======================================\n\n');
+  process.exit(-1);
+}
+
 const API_URL = process.env.API_URL
 
 
