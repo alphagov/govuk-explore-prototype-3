@@ -999,6 +999,13 @@ li.govuk-tabs__list-item {
         }
       }
     }
+    #xpl-frame2-activity li {
+      min-height: 60px;
+    }
+    #xpl-frame2-topics li {
+      max-height: 60px;
+    }
+
   }
 
   .govuk-breadcrumbs {
@@ -1146,7 +1153,6 @@ li.govuk-tabs__list-item {
           width: 29%;
           li {
             margin-bottom: 30px;
-            max-height: 20px;
             a {
               display: block;
             }
