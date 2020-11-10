@@ -1176,7 +1176,7 @@ li.govuk-tabs__list-item {
           width: 29%;
           li {
             margin-bottom: 30px;
-            min-height: 60px;
+            max-height: 20px;
             a {
               display: block;
             }
