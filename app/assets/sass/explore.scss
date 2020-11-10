@@ -239,11 +239,6 @@ main#main-content {
   }
 }
 
-.govuk-heading-l {
-  font-size: 22px;
-  margin: 30px 0 30px 0;
-}
-
 
 .home-services {
   &__heading {
@@ -567,6 +562,11 @@ li.govuk-tabs__list-item {
     text-decoration: none;
   }
 
+  .govuk-heading-l {
+    font-size: 27px;
+    margin: 40px 0 40px 0;
+  }
+
   .govuk-accordion li {
     padding-bottom: 30px;
     margin-bottom: 0;
@@ -618,8 +618,8 @@ li.govuk-tabs__list-item {
       width: 10px;
       background-image: url('/public/images/chevron-right.svg');
       background-repeat: no-repeat;
-      background-position: 0 18px;
-      background-size: 21px;
+      background-position: 0 12px;
+      background-size: 16px;
     }
     ul.govuk-list {
       li {
@@ -631,12 +631,29 @@ li.govuk-tabs__list-item {
     }
   }
 
-
   .xpl-activity, .xpl-featured, .departments-and-policy {
-    border-top: 2px solid govuk-colour("black");
+    border-top: 5px solid govuk-colour("black");
   }
 
+  .xpl-activity {
+    &__intro {
+      font-weight: normal;
+      font-size: 16px;
+    }
+    h3 {
+      margin-top: 0;
+    }
+    li {
+      min-height: 65px;
+    }
+  }
+
+  //==== end explore page section. Add thinge here
+
 }
+
+
+
 
 .xpl-nav-menu--open {
   > * {
@@ -927,7 +944,7 @@ li.govuk-tabs__list-item {
     h3 {
       float: left;
       width: 80%;
-      margin: 30px 0 10px 0;
+      margin: 25px 0 10px 0;
     }
     p {
       clear: both;
@@ -941,7 +958,7 @@ li.govuk-tabs__list-item {
     }
     ul.govuk-list {
       li {
-        border-top: 2px solid govuk-colour("black");
+        border-top: 1px solid govuk-colour("black");
         > a > div {
           min-height: 180px;
         }
