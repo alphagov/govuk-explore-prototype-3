@@ -999,36 +999,6 @@ li.govuk-tabs__list-item {
         }
       }
     }
-
-    .xpl-activity {
-      float: left;
-      width: 63%;
-      .activity-list-1 {
-        float: left;
-        width: 40%;
-        padding-right: 10px;
-        li {
-          min-height: 100px;
-        }
-      }
-      .activity-list-2 {
-        float: right;
-        width: 40%;
-        li {
-          min-height: 100px;
-          padding-left: 10px;
-        }
-      }
-    }
-
-    .departments-and-policy {
-      float: right;
-      width: 30%;
-    }
-
-    footer.govuk-footer {
-      clear: both;
-    }
   }
 
   .govuk-breadcrumbs {
