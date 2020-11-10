@@ -105,7 +105,7 @@ router.get('/', function (req, res) {
       // fetch its own version
       const newBody = body
         .replace(/(href|src)="\//g, '$1="https://www.gov.uk/')
-        .replace(/<header[^]+<\/header>/, headerStringWithCss)
+        .replace(/<header[^]+?<\/header>/, headerStringWithCss)
         .replace(/<\/body>/,'<script src="/public/javascripts/newmenu.js"></script>\n</body>')
         .replace(/<a(.*) href\s*=\s*(['"])\s*(https:)?\/\/www.gov.uk\//g,'<a $1 href=$2/');
 
