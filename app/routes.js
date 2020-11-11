@@ -75,8 +75,11 @@ router.get('/topic/:topicSlug', function (req, res) {
 
 //----------------------
 
-router.get('/topics', function( req, res ) {
-  res.render('topics');
+router.get('/topic', function( req, res ) {
+  request(API_URL + 'topic/', { json: true }, (error, results, body) => {
+    if (error) throw error;
+    res.render('topics', body);
+  });
 });
 
 router.get('/', function (req, res) {
