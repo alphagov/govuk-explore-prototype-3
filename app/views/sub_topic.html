@@ -29,7 +29,14 @@
   {% set topicsHtml %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        {% if subtopic_sections.items.length > 1 %}
+
+        {% if subtopics.length !== 0 %}
+          <ul class="govuk-list">
+            {% for subtopic in subtopics %}
+              <li><a href="{{ subtopic.link }}">{{ subtopic.title }}</a></li>
+            {% endfor %}
+          </ul>
+        {% elif subtopic_sections.items.length > 1 %}
           {{ govukAccordion(subtopic_sections) }}
         {% else %}
           <h2 class="govuk-heading-m">{{ subtopic_sections.items[0].heading.text }}</h2>

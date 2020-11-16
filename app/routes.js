@@ -7,10 +7,10 @@ const url = require('url');
 // Add your routes here - above the module.exports line
 
 if (!process.env.API_URL) {
-  console.log('\n\n=== ERROR ============================');
-  console.log('You must set API_URL to specify the URL of the backend API');
-  console.log('for instance: API_URL=http://localhost:3050 npm start');
-  console.log('======================================\n\n');
+  console.warn('\n\n=== ERROR ============================');
+  console.warn('You must set API_URL to specify the URL of the backend API');
+  console.warn('for instance: API_URL=http://localhost:3050 npm start');
+  console.warn('======================================\n\n');
   process.exit(-1);
 }
 
@@ -67,6 +67,18 @@ router.get('/topic/:topicSlug', function (req, res) {
   request(API_URL + 'topic/' + topicSlug, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     res.render('topic', body)
+  });
+});
+
+
+router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
+  topicSlug = req.params.topicSlug
+  subTopicSlug = req.params.subTopicSlug
+  request(API_URL + 'topic/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
+    request(API_URL + 'topic/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
+      body.topicSlug = topicSlug;
+      res.render('sub_topic', { ...body, parent: bodyTopic.title });
+    });
   });
 });
 
