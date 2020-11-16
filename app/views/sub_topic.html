@@ -30,20 +30,23 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        {% if subtopics.length !== 0 %}
+        {% if subtopic_sections %}
+          {% if subtopic_sections.items.length === 1 %}
+            <h2 class="govuk-heading-m">{{ subtopic_sections.items[0].heading.text }}</h2>
+            <div class="a-z-list">
+              {{ subtopic_sections.items[0].content.html|safe }}
+            </div>
+          {% else %}
+            {{ govukAccordion(subtopic_sections) }}
+          {% endif %}
+        {% else %}
           <ul class="govuk-list">
             {% for subtopic in subtopics %}
               <li><a href="{{ subtopic.link }}">{{ subtopic.title }}</a></li>
             {% endfor %}
           </ul>
-        {% elif subtopic_sections.items.length > 1 %}
-          {{ govukAccordion(subtopic_sections) }}
-        {% else %}
-          <h2 class="govuk-heading-m">{{ subtopic_sections.items[0].heading.text }}</h2>
-          <div class="a-z-list">
-            {{ subtopic_sections.items[0].content.html|safe }}
-          </div>
         {% endif %}
+
 
         <h2 class="govuk-heading-m">Related topics</h2>
         <div class="topic-tags">

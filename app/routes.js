@@ -76,6 +76,7 @@ router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
   subTopicSlug = req.params.subTopicSlug
   request(API_URL + 'topic/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
     request(API_URL + 'topic/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
+      console.log(body);
       body.topicSlug = topicSlug;
       res.render('sub_topic', { ...body, parent: bodyTopic.title });
     });
