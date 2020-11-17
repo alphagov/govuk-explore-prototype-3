@@ -42,19 +42,16 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
   subTopicSlug = req.params.subTopicSlug
 
   request(API_URL + 'browse/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
-    request(API_URL + 'browse/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
-      body.topicSlug = topicSlug;
-      body.organisations = body.organisations.slice(0,5);
-      body.latest_news = body.latest_news.slice(0,3);
-      body.latest_news.forEach(news => {
-        const d = new Date(news.public_timestamp);
-        news.date = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
-        news.subtopic = news.subtopic === 'other' ? '' : news.subtopic.replace(/_/g, ' ');
-        news.topic = news.topic === 'other' ? '' : news.topic.replace(/_/g, ' ');
-      });
-
-      res.render('sub_topic', { ...body, parent: bodyTopic.title });
+    body.topicSlug = topicSlug;
+    body.organisations = body.organisations.slice(0,5);
+    body.latest_news = body.latest_news.slice(0,3);
+    body.latest_news.forEach(news => {
+      const d = new Date(news.public_timestamp);
+      news.date = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
+      news.subtopic = news.subtopic === 'other' ? '' : news.subtopic.replace(/_/g, ' ');
+      news.topic = news.topic === 'other' ? '' : news.topic.replace(/_/g, ' ');
     });
+    res.render('sub_topic', body);
   });
 });
 
@@ -75,11 +72,8 @@ router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
   subTopicSlug = req.params.subTopicSlug
   request(API_URL + 'topic/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
-    request(API_URL + 'topic/' + topicSlug, { json: true }, (error, result, bodyTopic) => {
-      console.log(body);
-      body.topicSlug = topicSlug;
-      res.render('sub_topic', { ...body, parent: bodyTopic.title });
-    });
+    body.topicSlug = topicSlug;
+    res.render('sub_topic', body);
   });
 });
 
