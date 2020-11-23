@@ -45,7 +45,7 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
   topicSlug = req.params.topicSlug
   subTopicSlug = req.params.subTopicSlug
 
-  request(API_URL + 'browse/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
+  request(`${API_URL}browse/${topicSlug}/${subTopicSlug}`, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     if (body.organisations) {
       body.organisations = body.organisations.slice(0,5);
