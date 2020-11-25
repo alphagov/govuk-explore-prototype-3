@@ -19,7 +19,9 @@ const API_URL = process.env.API_URL
 
 //---- Topic pages (both mainstream and specialist)
 
-const topicPage = function(topicType, topicSlug) {
+const topicPage = function(topicType, req, res) {
+  const topicSlug = req.params.topicSlug;
+
   request(`${API_URL}/${topicType}/${topicSlug}`, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     body.organisations = body.organisations.slice(0,5);
@@ -35,11 +37,11 @@ const topicPage = function(topicType, topicSlug) {
 }
 
 router.get('/browse/:topicSlug', function (req, res) {
-  return topicPage('browse', req.params.topicSlug);
+  return topicPage('browse', req, res);
 });
 
 router.get('/topic/:topicSlug', function (req, res) {
-  return topicPage('browse', req.params.topicSlug);
+  return topicPage('topic', req, res);
 });
 
 
