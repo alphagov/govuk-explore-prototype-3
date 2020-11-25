@@ -24,7 +24,13 @@ gulp.task('sass-extensions', function (done) {
 gulp.task('sass', function () {
   return gulp.src(config.paths.assets + '/sass/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(sass({
+      outputStyle: 'expanded',
+      includePaths: [
+        'node_modules/govuk-frontend/govuk/helpers',
+        'node_modules/govuk-frontend/govuk/vendor',
+      ]
+    }).on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(config.paths.public + '/stylesheets/'))
 })

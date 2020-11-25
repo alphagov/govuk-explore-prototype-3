@@ -112,9 +112,8 @@ router.get('/', function (req, res) {
 
       const headerString = fs.readFileSync('app/views/header.html', 'utf8');
       const headerStringWithCss = `
-  <link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/explore.css" media="all" rel="stylesheet" type="text/css" />
   ` + headerString;
-
 
       // Make all src and ref attributes absolute, or the server will try to
       // fetch its own version

@@ -1,7 +1,10 @@
-@import "lib/extensions/extensions";
-@include govuk-exports("govuk/component/header") {};
-@import "colour-organisations";
+@import "media-queries";
+@import "sass-mq";
+@import "colour";
 
+
+$govuk-link-colour: govuk-colour("blue") !default;
+$govuk-border-colour: govuk-colour("mid-grey");
 $link-hover-colour: #003078;
 $menu-hover-colour: #005ff8;
 
@@ -973,10 +976,14 @@ li.govuk-tabs__list-item {
 }
 
 
+$mobile-width:  320px;
+$tablet-width:  740px;
+$desktop-width: 980px;
+$wide-width: 1300px;
 
 // Desktop
 
-@include govuk-media-query ($from: tablet) {
+@include govuk-media-query ($from: $tablet-width) {
   .js-enabled .govuk-tabs__list-item {
     padding: 20px 20px 19px 20px;
     margin-top: -20px;
@@ -987,7 +994,7 @@ li.govuk-tabs__list-item {
   }
 }
 
-@include govuk-media-query ($from: desktop) {
+@include govuk-media-query ($from: $desktop-width) {
 
   .explore-page {
     h1 {
