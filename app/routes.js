@@ -19,10 +19,7 @@ const API_URL = process.env.API_URL
 
 //---- Topic pages (both mainstream and specialist)
 
-router.get('/:topicType/:topicSlug', function (req, res) {
-  topicType = req.params.topicType
-  topicSlug = req.params.topicSlug
-
+const topicPage = function(topicType, topicSlug) {
   request(`${API_URL}/${topicType}/${topicSlug}`, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     body.organisations = body.organisations.slice(0,5);
@@ -35,17 +32,26 @@ router.get('/:topicType/:topicSlug', function (req, res) {
     });
     res.render('topic', body)
   })
-})
+}
+
+router.get('/browse/:topicSlug', function (req, res) {
+  return topicPage('browse', req.params.topicSlug);
+});
+
+router.get('/topic/:topicSlug', function (req, res) {
+  return topicPage('browse', req.params.topicSlug);
+});
+
 
 
 //---- Mainstream subtopics
 
 
 router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
-  topicSlug = req.params.topicSlug
-  subTopicSlug = req.params.subTopicSlug
-
-  request(`${API_URL}browse/${topicSlug}/${subTopicSlug}`, { json: true }, (error, result, body) => {
+  const topicSlug = req.params.topicSlug;
+  const subTopicSlug = req.params.subTopicSlug;
+  const url = `${API_URL}/browse/${topicSlug}/${subTopicSlug}`;
+  request(url, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     if (body.organisations) {
       body.organisations = body.organisations.slice(0,5);
@@ -67,9 +73,10 @@ router.get('/browse/:topicSlug/:subTopicSlug', function (req, res) {
 //---- Specialist subtopics
 
 router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
-  topicSlug = req.params.topicSlug
-  subTopicSlug = req.params.subTopicSlug
-  request(API_URL + 'topic/' + topicSlug + '/' + subTopicSlug, { json: true }, (error, result, body) => {
+  const topicSlug = req.params.topicSlug;
+  const subTopicSlug = req.params.subTopicSlug;
+  const url = `${API_URL}/topic/${topicSlug}/${subTopicSlug}`;
+  request(url, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     res.render('sub_topic', body);
   });
