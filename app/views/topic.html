@@ -28,18 +28,19 @@
 
 
   {% set topicsHtml %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    {% if featured %}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-        <h2 class="govuk-heading-l">Most viewed</h2>
-        <ul class="featured-list govuk-list">
-          {% for feature in featured %}
-            <li><a href="{{feature.link}}">{{ feature.title }}</a></li>
-          {% endfor %}
-        </ul>
+          <h2 class="govuk-heading-l">Most viewed</h2>
+          <ul class="featured-list govuk-list">
+            {% for feature in featured %}
+              <li><a href="{{feature.link}}">{{ feature.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
-    </div>
-
+    {% endif %}
     <section class="xpl-topics">
       <h2 class="govuk-heading-l">Sub-topics</h2>
       <ul class="govuk-list">
@@ -117,23 +118,27 @@
     </div>
   {% endset -%}
 
+  {% if taxon_search_filter %}
+    {{ govukTabs({
+      items: [
+        {
+          label: "Topics",
+          id: "topics",
+          panel: {
+            html: topicsHtml
+          }
+        },
+        {
+          label: "Government activity",
+          id: "government-activity",
+          panel: {
+            html: governmentHtml
+          }
+        }
+      ]
+    }) }}
+  {% else %}
+    {{ topicsHtml | safe }}
+  {% endif %}
 
-  {{ govukTabs({
-    items: [
-      {
-        label: "Topics",
-        id: "topics",
-        panel: {
-          html: topicsHtml
-        }
-      },
-      {
-        label: "Government activity",
-        id: "government-activity",
-        panel: {
-          html: governmentHtml
-        }
-      }
-    ]
-  }) }}
 {% endblock %}
