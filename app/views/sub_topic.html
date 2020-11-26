@@ -29,7 +29,6 @@
   {% set topicsHtml %}
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-
         {% if subtopic_sections %}
           {% if subtopic_sections.items.length === 1 %}
             <h2 class="govuk-heading-m">{{ subtopic_sections.items[0].heading.text }}</h2>
@@ -37,9 +36,12 @@
               {{ subtopic_sections.items[0].content.html|safe }}
             </div>
           {% else %}
+            <h2 class="govuk-heading-m">A to Z</h2>
+
             {{ govukAccordion(subtopic_sections) }}
           {% endif %}
         {% else %}
+          <h2 class="govuk-heading-m">A to Z</h2>
           <ul class="govuk-list xpl-subsubtopics">
             {% for subtopic in subtopics %}
               <li><a href="{{ subtopic.link }}">{{ subtopic.title }}</a></li>

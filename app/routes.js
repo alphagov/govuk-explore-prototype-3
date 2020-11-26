@@ -84,8 +84,16 @@ router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
   const topicSlug = req.params.topicSlug;
   const subTopicSlug = req.params.subTopicSlug;
   const url = `${API_URL}/topic/${topicSlug}/${subTopicSlug}`;
+
   request(url, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
+    if (body.subtopics) {
+      body.subtopics = body.subtopics.sort((a,b) => {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) return -1;
+        if (a.title > b.title) return 1;
+        return 0;
+      });
+    }
     res.render('sub_topic', body);
   });
 });
