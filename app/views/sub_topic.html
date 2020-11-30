@@ -36,12 +36,9 @@
               {{ subtopic_sections.items[0].content.html|safe }}
             </div>
           {% else %}
-            <h2 class="govuk-heading-m">A to Z</h2>
-
             {{ govukAccordion(subtopic_sections) }}
           {% endif %}
         {% else %}
-          <h2 class="govuk-heading-m">A to Z</h2>
           <ul class="govuk-list xpl-subsubtopics">
             {% for subtopic in subtopics %}
               <li><a href="{{ subtopic.link }}">{{ subtopic.title }}</a></li>
