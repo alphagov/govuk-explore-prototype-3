@@ -104,7 +104,7 @@ router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
 //----------------------
 
 router.get('/topic', function( req, res ) {
-  request(API_URL + 'topic/', { json: true }, (error, results, body) => {
+  request(API_URL + '/topic', { json: true }, (error, results, body) => {
     if (error) throw error;
     res.render('topics', body);
   });
