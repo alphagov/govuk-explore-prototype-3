@@ -84,7 +84,7 @@ router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
   const topicSlug = req.params.topicSlug;
   const subTopicSlug = req.params.subTopicSlug;
   const url = `${API_URL}/topic/${topicSlug}/${subTopicSlug}`;
-
+  console.log('specialist subtopic', url);
   request(url, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     if (body.subtopics) {

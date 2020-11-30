@@ -126,22 +126,27 @@
   {% endset -%}
 
 
-  {{ govukTabs({
-    items: [
-      {
-        label: "Topics",
-        id: "topics",
-        panel: {
-          html: topicsHtml
+  {% if taxon_search_filter %}
+    {{ govukTabs({
+      items: [
+        {
+          label: "Topics",
+          id: "topics",
+          panel: {
+            html: topicsHtml
+          }
+        },
+        {
+          label: "Government activity",
+          id: "government-activity",
+          panel: {
+            html: governmentHtml
+          }
         }
-      },
-      {
-        label: "Government activity",
-        id: "government-activity",
-        panel: {
-          html: governmentHtml
-        }
-      }
-    ]
-  }) }}
+      ]
+    }) }}
+  {% else %}
+    {{ topicsHtml | safe }}
+  {% endif %}
+
 {% endblock %}
