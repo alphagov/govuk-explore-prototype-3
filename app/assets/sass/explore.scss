@@ -104,7 +104,6 @@ $menu-hover-colour: #005ff8;
       }
     }
     &.xpl-minor-nav-item {
-      background: #f3f2f1;
       margin-left: -25px;
       margin-right: -25px;
       padding-bottom: 0;
@@ -346,21 +345,6 @@ main#main-content {
   }
 }
 
-#xpl-popup-menu {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background: govuk-colour("white");
-
-  #navigation {
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
-}
 
 .govuk-header__navigation, #xpl-search-box {
   margin-left: auto;
@@ -700,10 +684,76 @@ li.govuk-tabs__list-item {
     }
   }
 
-
   ul.xpl-subsubtopics li {
     margin-bottom: 30px;
   }
+
+  #xpl-popup-menu {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: govuk-colour("white");
+
+    #navigation {
+
+      .govuk-accordion {
+        margin-bottom: 0;
+        border-bottom: 0;
+        &__controls {
+          display: none;
+        }
+        &__section, &__section-link {
+          border-bottom: 1px solid $govuk-border-colour;
+        }
+        &__section-link {
+          h2 {
+            font-size: 22px;
+            font-weight: 700;
+            a:visited {
+              color: $govuk-link-colour;
+            }
+          }
+        }
+        &__section-button {
+          padding-top: 0;
+          padding-bottom: 0;
+          font-size: 22px;
+        }
+        &__section-header {
+          margin-left: 30px;
+          margin-right: 30px;
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          border: 0;
+          &:hover {
+            box-shadow: none;
+          }
+        }
+        &__section-content {
+          margin-left: 30px;
+          margin-right: 30px;
+          p {
+            padding-top: 3px;
+          }
+        }
+      }
+
+      .xpl-below-accordion li {
+        margin-left: 5px;
+        margin-right: 5px;
+        a {
+          font-weight: normal;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+
 
   //==== end explore page section. Add things here
 
@@ -747,22 +797,6 @@ li.govuk-tabs__list-item {
     font-size: 18px;
     font-weight: bold;
   }
-}
-
-#xpl-popup-menu {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  background: govuk-colour("white");
-
-  #navigation {
-    margin-left: 25px;
-    margin-right: 25px;
-  }
-
 }
 
 .govuk-header__navigation, #xpl-search-box {

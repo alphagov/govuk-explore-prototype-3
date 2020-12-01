@@ -20,7 +20,6 @@
           <li id="xpl-topics-menu-item" class="govuk-header__navigation-item">
             <button id="xpl-topics-button-desktop" class="xpl-menu__button">
               Topics
-              <!--              <span aria-hidden="true" class="xpl-menu-symbol">⌄</span> -->
             </button>
           </li>
           <li class="govuk-header__navigation-item">
@@ -100,74 +99,90 @@
       <nav class="xpl-nav">
         <button type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="true">Menu</button>
         <div id="xpl-popup-menu">
-          <ul id="navigation" class="govuk-header__navigation" aria-label="Navigation menu" aria-hidden="false">
-            <li class="govuk-header__navigation-item">
-              <button id="xpl-topics-button" class="xpl-menu__button">Topics</button>
-              <div class="xpl-frame2" style="display: none">
-                <button id="xpl-topics-back-button" class="xpl-menu__button-back">Back</button>
-                <h2>Topics</h2>
-                <ul>
-                  <li><a href="/browse/benefits">Benefits</a></li>
-                  <li><a href="/browse/births-deaths-marriages">Births, death, marriages and care</a></li>
-                  <li><a href="/browse/business">Business and self-employed</a></li>
-                  <li><a href="/browse/childcare-parenting">Childcare and parenting</a></li>
-                  <li><a href="/browse/citizenship">Citizenship and living in the UK</a></li>
-                  <li><a href="/browse/justice">Crime, justice and the law</a></li>
-                </ul>
-                <ul>
-                  <li><a href="/browse/disabilities">Disabled people</a></li>
-                  <li><a href="/browse/driving">Driving and transport</a></li>
-                  <li><a href="/browse/education">Education and learning</a></li>
-                  <li><a href="/browse/employing-people">Employing people</a></li>
-                  <li><a href="/browse/environment-countryside">Environment and countryside</a></li>
-                  <li><a href="/browse/housing-local-services">Housing and local services</a></li>
-                </ul>
-                <ul>
-                  <li><a href="/browse/tax">Money and tax</a></li>
-                  <li><a href="/browse/abroad">Passports, travel and living abroad</a></li>
-                  <li><a href="/browse/visas-immigration">Visas and immigration</a></li>
-                  <li><a href="/browse/working">Working, jobs and pensions</a></li>
-                </ul>
+          <div id="navigation" class="govuk-header__navigation">
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+              <div class="govuk-accordion__section ">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                      Topics
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                  <ul class="govuk-list">
+                    <li><a href="/browse/benefits">Benefits</a></li>
+                    <li><a href="/browse/births-deaths-marriages">Births, death, marriages and care</a></li>
+                    <li><a href="/browse/business">Business and self-employed</a></li>
+                    <li><a href="/browse/childcare-parenting">Childcare and parenting</a></li>
+                    <li><a href="/browse/citizenship">Citizenship and living in the UK</a></li>
+                    <li><a href="/browse/justice">Crime, justice and the law</a></li>
+                    <li><a href="/browse/disabilities">Disabled people</a></li>
+                    <li><a href="/browse/driving">Driving and transport</a></li>
+                    <li><a href="/browse/education">Education and learning</a></li>
+                    <li><a href="/browse/employing-people">Employing people</a></li>
+                    <li><a href="/browse/environment-countryside">Environment and countryside</a></li>
+                    <li><a href="/browse/housing-local-services">Housing and local services</a></li>
+                    <li><a href="/browse/tax">Money and tax</a></li>
+                    <li><a href="/browse/abroad">Passports, travel and living abroad</a></li>
+                    <li><a href="/browse/visas-immigration">Visas and immigration</a></li>
+                    <li><a href="/browse/working">Working, jobs and pensions</a></li>
+                  </ul>
+                </div>
               </div>
-            </li>
-
-            <li class="govuk-header__navigation-item">
-              <a href="/government/organisations">Departments</a>
-            </li>
-
-            <li class="govuk-header__navigation-item">
-              <hr/>
-              <h2>Government activity</h2>
-              <ul class="govuk-list xpl-gov-activity">
-                <li class="govuk-header__navigation-item-2">
-                  <a class="govuk-header__link" href="/search/news-and-communications">News</a><br/>
-                  <p>News articles, speeches and correspondance</p>
-                </li>
-                <li class="govuk-header__navigation-item-2">
-                  <a class="govuk-header__link" href="/search/guidance-and-regulation">Guidance and regulation</a><br/>
-                  <p>Detailed guidance, rules and regulations</p>
-                </li>
-                <li class="govuk-header__navigation-item-2">
-                  <a class="govuk-header__link" href="/search/research-and-statistics">Research and statistics</a><br/>
-                  <p>Reports, analysis and official statistics</p>
-                </li>
-                <li class="govuk-header__navigation-item-2">
-                  <a class="govuk-header__link" href="/search/policy-papers-and-consultations">Policy papers and consultations</a><br/>
-                  <p>Consultations and strategy</p>
-                </li>
-                <li class="govuk-header__navigation-item-2">
-                  <a class="govuk-header__link" href="/search/transparency-and-freedom-of-information-releases">Transparency documents</a><br/>
-                  <p>Government data, freedom of information releases and corporate reports</p>
-                </li>
-              </ul>
-            </li>
-            <li class="govuk-header__navigation-item xpl-minor-nav-item">
-              <a href="/government/how-government-works">How government works</a>
-            </li>
-            <li class="govuk-header__navigation-item xpl-minor-nav-item">
-              <a href="/government/get-involved">Get involved</a>
-            </li>
-          </ul>
+              <div class="govuk-accordion__section-link">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <a href="/government/organisations" id="accordion-default-heading-2">
+                      Departments
+                    </a>
+                  </h2>
+                </div>
+              </div>
+              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section-header">
+                  <h2 class="govuk-accordion__section-heading">
+                    <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                      Government activity
+                    </span>
+                  </h2>
+                </div>
+                <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                  <ul class="govuk-list xpl-gov-activity">
+                    <li class="govuk-header__navigation-item-2">
+                      <a class="govuk-header__link" href="/search/news-and-communications">News</a><br/>
+                      <p>News articles, speeches and correspondance</p>
+                    </li>
+                    <li class="govuk-header__navigation-item-2">
+                      <a class="govuk-header__link" href="/search/guidance-and-regulation">Guidance and regulation</a><br/>
+                      <p>Detailed guidance, rules and regulations</p>
+                    </li>
+                    <li class="govuk-header__navigation-item-2">
+                      <a class="govuk-header__link" href="/search/research-and-statistics">Research and statistics</a><br/>
+                      <p>Reports, analysis and official statistics</p>
+                    </li>
+                    <li class="govuk-header__navigation-item-2">
+                      <a class="govuk-header__link" href="/search/policy-papers-and-consultations">Policy papers and consultations</a><br/>
+                      <p>Consultations and strategy</p>
+                    </li>
+                    <li class="govuk-header__navigation-item-2">
+                      <a class="govuk-header__link" href="/search/transparency-and-freedom-of-information-releases">Transparency documents</a><br/>
+                      <p>Government data, freedom of information releases and corporate reports</p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <ul class="govuk-list xpl-below-accordion">
+              <li class="govuk-header__navigation-item xpl-minor-nav-item">
+                <a href="/government/how-government-works">How government works</a>
+              </li>
+              <li class="govuk-header__navigation-item xpl-minor-nav-item">
+                <a href="/government/get-involved">Get involved</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
   </div>
