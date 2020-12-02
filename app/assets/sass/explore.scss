@@ -1180,60 +1180,66 @@ $wide-width: 1300px;
       }
       .xpl-frame2 {
         position: absolute;
-        left: 0;
-        right: 0;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 990px;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
         top: 68px;
         z-index: 10;
-        width: 100%;
+        width: 100vw;
         box-shadow: 3px 5px 5px #999;
         background: govuk-colour("white");
-        a:link, a:visited {
-          color: govuk-colour("blue");
-          font-size: 16px;
-          font-weight: bold;
-        }
-        a:hover {
-          color: $link-hover-colour;
-        }
-        .xpl-minor-item {
-          background: #f3f2f1;
-          ul {
-            width: 100%;
-            padding-left: 35%;
-            li {
-              display: inline-block;
-              width: 32%;
-            }
-          }
-        }
-        ul {
-          padding: 30px 0 0 30px;
-          margin: 0;
-          display: inline-block;
-          vertical-align: top;
-          width: 29%;
-          li {
-            margin-bottom: 30px;
-            a {
-              display: block;
-            }
-          }
-          li div, li p {
-            color: govuk-colour("black");
+
+        &-inner {
+          max-width: 960px;
+          margin-left: auto;
+          margin-right: auto;
+
+          a:link, a:visited {
+            color: govuk-colour("blue");
             font-size: 16px;
-            padding: 0;
+            font-weight: bold;
           }
-        }
-        .xpl-gov-activity-intro {
-          font-size: 22px;
-          width: 25%;
-          padding: 30px 30px 0 30px;
-          margin: 0;
-          display: inline-block;
-          vertical-align: top;
+          a:hover {
+            color: $link-hover-colour;
+          }
+          .xpl-minor-item {
+            background: #f3f2f1;
+            ul {
+              width: 100%;
+              padding-left: 35%;
+              li {
+                display: inline-block;
+                width: 32%;
+              }
+            }
+          }
+          ul {
+            padding: 30px 0 0 0;
+            margin: 0;
+            display: inline-block;
+            vertical-align: top;
+            width: 33%;
+            li {
+              margin-bottom: 30px;
+              a {
+                display: block;
+              }
+            }
+            li div, li p {
+              color: govuk-colour("black");
+              font-size: 16px;
+              padding: 0;
+            }
+          }
+          .xpl-gov-activity-intro {
+            font-size: 22px;
+            width: 25%;
+            padding: 30px 30px 0 30px;
+            margin: 0;
+            display: inline-block;
+            vertical-align: top;
+          }
         }
       }
     }
