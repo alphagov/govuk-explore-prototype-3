@@ -40,16 +40,10 @@ $('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => 
 });
 
 
-$('.govuk-js-search-toggle').on('click', event => {
-  $(event.target).toggleClass('govuk-js-search-toggle--open')
-  $(event.target).text('×')
-  $('#xpl-search-box').toggle();
-});
-
 
 $('.govuk-js-header-toggle').on('click', event => {
   event.target.classList.toggle('govuk-header__menu-button--open');
   event.target.innerText = event.target.classList.contains('govuk-header__menu-button--open') ? '×' : 'Menu';
-  $('#navigation').toggleClass('govuk-header__navigation--open');
+  $('#navigation').toggle();
   $('main, footer, #global-header-bar, #global-bar, #wrapper').toggle();
 });
