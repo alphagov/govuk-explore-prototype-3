@@ -1204,7 +1204,7 @@ $wide-width: 1300px;
             color: $link-hover-colour;
           }
           .xpl-minor-item {
-            background: #f3f2f1;
+            border-top: 1px solid $govuk-border-colour;
             ul {
               width: 100%;
               padding-left: 35%;
