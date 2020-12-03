@@ -705,6 +705,9 @@ li.govuk-tabs__list-item {
         &__controls {
           display: none;
         }
+        &__section--expanded {
+          background: #f3f2f1;
+        }
         &__section, &__section-link {
           border-bottom: 1px solid $govuk-border-colour;
         }
