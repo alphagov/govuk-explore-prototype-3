@@ -5,21 +5,16 @@ $('#xpl-topics-button').on('click', event => {
 });
 
 
-$('#xpl-topics-back-button').on('click', event => {
-  $(event.target).parent().hide();
-  $(event.target).parent().prev('button').show();
-  $(event.target).parents('li').nextAll('li').show();
-});
-
-
 $('#xpl-topics-menu-item, #xpl-topics-button-desktop').on('click', event => {
   event.stopPropagation();
   const menuLabel = $('#xpl-topics-button-desktop');
   if (menuLabel.parent().hasClass('menu-item-open')) {
     menuLabel.closest('ul').children('li').removeClass('menu-item-open');
+    $('.xpl-backdrop').hide();
   } else {
     menuLabel.closest('ul').children('li').removeClass('menu-item-open');
     menuLabel.parent('li').addClass('menu-item-open');
+    $('.xpl-backdrop').show();
   }
   $('#xpl-frame2-topics').toggle();
   $('#xpl-frame2-activity').hide();
@@ -31,9 +26,11 @@ $('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => 
   const menuLabel = $('#xpl-activity-button-desktop');
   if (menuLabel.parent().hasClass('menu-item-open')) {
     menuLabel.closest('ul').children('li').removeClass('menu-item-open');
+    $('.xpl-backdrop').hide();
   } else {
     menuLabel.closest('ul').children('li').removeClass('menu-item-open');
     menuLabel.parent('li').addClass('menu-item-open');
+    $('.xpl-backdrop').show();
   }
   $('#xpl-frame2-topics').hide();
   $('#xpl-frame2-activity').toggle();
@@ -44,6 +41,11 @@ $('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => 
 $('.govuk-js-header-toggle').on('click', event => {
   event.target.classList.toggle('govuk-header__menu-button--open');
   event.target.innerText = event.target.classList.contains('govuk-header__menu-button--open') ? '×' : 'Menu';
-  $('#navigation').toggle();
-  $('main, footer, #global-header-bar, #global-bar, #wrapper').toggle();
+  $('main, footer, #global-header-bar, #global-bar, #wrapper, #navigation').toggle();
+});
+
+$('.xpl-backdrop').on('click', function(event) {
+  $(this).hide();
+  $('#xpl-frame2-topics, #xpl-frame2-activity').hide();
+  $('#navigation-desktop li').removeClass('menu-item-open');
 });
