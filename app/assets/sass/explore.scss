@@ -1285,6 +1285,9 @@ $wide-width: 1300px;
         background-color: govuk-colour("white");
         padding-bottom: 20px;
         color: $menu-hover-colour;
+        &:hover button:after {
+          border-color: black;
+        }
         button {
           cursor: pointer;
 
