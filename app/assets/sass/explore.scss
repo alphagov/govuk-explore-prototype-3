@@ -780,10 +780,8 @@ li.govuk-tabs__list-item {
 .home-numbers {
   &__large {
     font-size: 88px;
-    display: inline-block;
-  }
-  &__label {
-    display: inline-block;
+    display: block;
+    padding-bottom: 10px;
   }
   &__link {
     font-size: 18px;
