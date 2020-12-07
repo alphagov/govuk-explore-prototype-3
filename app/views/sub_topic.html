@@ -4,146 +4,148 @@
   {{ title }}
 {% endblock %}
 
-{% block beforeContent %}
-  <div class="app-c-back-link-inverse">
-    <div class="app-c-back-link-inverse-inner">
-      <a class="govuk-back-link" href="{{ parent.link }}">{{ parent.title }}</a>
-    </div>
-  </div>
-{% endblock %}
 
-{% block content %}
-  <header class=" app-c-inverse-header app-c-inverse-header--full-width app-c-inverse-header--padding-top">
-    <div class="header-inner">
+{% block main %}
+  {% block beforeContent %}
+    <div class="app-c-back-link-inverse">
+      <div class="app-c-back-link-inverse-inner">
+        <a class="govuk-back-link" href="{{ parent.link }}">{{ parent.title }}</a>
+      </div>
+    </div>
+  {% endblock %}
+
+  {% block content %}
+    <header class=" app-c-inverse-header app-c-inverse-header--full-width app-c-inverse-header--padding-top">
+      <div class="header-inner">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="page-heading govuk-heading-xl app-c-title--inverse">
+              {{ title }}
+            </h1>
+            <p class="lede govuk-body-l app-c-lead-paragraph--inverse">{{ description }}</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {% set topicsHtml %}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-          <h1 class="page-heading govuk-heading-xl app-c-title--inverse">
-            {{ title }}
-          </h1>
-          <p class="lede govuk-body-l app-c-lead-paragraph--inverse">{{ description }}</p>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  {% set topicsHtml %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        {% if subtopic_sections %}
-          {% if subtopic_sections.items.length === 1 %}
-            <h2 class="govuk-heading-m">{{ subtopic_sections.items[0].heading.text }}</h2>
-            <div class="a-z-list">
-              {{ subtopic_sections.items[0].content.html|safe }}
-            </div>
+          {% if subtopic_sections %}
+            {% if subtopic_sections.items.length === 1 %}
+              <h2 class="govuk-heading-m">{{ subtopic_sections.items[0].heading.text }}</h2>
+              <div class="a-z-list">
+                {{ subtopic_sections.items[0].content.html|safe }}
+              </div>
+            {% else %}
+              {{ govukAccordion(subtopic_sections) }}
+            {% endif %}
           {% else %}
-            {{ govukAccordion(subtopic_sections) }}
-          {% endif %}
-        {% else %}
-          <ul class="govuk-list xpl-subsubtopics">
-            {% for subtopic in subtopics %}
-              <li><a href="{{ subtopic.link }}">{{ subtopic.title }}</a></li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-
-
-        {% if related_topics|length > 0 %}
-          <h2 class="govuk-heading-m">Related topics</h2>
-          <div class="topic-tags">
-            <ul>
-              {% for topic in related_topics %}
-                <li><a href="{{ topic.link }}">{{ topic.title }}</a></li>
+            <ul class="govuk-list xpl-subsubtopics">
+              {% for subtopic in subtopics %}
+                <li><a href="{{ subtopic.link }}">{{ subtopic.title }}</a></li>
               {% endfor %}
             </ul>
-          </div>
-        {% endif %}
+          {% endif %}
+
+
+          {% if related_topics|length > 0 %}
+            <h2 class="govuk-heading-m">Related topics</h2>
+            <div class="topic-tags">
+              <ul>
+                {% for topic in related_topics %}
+                  <li><a href="{{ topic.link }}">{{ topic.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  {% endset -%}
+    {% endset -%}
 
-  {% set governmentHtml %}
-    <h2 class="govuk-heading-l">Latest activity in this topic</h2>
-    <div class="govuk-grid-row">
-      {% for activity in latest_news %}
-        <div class="govuk-grid-column-one-third">
-          <div class="xpl-topic-activity-frame">
-            <a class="govuk-link" href="{{activity.url}}">
-              <div class="xpl-topic-activity-inner">
-                <h2 class="govuk-heading-l">{{activity.title}}</h2>
-                <p class="govuk-body">
-                  {{activity.subtopic|title}}{% if activity.subtopic %},{% endif %}
-                  Published {{activity.date}}
-                </p>
-                <p class="govuk-body xpl-topic-activity-footer">{{activity.topic|title}}</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <div class="xpl-topic-browse">
-          <h2 class="govuk-heading-l">Browse by publication type</h2>
-
-          <h3 class="xpl-topic-heading"><a class="govuk-link" href="/search/news-and-communications?parent={{topicSlug}}&amp;{{taxon_search_filter}}">News</a></h3>
-          <p class="govuk-body">News articles, speeches and correspondence</p>
-
-          <h3><a class="govuk-link" href="/search/guidance-and-regulation?{{ taxon_search_filter }}&amp;order=most-viewed">Guidance and regulation</a></h3>
-          <p class="govuk-body">Detailed guidance, rules and regulation</p>
-
-          <h3><a class="govuk-link" href="/search/research-and-statistics?content_store_document_type=statistics_published&amp;{{ taxon_search_filter }}&amp;order=updated-newest">Research and statistics</a></h3>
-          <p class="govuk-body">Research, analysis and official statistics</p>
-
-          <h3><a class="govuk-link" href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&amp;order=updated-newest">Policy papers and consultations</a></h3>
-          <p class="govuk-body">Consultations and strategy</p>
-
-          <h3><a class="govuk-link" href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&amp;order=updated-newest">Transparency</a></h3>
-          <p class="govuk-body">Government data, freedom of information releases and corporate reports</p>
-        </div>
-
-
-        <h2 class="govuk-heading-l">Departments and organisations</h2>
-
-        <ul class="govuk-list">
-          {% for organisation in organisations %}
-            <li class="xpl-organisation">
-              <a href="https://www.gov.uk{{organisation.url}}">
-                <div class="xpl-organisation__inner xpl-org {{organisation.slug}}">
-                  <img src="/public/images/org_logos/{{organisation.crest}}_crest_18px_x2.png" alt=organisation logo"/>
-                  <p class="govuk-body">{{organisation.title}}</p>
+    {% set governmentHtml %}
+      <h2 class="govuk-heading-l">Latest activity in this topic</h2>
+      <div class="govuk-grid-row">
+        {% for activity in latest_news %}
+          <div class="govuk-grid-column-one-third">
+            <div class="xpl-topic-activity-frame">
+              <a class="govuk-link" href="{{activity.url}}">
+                <div class="xpl-topic-activity-inner">
+                  <h2 class="govuk-heading-l">{{activity.title}}</h2>
+                  <p class="govuk-body">
+                    {{activity.subtopic|title}}{% if activity.subtopic %},{% endif %}
+                    Published {{activity.date}}
+                  </p>
+                  <p class="govuk-body xpl-topic-activity-footer">{{activity.topic|title}}</p>
                 </div>
               </a>
-            </li>
-          {% endfor %}
-        </ul>
+            </div>
+          </div>
+        {% endfor %}
       </div>
-    </div>
-  {% endset -%}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="xpl-topic-browse">
+            <h2 class="govuk-heading-l">Browse by publication type</h2>
+
+            <h3 class="xpl-topic-heading"><a class="govuk-link" href="/search/news-and-communications?parent={{topicSlug}}&amp;{{taxon_search_filter}}">News</a></h3>
+            <p class="govuk-body">News articles, speeches and correspondence</p>
+
+            <h3><a class="govuk-link" href="/search/guidance-and-regulation?{{ taxon_search_filter }}&amp;order=most-viewed">Guidance and regulation</a></h3>
+            <p class="govuk-body">Detailed guidance, rules and regulation</p>
+
+            <h3><a class="govuk-link" href="/search/research-and-statistics?content_store_document_type=statistics_published&amp;{{ taxon_search_filter }}&amp;order=updated-newest">Research and statistics</a></h3>
+            <p class="govuk-body">Research, analysis and official statistics</p>
+
+            <h3><a class="govuk-link" href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&amp;order=updated-newest">Policy papers and consultations</a></h3>
+            <p class="govuk-body">Consultations and strategy</p>
+
+            <h3><a class="govuk-link" href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&amp;order=updated-newest">Transparency</a></h3>
+            <p class="govuk-body">Government data, freedom of information releases and corporate reports</p>
+          </div>
 
 
-  {% if taxon_search_filter %}
-    {{ govukTabs({
-      items: [
-        {
-          label: "Topics",
-          id: "topics",
-          panel: {
-            html: topicsHtml
+          <h2 class="govuk-heading-l">Departments and organisations</h2>
+
+          <ul class="govuk-list">
+            {% for organisation in organisations %}
+              <li class="xpl-organisation">
+                <a href="https://www.gov.uk{{organisation.url}}">
+                  <div class="xpl-organisation__inner xpl-org {{organisation.slug}}">
+                    <img src="/public/images/org_logos/{{organisation.crest}}_crest_18px_x2.png" alt=organisation logo"/>
+                    <p class="govuk-body">{{organisation.title}}</p>
+                  </div>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endset -%}
+
+
+    {% if taxon_search_filter %}
+      {{ govukTabs({
+        items: [
+          {
+            label: "Topics",
+            id: "topics",
+            panel: {
+              html: topicsHtml
+            }
+          },
+          {
+            label: "Government activity",
+            id: "government-activity",
+            panel: {
+              html: governmentHtml
+            }
           }
-        },
-        {
-          label: "Government activity",
-          id: "government-activity",
-          panel: {
-            html: governmentHtml
-          }
-        }
-      ]
-    }) }}
-  {% else %}
-    {{ topicsHtml | safe }}
-  {% endif %}
-
+        ]
+      }) }}
+    {% else %}
+      {{ topicsHtml | safe }}
+    {% endif %}
+  {% endblock %}
 {% endblock %}

@@ -207,6 +207,7 @@ $menu-hover-colour: #005ff8;
 
   .home-top__links-outer {
     padding-right: 0;
+    padding-left: 0;
   }
 
   .home-top__links {
@@ -223,11 +224,6 @@ $menu-hover-colour: #005ff8;
   .gem-c-search {
     margin-top: 30px;
   }
-}
-
-main#main-content {
-  margin-left: 25px;
-  margin-right: 25px;
 }
 
 .home-divider {
@@ -352,7 +348,7 @@ main#main-content {
 .govuk-header__navigation, #xpl-search-box {
   margin-left: auto;
   margin-right: auto;
-  max-width: 990px;
+  max-width: 960px;
 }
 
 #xpl-search-box {
@@ -400,41 +396,14 @@ li.govuk-tabs__list-item {
 }
 
 
-.app-c-back-link-inverse {
-  margin-top: 0;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  padding: 10px 0 10px 0px;
-  background-color: #283135;
-  &-inner {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 990px;
-    padding-left: 30px;
-    .govuk-back-link {
-      background-position: 0px 4px;
-      font-size: 18px;
-      padding-left: 20px;
-    }
-  }
-}
 
 .app-c-inverse-header {
   background-color: #283135;
-  width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 .header-inner {
-  max-width: 990px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -760,6 +729,19 @@ li.govuk-tabs__list-item {
     }
   }
 
+  section {
+    margin-left: 25px;
+    margin-right: 025px;
+  }
+
+  .govuk-tabs {
+    margin-left: 25px;
+    margin-right: 25px;
+    section {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
 
   //==== end explore page section. Add things here
 
@@ -808,7 +790,7 @@ li.govuk-tabs__list-item {
 .govuk-header__navigation, #xpl-search-box {
   margin-left: auto;
   margin-right: auto;
-  max-width: 990px;
+  max-width: 960px;
 }
 
 #xpl-search-box {
@@ -858,19 +840,14 @@ li.govuk-tabs__list-item {
 
 .app-c-back-link-inverse {
   margin-top: 0;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
+  margin-left: 0;
   padding: 10px 0 10px 0px;
   background-color: #283135;
   &-inner {
     margin-left: auto;
     margin-right: auto;
-    max-width: 990px;
-    padding-left: 30px;
+    max-width: 960px;
+    padding-left: 25px;
     .govuk-back-link {
       background-position: 0px 4px;
       font-size: 18px;
@@ -881,20 +858,14 @@ li.govuk-tabs__list-item {
 
 .app-c-inverse-header {
   background-color: #283135;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
 }
 
 .header-inner {
-  max-width: 990px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 45px;
+  padding-left: 25px;
+  padding-right: 25px;
   h1 {
     padding-top: 0;
   }
@@ -1040,6 +1011,25 @@ $wide-width: 1300px;
     h1 {
       margin-top: 30px;
     }
+
+    section {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .govuk-tabs {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+      max-width: 960px;
+    }
+
+    .app-c-back-link-inverse-inner {
+      padding-left: 0;
+    }
+
+
     .home-top__links {
       &:after {
         bottom: 0;
@@ -1241,7 +1231,7 @@ $wide-width: 1300px;
             margin: 0;
             display: inline-block;
             vertical-align: top;
-            width: 33%;
+            width: 35%;
             li {
               margin-bottom: 30px;
               a {
@@ -1258,7 +1248,7 @@ $wide-width: 1300px;
             color: black;
             font-size: 22px;
             width: 25%;
-            padding: 30px 30px 0 30px;
+            padding: 30px 30px 0 0;
             margin: 0;
             display: inline-block;
             vertical-align: top;
