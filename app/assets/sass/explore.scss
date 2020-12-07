@@ -994,18 +994,9 @@ $wide-width: 1300px;
 
 // Desktop
 
-@include govuk-media-query ($from: $tablet-width) {
-  .js-enabled .govuk-tabs__list-item {
-    padding: 20px 20px 19px 20px;
-    margin-top: -20px;
-    margin-right: 20px;
-    &--selected {
-      padding-bottom: 20px;
-    }
-  }
-}
-
 @include govuk-media-query ($from: $desktop-width) {
+
+
 
   .explore-page {
     h1 {
@@ -1015,6 +1006,15 @@ $wide-width: 1300px;
     section {
       margin-left: 0;
       margin-right: 0;
+    }
+
+    &.js-enabled .govuk-tabs__list-item {
+      padding: 20px 20px 19px 20px;
+      margin-top: -20px;
+      margin-right: 20px;
+      &--selected {
+        padding-bottom: 20px;
+      }
     }
 
     .govuk-tabs {
