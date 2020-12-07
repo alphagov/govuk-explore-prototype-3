@@ -3,6 +3,7 @@ const router = express.Router()
 
 const fs = require('fs')
 const request = require('request');
+const govukTopics = require('./govuk-topics');
 const url = require('url');
 // Add your routes here - above the module.exports line
 
@@ -15,6 +16,12 @@ if (!process.env.API_URL) {
 }
 
 const API_URL = process.env.API_URL
+
+//---- pre-fetch all topics titles  and descriptions
+
+let mainstreamTopics, specialistTopics;
+govukTopics.fetchMainstreamTopics(body => mainstreamTopics=body);
+govukTopics.fetchSpecialistTopics(body => specialistTopics=body);
 
 
 //---- Topic pages (both mainstream and specialist)
@@ -34,6 +41,13 @@ const topicPage = function(topicType, req, res) {
         news.date = `${d.getDate()}/${d.getMonth()}/${d.getFullYear()}`;
         news.subtopic = news.subtopic === 'other' ? '' : news.subtopic.replace(/_/g, ' ');
         news.topic = news.topic === 'other' ? '' : news.topic.replace(/_/g, ' ');
+      });
+    }
+    if (body.subtopics) {
+      // Add the description of each subtopic from the appropriate topics global var
+      body.subtopics = body.subtopics.map(sub => {
+        const topicList = topicType === 'browse' ? mainstreamTopics : specialistTopics;
+        return {...sub, description: topicList.find(topic => topic._id === sub.link).description };
       });
     }
     res.render('topic', body)
@@ -106,6 +120,13 @@ router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
 router.get('/topic', function( req, res ) {
   request(API_URL + '/topic', { json: true }, (error, results, body) => {
     if (error) throw error;
+    if (body.subtopics) {
+      // Add the description of each subtopic from the specialistTopics global var
+      body.subtopics = body.subtopics.map(sub => {
+        return {...sub, description: specialistTopics.find(topic => topic._id === sub.link).description };
+      });
+    }
+
     res.render('topics', body);
   });
 });
