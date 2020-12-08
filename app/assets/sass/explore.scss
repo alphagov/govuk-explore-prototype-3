@@ -557,13 +557,19 @@ li.govuk-tabs__list-item {
   .xpl-topics {
     margin-bottom: 30px;
     padding-top: 30px;
+    h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
     h3 {
       float: left;
       width: 80%;
     }
     p {
+      font-size: 24px;
       clear: both;
       margin-right: 30px;
+      margin-bottom: 40px;
     }
     .xpl-chevron {
       float: right;
