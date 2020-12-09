@@ -126,7 +126,7 @@
 
             {% for organisation in organisations %}
               <li class="xpl-organisation">
-                <a href="https://www.gov.uk{{organisation.url}}">
+                <a href="{{organisation.url}}">
                   <div class="xpl-organisation__inner xpl-org {{organisation.slug}}">
                     <img src="/public/images/org_logos/{{organisation.crest}}_crest_18px_x2.png" alt=organisation logo"/>
                     <p class="govuk-body">{{organisation.title}}</p>
