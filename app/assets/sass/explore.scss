@@ -591,6 +591,9 @@ li.govuk-tabs__list-item {
         border-top: 2px solid govuk-colour("black");
         > a > div {
           min-height: 180px;
+          p {
+            font-size: 19px;
+          }
         }
       }
     }
