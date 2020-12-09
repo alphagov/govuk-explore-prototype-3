@@ -1279,18 +1279,21 @@ $wide-width: 1300px;
     &__navigation-item {
       &:hover {
         button, a:link, a:visited {
-          color: $menu-hover-colour;
-          &:after {
-            border-color: $menu-hover-colour;
-          }
+          text-decoration: underline;
+          text-underline-offset: 4px;
         }
       }
       &.menu-item-open {
         background-color: govuk-colour("white");
         padding-bottom: 20px;
         color: $menu-hover-colour;
-        &:hover button:after {
-          border-color: black;
+        &:hover {
+          button {
+            text-decoration: none;
+          }
+          button:after {
+            border-color: black;
+          }
         }
         button {
           cursor: pointer;
