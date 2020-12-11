@@ -11,16 +11,16 @@
   <div class="{{ containerClasses }}">
     {% block beforeContent %}{% endblock %}
     <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
-      <div class="govuk-grid-row xpl-hero">
+      <div class="xpl-hero">
         <div class="xpl-hero-inner">
-          <div class="govuk-grid-column-two-thirds">
+          <div class="xpl-hero-column-left">
             <h1 class="govuk-heading-xl">
               Welcome to GOV.UK
             </h1>
             <p class="home-top__intro">The best place to find government services and information</p>
             <p class="home-top__intro home-top__intro--simpler">Simpler, clearer, faster</p>
           </div>
-          <div class="govuk-grid-column-one-third home-top__links-outer">
+          <div class="home-top__links-outer">
             <div class="home-top__links">
               <h2 class="home-top__links-title govuk-heading-m">Popular on GOV.UK</h2>
               <ul class="home-top__links-list">

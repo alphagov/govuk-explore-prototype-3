@@ -10,7 +10,8 @@ $menu-hover-colour: #005ff8;
 
 $mobile-width:  320px;
 $tablet-width:  740px;
-$desktop-width: 980px;
+//$desktop-width: 769px;
+$desktop-width: 960px;
 $wide-width: 1300px;
 
 
@@ -46,12 +47,6 @@ $wide-width: 1300px;
     margin: 40px 0 40px 0;
   }
 
-
-  .home-top__links {
-    &-title {
-      color: govuk-colour("white");
-    }
-  }
 
   .home-services {
     &__heading {
@@ -213,6 +208,8 @@ $wide-width: 1300px;
 
     .home-top__links {
       margin-top: 15px;
+      padding: 0;
+      background: govuk-colour("blue");
     }
     .home-top__links-item {
       margin-bottom: 20px;
@@ -221,6 +218,7 @@ $wide-width: 1300px;
     .home-top__links-title {
       padding-bottom: 5px;
       margin-top: 60px;
+      color: govuk-colour("white");
     }
     .gem-c-search {
       margin-top: 30px;
@@ -444,6 +442,15 @@ $wide-width: 1300px;
       margin-right: 0;
     }
 
+
+
+    section.subtopics {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 960px;
+    }
+
+
     .xpl-activity, .xpl-featured, .departments-and-policy {
       border-width: 5px;
     }
@@ -469,23 +476,35 @@ $wide-width: 1300px;
       padding-left: 0;
     }
 
-
-    .xpl-hero .home-top__links {
-      &:after {
-        bottom: 0;
+    .xpl-hero {
+      padding-bottom: 0;
+      .xpl-hero-column-left {
+        display: inline-block;
+        vertical-align: top;
+        width: 66%;
       }
-      &-title {
-        margin-top: 0;
-        font-weight: normal;
-        padding-bottom: 5px;
+      .home-top__links-outer {
+        width: 33%;
+        display: inline-block;
+        vertical-align: top;
       }
-      &-list a {
-        font-weight: bold;
+      .home-top__links {
+        position:relative;
+        z-index:1;
+        margin-top:5px;
+        padding:15px 20px 20px 20px;
+        background:#0b0c0c;
+        &-title {
+          margin-top: 0;
+          font-weight: normal;
+          padding-bottom: 5px;
+        }
+        &-list a {
+          font-weight: bold;
+        }
       }
     }
     .xpl-topics {
-      margin-left: auto;
-      margin-right: auto;
       max-width: 960px;
       h2 {
         font-size: 27px;
@@ -514,8 +533,6 @@ $wide-width: 1300px;
     .xpl-subsubtopics-section {
       margin-left: auto;
       margin-right: auto;
-      padding-left: 25px;
-      padding-right: 25px;
       max-width: 960px;
     }
 
