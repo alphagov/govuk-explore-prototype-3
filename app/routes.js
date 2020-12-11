@@ -136,33 +136,33 @@ router.get('/', function (req, res) {
 });
 
 
-// All other URLs (including css, js, etc.)
-  router.get('/*', function(req,res) {
-    //modify the url in any way you want
-    var url_parts = url.parse(req.url, false);
-    var query = url_parts.query;
-    var newurl = 'https://www.gov.uk' + req.path + '?' + query;
+// All other URLs
+router.get('/*', function(req,res) {
+  //modify the url in any way you want
+  var url_parts = url.parse(req.url, false);
+  var query = url_parts.query;
+  var newurl = 'https://www.gov.uk' + req.path + '?' + query;
 
-    request(newurl, function (error, response, body) {
-      if (error) throw error;
+  request(newurl, function (error, response, body) {
+    if (error) throw error;
 
-      const headerString = fs.readFileSync('app/views/header.html', 'utf8');
-      const headerStringWithCss = `
-  <link href="/public/stylesheets/explore.css" media="all" rel="stylesheet" type="text/css" />
+    const headerString = fs.readFileSync('app/views/header.html', 'utf8');
+    const headerStringWithCss = `
+  <link href="/public/stylesheets/explore-menu.css" media="all" rel="stylesheet" type="text/css" />
   ` + headerString;
 
-      // Make all src and ref attributes absolute, or the server will try to
-      // fetch its own version
-      const newBody = body
-        .replace(/(href|src)="\//g, '$1="https://www.gov.uk/')
-        .replace(/<header[^]+?<\/header>/, headerStringWithCss)
-        .replace(/<\/body>/,'<script src="/public/javascripts/newmenu.js"></script>\n</body>')
-        .replace(/<a(.*) href\s*=\s*(['"])\s*(https:)?\/\/www.gov.uk\//g,'<a $1 href=$2/');
+    // Make all src and ref attributes absolute, or the server will try to
+    // fetch its own version
+    const newBody = body
+          .replace(/(href|src)="\//g, '$1="https://www.gov.uk/')
+          .replace(/<header[^]+?<\/header>/, headerStringWithCss)
+          .replace(/<\/body>/,'<script src="/public/javascripts/newmenu.js"></script>\n</body>')
+          .replace(/<a(.*) href\s*=\s*(['"])\s*(https:)?\/\/www.gov.uk\//g,'<a $1 href=$2/');
 
-      res.send(newBody);
+    res.send(newBody);
 
-    });
   });
+});
 
 
 module.exports = router

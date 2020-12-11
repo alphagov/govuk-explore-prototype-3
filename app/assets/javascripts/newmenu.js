@@ -37,12 +37,21 @@ $('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => 
 });
 
 
+// Mobile -- button to show or hide the menu
+$('.explore-header .xpl-nav .govuk-js-header-toggle').on('click', event => {
 
-$('.govuk-js-header-toggle').on('click', event => {
+  // change the button itself
   event.target.classList.toggle('govuk-header__menu-button--open');
   event.target.innerText = event.target.classList.contains('govuk-header__menu-button--open') ? '×' : 'Menu';
-  $('main, footer, #global-header-bar, #global-bar, #wrapper, #navigation').toggle();
+
+  // show or hide the dropdown
+  $('.explore-header #xpl-popup-menu').toggle();
+
+  // hide or show the rest of the page
+  $('.explore-header').nextAll().toggle();
 });
+
+
 
 $('.xpl-backdrop').on('click', function(event) {
   $(this).hide();

@@ -539,18 +539,6 @@ $wide-width: 1300px;
     }
   }
 
-  .xpl-backdrop {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    top: 58px;
-    width: 100vw;
-    height: 200vh;
-    background: black;
-    opacity: 0.8;
-  }
 
   .govuk-accordion__section:hover {
     background-color: #f3f2f1;

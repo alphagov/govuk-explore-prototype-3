@@ -19,6 +19,10 @@ $wide-width: 1300px;
 .explore-header {
   border-bottom: 0;
 
+  a:link, a:visited {
+    text-decoration: none;
+  }
+
   .govuk-header__container {
     border-bottom: none;
     padding-left: 25px;
@@ -355,69 +359,68 @@ $wide-width: 1300px;
       float: right;
       width: 74.55%;
     }
-    .govuk-header__navigation {
-      min-height: unset;
-      position: absolute;
-      right: 0;
-    }
-    .govuk-header__navigation-item {
-      padding: 20px 30px 0 20px;
-      margin-right: 0;
-      cursor: pointer;
-
-      &#xpl-topics-menu-item, &#xpl-activity-menu-item {
-        padding-right: 45px;
-      }
-      &.menu-item-open {
-        button:after {
-          -webkit-transform: rotate(317deg);
-          -ms-transform: rotate(317deg);
-          transform: rotate(317deg);
-          border: solid;
-          border-width: 2.5px 2.5px 0 0;
-          border-color: black;
-          clip-path: none;
-          top: 7px;
-          cursor: pointer;
-        }
-      }
-      button {
-        font-family: "GDS Transport", Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-weight: 700;
-        font-size: 14px;
-        font-size: 0.875rem;
-        white-space: nowrap;
-        position: relative;
-        cursor: pointer;
-        &:after {
-          content: "";
-          display: block;
-          position: absolute;
-          top: 4px;
-          right: -24px;
-          width: 6px;
-          height: 6px;
-          -webkit-transform: rotate(137deg);
-          -ms-transform: rotate(137deg);
-          transform: rotate(137deg);
-          border: solid;
-          border-width: 2.5px 2.5px 0 0;
-          border-color: white;
-          clip-path: none;
-        }
-        &:focus {
-          outline: none;
-        }
-      }
-    }
     .xpl-nav--desktop {
       display: block;
       background: govuk-colour("black");
       button, a:link, a:visited {
         color: govuk-colour("white");
         font-size: 16px;
+      }
+      .govuk-header__navigation {
+        min-height: unset;
+        position: absolute;
+        right: 0;
+      }
+      .govuk-header__navigation-item {
+        padding: 20px 30px 0 20px;
+        margin-right: 0;
+        cursor: pointer;
+
+        &#xpl-topics-menu-item, &#xpl-activity-menu-item {
+          padding-right: 45px;
+        }
+        &.menu-item-open {
+          button:after {
+            -webkit-transform: rotate(317deg);
+            -ms-transform: rotate(317deg);
+            transform: rotate(317deg);
+            border: solid;
+            border-width: 2.5px 2.5px 0 0;
+            border-color: black;
+            clip-path: none;
+            top: 7px;
+            cursor: pointer;
+          }
+        }
+        button {
+          font-family: "GDS Transport", Arial, sans-serif;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          font-weight: 700;
+          font-size: 16px;
+          white-space: nowrap;
+          position: relative;
+          cursor: pointer;
+          &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 4px;
+            right: -24px;
+            width: 6px;
+            height: 6px;
+            -webkit-transform: rotate(137deg);
+            -ms-transform: rotate(137deg);
+            transform: rotate(137deg);
+            border: solid;
+            border-width: 2.5px 2.5px 0 0;
+            border-color: white;
+            clip-path: none;
+          }
+          &:focus {
+            outline: none;
+          }
+        }
       }
       .xpl-frame2 {
         position: absolute;
@@ -472,6 +475,18 @@ $wide-width: 1300px;
           }
         }
       }
+    }
+    .xpl-backdrop {
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      top: 58px;
+      width: 100vw;
+      height: 200vh;
+      background: black;
+      opacity: 0.8;
     }
     .xpl-nav {
       display: none;
