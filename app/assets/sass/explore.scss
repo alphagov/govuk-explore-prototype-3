@@ -48,6 +48,14 @@ $wide-width: 1300px;
   }
 
 
+  .xpl-section-inner {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .home-services {
     &__heading {
       margin-top: 30px;
@@ -174,13 +182,6 @@ $wide-width: 1300px;
     padding-top: 15px;
     background: govuk-colour("blue");
     margin-top: -10px;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    margin-top: -10px;
 
     &.govuk-grid-row {
       padding-left: 10px;
@@ -227,16 +228,16 @@ $wide-width: 1300px;
     &.govuk-grid-row {
       padding: 0;
     }
-    .xpl-hero-inner {
-      max-width: 960px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 25px;
-      padding-right: 25px;
-      .govuk-grid-column-two-thirds {
-        padding: 0;
-      }
-    }
+//    .xpl-hero-inner {
+//      max-width: 960px;
+//      margin-left: auto;
+//      margin-right: auto;
+//      padding-left: 25px;
+//      padding-right: 25px;
+//      .govuk-grid-column-two-thirds {
+//        padding: 0;
+//      }
+//    }
   }
 
 
@@ -312,11 +313,6 @@ $wide-width: 1300px;
     margin-bottom: 30px;
   }
 
-
-  section {
-    margin-left: 25px;
-    margin-right: 25px;
-  }
 
   .govuk-tabs {
     margin-left: 25px;
@@ -505,8 +501,24 @@ $wide-width: 1300px;
         }
       }
     }
-    .xpl-topics {
+
+    .xpl-featured-inner {
       max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+
+    .xpl-topics {
+      &-inner {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
       h2 {
         font-size: 27px;
       }
@@ -573,13 +585,6 @@ $wide-width: 1300px;
   .header-inner {
     padding-left: 0;
     padding-right: 0;
-  }
-
-
-  main#main-content {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
   }
 
 }
