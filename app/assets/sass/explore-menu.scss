@@ -23,6 +23,10 @@ $wide-width: 1300px;
     text-decoration: none;
   }
 
+  .govuk-header__logo {
+    margin-bottom: 0;
+  }
+
   .govuk-header__container {
     border-bottom: none;
     padding-left: 25px;
@@ -353,7 +357,7 @@ $wide-width: 1300px;
     .govuk-header__logo {
       width: 180px;
       margin-top: 14px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
     .govuk-header__content {
       float: right;
