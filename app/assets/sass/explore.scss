@@ -153,7 +153,6 @@ $wide-width: 1300px;
     }
   }
 
-
   .header-inner {
     max-width: 960px;
     margin-left: auto;
@@ -162,9 +161,12 @@ $wide-width: 1300px;
     padding-right: 45px;
     h1 {
       padding-top: 0;
+      margin-top: 0;
+    }
+    .lede {
+      font-size: 20px;
     }
   }
-
 
   .home-numbers {
     &__large {
@@ -360,7 +362,7 @@ $wide-width: 1300px;
   .app-c-back-link-inverse {
     margin-top: 0;
     margin-left: 0;
-    padding: 10px 0 10px 0px;
+    padding: 30px 0 0px 0px;
     background-color: #283135;
     &-inner {
       margin-left: auto;
@@ -371,6 +373,7 @@ $wide-width: 1300px;
         background-position: 0px 4px;
         font-size: 18px;
         padding-left: 20px;
+        margin-bottom: 0;
       }
     }
   }
@@ -469,6 +472,14 @@ $wide-width: 1300px;
       max-width: 960px;
     }
 
+    .app-c-back-link-inverse {
+      padding-top: 60px;
+      a.govuk-back-link {
+        font-size: 22px;
+        background-position: 0 7px;
+      }
+    }
+
     .app-c-back-link-inverse-inner {
       padding-left: 0;
     }
@@ -561,30 +572,32 @@ $wide-width: 1300px;
       padding-top: 10px;
     }
 
-  }
 
-  .govuk-breadcrumbs {
-    .govuk-breadcrumbs__list-item:before {
-      top: 0;
-    }
-  }
-
-
-  .js-enabled .govuk-accordion {
-    width: 66%;
-    .govuk-accordion__section {
-      &:hover {
-        background-color: #f3f2f1;
-      }
-      button:hover:not(:focus) {
-        text-decoration: none;
+    .govuk-breadcrumbs {
+      .govuk-breadcrumbs__list-item:before {
+        top: 0;
       }
     }
-  }
 
-  .header-inner {
-    padding-left: 0;
-    padding-right: 0;
-  }
 
+    .js-enabled .govuk-accordion {
+      width: 66%;
+      .govuk-accordion__section {
+        &:hover {
+          background-color: #f3f2f1;
+        }
+        button:hover:not(:focus) {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .header-inner {
+      padding-left: 0;
+      padding-right: 0;
+      p.lede {
+        font-size: 22px;
+      }
+    }
+  }
 }
