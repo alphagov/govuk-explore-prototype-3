@@ -424,6 +424,24 @@ $wide-width: 1300px;
             cursor: pointer;
           }
         }
+        &#xpl-search-menu-item {
+          padding: 0;
+          position: relative;
+          top: 0;
+          button {
+            right: 0;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            background-image: url(https://www.gov.uk/assets/finder-frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
+            background-repeat: no-repeat;
+            background-position: -18px 50%;
+            background-size: 70px auto;
+            background-color: #1d70b8;
+            text-indent: -5000px;
+            overflow: hidden;
+          }
+        }
         button {
           font-family: "GDS Transport", nta, Arial, sans-serif;
           -webkit-font-smoothing: antialiased;
