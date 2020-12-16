@@ -38,7 +38,7 @@ $('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => 
 
 
 // Mobile -- button to show or hide the menu
-$('.explore-header .xpl-nav .govuk-js-header-toggle').on('click', event => {
+document.getElementById('xpl-menu-button').addEventListener('click', event => {
 
   // change the button itself
   event.target.classList.toggle('govuk-header__menu-button--open');
