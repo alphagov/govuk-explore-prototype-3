@@ -47,8 +47,15 @@ document.getElementById('xpl-menu-button').addEventListener('click', event => {
   // show or hide the dropdown
   $('.explore-header #xpl-popup-menu').toggle();
 
-  // hide or show the rest of the page
-  $('.explore-header').nextAll().toggle();
+  if ($('#xpl-search-button').hasClass('govuk-header__menu-button--open')) {
+    // hide the search popup
+    $('#xpl-search-button').removeClass('govuk-header__menu-button--open');
+    $('#xpl-search-button').text('Search');
+    $('#xpl-popup-search').hide();
+  } else {
+    // hide or show the rest of the page
+    $('.explore-header').nextAll().toggle();
+  }
 });
 
 
@@ -63,6 +70,14 @@ document.getElementById('xpl-search-button').addEventListener('click', event => 
 
   // hide or show the rest of the page
   $('.explore-header').prevAll().toggle();
+
+  if ($('#xpl-menu-button').hasClass('govuk-header__menu-button--open')) {
+    $('#xpl-menu-button').removeClass('govuk-header__menu-button--open');
+    $('#xpl-menu-button').text('Menu');
+    $('#xpl-popup-menu').hide();
+  } else {
+    $('.explore-header').nextAll().toggle();
+  }
 });
 
 

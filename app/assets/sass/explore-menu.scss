@@ -123,6 +123,11 @@ $wide-width: 1300px;
   #xpl-popup-search {
     padding: 0 25px 0 25px;
     height: 100vh;
+    h2 {
+      color: black;
+      margin-top: 0;
+      padding-top: 30px;
+    }
   }
 
   #xpl-popup-menu {
@@ -256,6 +261,10 @@ $wide-width: 1300px;
       overflow: hidden;
       &::after {
         display: none;
+      }
+      &.govuk-header__menu-button--open {
+        background: white;
+        text-indent: 0;
       }
     }
   }
