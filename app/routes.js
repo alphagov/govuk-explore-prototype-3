@@ -98,7 +98,7 @@ router.get('/topic/:topicSlug/:subTopicSlug', function (req, res) {
   const topicSlug = req.params.topicSlug;
   const subTopicSlug = req.params.subTopicSlug;
   const url = `${API_URL}/topic/${topicSlug}/${subTopicSlug}`;
-  console.log('specialist subtopic', url);
+
   request(url, { json: true }, (error, result, body) => {
     body.topicSlug = topicSlug;
     if (body.subtopics) {
@@ -138,6 +138,7 @@ router.get('/', function (req, res) {
 
 // All other URLs
 router.get('/*', function(req,res) {
+
   //modify the url in any way you want
   var url_parts = url.parse(req.url, false);
   var query = url_parts.query;
@@ -149,7 +150,10 @@ router.get('/*', function(req,res) {
     const headerString = fs.readFileSync('app/views/header.html', 'utf8');
     const headerStringWithCss = `
   <link href="/public/stylesheets/explore-menu.css" media="all" rel="stylesheet" type="text/css" />
-  ` + headerString;
+  <link href="/public/css/accordion.css" media="all" rel="stylesheet" type="text/css" />
+  ` + headerString + `
+  <script src="/public/javascripts/accordion.js"></script>
+`;
 
     // Make all src and ref attributes absolute, or the server will try to
     // fetch its own version
