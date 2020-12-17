@@ -110,8 +110,7 @@ $wide-width: 1300px;
     color: #8c8c8c;
   }
 
-
-  #xpl-popup-menu {
+  #xpl-popup-search, #xpl-popup-menu {
     width: 100vw;
     position: relative;
     left: 50%;
@@ -119,7 +118,14 @@ $wide-width: 1300px;
     margin-left: -50vw;
     margin-right: -50vw;
     background: govuk-colour("white");
+  }
 
+  #xpl-popup-search {
+    padding: 0 25px 0 25px;
+    height: 100vh;
+  }
+
+  #xpl-popup-menu {
     #navigation {
       height: 100vh;
       .govuk-accordion {

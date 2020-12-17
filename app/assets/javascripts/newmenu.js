@@ -52,6 +52,19 @@ document.getElementById('xpl-menu-button').addEventListener('click', event => {
 });
 
 
+// Mobile -- button to show or hide the search panel
+document.getElementById('xpl-search-button').addEventListener('click', event => {
+  // change the button itself
+  event.target.classList.toggle('govuk-header__menu-button--open');
+  event.target.innerText = event.target.classList.contains('govuk-header__menu-button--open') ? '×' : 'Search';
+
+  // show or hide the dropdown
+  $('.explore-header #xpl-popup-search').toggle();
+
+  // hide or show the rest of the page
+  $('.explore-header').prevAll().toggle();
+});
+
 
 $('.xpl-backdrop').on('click', function(event) {
   $(this).hide();

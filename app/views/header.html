@@ -126,9 +126,11 @@
 
 
       <!-- mobile menu -->
+
       <nav class="xpl-nav">
         <button id="xpl-menu-button" type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="navigation" aria-label="Show or hide navigation menu" aria-expanded="false">Menu</button>
         <button id="xpl-search-button" type="button" class="govuk-header__menu-button govuk-js-header-toggle" aria-controls="search" aria-label="Show or hide search menu" aria-expanded="false">Search</button>
+
         <div id="xpl-popup-menu" style="display:none">
           <div id="navigation">
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
@@ -213,6 +215,19 @@
               </li>
             </ul>
           </div>
+        </div>
+
+        <div id="xpl-popup-search" style="display:none">
+          <h2>Search on GOV.UK</h2>
+          <div><input type="text"/><span>0</span></div>
+          <h2>Most viewed</h2>
+          <ul class="govuk-list">
+            <li><a href="/">Coronavirus: find your area's tier</a></li>
+            <li><a href="/">Coronavirus: travel advice</a></li>
+            <li><a href="/">Coronavirus: social distancing rules</a></li>
+            <li><a href="/">Sign in to Universal Credit</a></li>
+            <li><a href="/">Brexit transition: check the new rules for January 2021</a></li>
+          </ul>
         </div>
       </nav>
     </div>
