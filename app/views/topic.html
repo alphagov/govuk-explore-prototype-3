@@ -44,21 +44,23 @@
       </div>
     {% endif %}
     <section class="subtopics">
-      <div class="xpl-topics">
-        <h2 class="govuk-heading-l">Sub-topics</h2>
-        <ul class="govuk-list">
-          {% for topic in subtopics %}
-            <li>
-              <a class="govuk-link" href="{{ topic.link }}">
-                <div>
-                  <div class="xpl-chevron" aria-hidden="true"></div>
-                  <h3 class="home-services__heading">{{ topic.title }}</h3>
-                  <p>{{ topic.description }}</p>
-                </div>
-              </a>
-            </li>
-          {% endfor %}
-        </ul>
+      <div class="xpl-section-inner">
+        <div class="xpl-topics">
+          <h2 class="govuk-heading-l">Sub-topics</h2>
+          <ul class="govuk-list">
+            {% for topic in subtopics %}
+              <li>
+                <a class="govuk-link" href="{{ topic.link }}">
+                  <div>
+                    <div class="xpl-chevron" aria-hidden="true"></div>
+                    <h3 class="home-services__heading">{{ topic.title }}</h3>
+                    <p>{{ topic.description }}</p>
+                  </div>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
     </section>
   {% endset -%}
