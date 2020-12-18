@@ -218,10 +218,13 @@
         </div>
 
         <div id="xpl-popup-search" style="display:none">
-          <h2>Search on GOV.UK</h2>
-          <div><input type="text"/><span>0</span></div>
+          <h2 class="govuk-heading-l">Search GOV.UK</h2>
+          <form action="/search/all" method="get" class="xpl-search-input">
+            <input type="text" name="keywords" /><button  class="xpl-menu__button xpl-search-button" type="submit">Search</button>
+          </form>
+
           <h2>Most viewed</h2>
-          <ul class="govuk-list">
+          <ul class="govuk-list" class="govuk-heading-l">
             <li><a href="/">Coronavirus: find your area's tier</a></li>
             <li><a href="/">Coronavirus: travel advice</a></li>
             <li><a href="/">Coronavirus: social distancing rules</a></li>
