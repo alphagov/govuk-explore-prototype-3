@@ -1,0 +1,23 @@
+{% macro list(title, subtitle, blocks) %}
+  <div class="xpl-topics">
+    {% if title %}
+      <h2 class="govuk-heading-l">{{ title }}</h2>
+    {% endif %}
+    {% if subtitle != '' %}
+      <p class="xpl-activity__intro">{{ subtitle }}</p>
+    {% endif %}
+    <ul class="govuk-list">
+      {% for block in blocks %}
+        <li>
+          <a class="govuk-link" href="{{ block.link }}">
+            <div>
+              <div class="xpl-chevron" aria-hidden="true"></div>
+              <h3>{{ block.title }}</h3>
+              <p class="govuk-body">{{ block.description }}</p>
+            </div>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endmacro %}

@@ -1,5 +1,5 @@
-
 {% extends "layout.html" %}
+{% import "includes/blocklist.html" as blocks %}
 
 {% block pageTitle %}
   GOV.UK Prototype Kit
@@ -36,155 +36,74 @@
 
       <section>
         <div class="xpl-section-inner">
-          <div class="xpl-topics">
-            <h2 class="govuk-heading-l">Topics</h2>
-            <ul class="govuk-list">
-              <li>
-                <a class="govuk-link" href="/browse/benefits">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Benefits</h3>
-                    <p class="govuk-body">Includes eligibility, appeals, tax credits and Universal Credit</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/births-deaths-marriages">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Births, deaths, marriages and care</h3>
-                    <p class="govuk-body">Parenting, civil partnerships, divorce and Lasting Power of Attorney</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/business">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Business and self-employed</h3>
-                    <p class="govuk-body">Tools and guidance for businesses</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/childcare-parenting">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Childcare and parenting</h3>
-                    <p class="govuk-body">Includes giving birth, fostering, adopting, benefits for children, childcare and schools</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/citizenship">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Citizenship and living in the UK</h3>
-                    <p class="govuk-body">Voting, community participation, life in the UK, international projects</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/justice">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Crime, justice and the law</h3>
-                    <p class="govuk-body">Legal processes, courts and the police</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/disabilities">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Disabled people</h3>
-                    <p class="govuk-body">Includes carers, your rights, benefits and the Equality Act</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/driving">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Driving and transport</h3>
-                    <p class="govuk-body">Includes vehicle tax, MOT and driving licences</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/education">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Education and learning</h3>
-                    <p class="govuk-body">Includes student loans, admissions and apprenticeships</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/employing-people">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Employing people</h3>
-                    <p class="govuk-body">Includes pay, contracts and hiring</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/environment-countryside">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Environment and countryside</h3>
-                    <p class="govuk-body">Includes flooding, recycling and wildlife</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/housing-local-services">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Housing and local services</h3>
-                    <p class="govuk-body">Owning or renting and council services</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/tax">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Money and tax</h3>
-                    <p class="govuk-body">Includes debt and Self Assessment</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/abroad">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Passports, travel and living abroad</h3>
-                    <p class="govuk-body">Includes renewing passports and travel advice by country</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/visas-immigration">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Visas and immigration</h3>
-                    <p class="govuk-body">Visas, asylum and sponsorship</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="govuk-link" href="/browse/working">
-                  <div>
-                    <div class="xpl-chevron" aria-hidden="true"></div>
-                    <h3>Working, jobs and pensions</h3>
-                    <p class="govuk-body">Includes holidays and finding a job</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
+              {{ blocks.list("Topics", "",
+              [ {
+              title: "Benefits",
+              link: "/browse/benefits",
+              description: "Includes eligibility, appeals, tax credits and Universal Credit"
+            }, {
+              title: "Births, deaths, marriages and care",
+              link: "/browse/births-deaths-marriages",
+              description: "Parenting, civil partnerships, divorce and Lasting Power of Attorney"
+            }, {
+              title: "Business and self-employed",
+              link: "/browse/business",
+              description: "Tools and guidance for businesses"
+            }, {
+              title: "Childcare and parenting",
+              link: "/browse/childcare-parenting",
+              description: "Includes giving birth, fostering, adopting, benefits for children, childcare and schools"
+            }, {
+              title: "Citizenship and living in the UK",
+              link: "/browse/citizenship",
+              description: "Voting, community participation, life in the UK, international projects"
+            }, {
+              title: "Crime, justice and the law",
+              link: "/browse/justice",
+              description: "Legal processes, courts and the police"
+            }, {
+              title: "Disabled people",
+              link: "/browse/disabilities",
+              description: "Includes carers, your rights, benefits and the Equality Act"
+            }, {
+              title: "Driving and transport",
+              link: "/browse/driving",
+              description: "Includes vehicle tax, MOT and driving licences"
+            }, {
+              title: "Education and learning",
+              link: "/browse/education",
+              description: "Includes student loans, admissions and apprenticeships"
+            }, {
+              title: "Employing people",
+              link: "/browse/employing-people",
+              description: "Includes pay, contracts and hiring"
+            }, {
+              title: "Environment and countryside",
+              link: "/browse/environment-countryside",
+              description: "Includes flooding, recycling and wildlife"
+            }, {
+              title: "Housing and local services",
+              link: "/browse/housing-local-services",
+              description: "Owning or renting and council services"
+            }, {
+              title: "Money and tax",
+              link: "/browse/tax",
+              description: "Includes debt and Self Assessment"
+            }, {
+              title: "Passports, travel and living abroad",
+              link: "/browse/abroad",
+              description: "Includes renewing passports and travel advice by country"
+            }, {
+              title: "Visas and immigration",
+              link: "/browse/",
+              description: "Visas, asylum and sponsorship"
+            }, {
+              title: "Working, jobs and pensions",
+              link: "/browse/working",
+              description: "Includes holidays and finding a job"
+            }
+          ])
+          }}
         </div>
       </section>
 
@@ -241,40 +160,20 @@
         <div class="xpl-section-inner">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
+
               <div class="xpl-activity">
-                <div class="xpl-topics">
-                  <h2 class="govuk-heading-l">Government activity</h2>
-                  <p class="xpl-activity__intro">Find out about and get involved with what the government is doing</p>
-                  <ul class="govuk-list">
-                    <li>
-                      <div class="xpl-chevron" aria-hidden="true"></div>
-                      <h3><a href="/search/news-and-communications" class="govuk-link">News</a></h3>
-                      <p class="govuk-body">News articles, speeches and correspondance</p>
-                    </li>
-                    <li>
-                      <div class="xpl-chevron" aria-hidden="true"></div>
-                      <h3><a href="/search/guidance-and-regulation" class="govuk-link">Guidance and regulation</a></h3>
-                      <p class="govuk-body">Detailed guidance, rules and regulation</p>
-                    </li>
-                    <li>
-                      <div class="xpl-chevron" aria-hidden="true"></div>
-                      <h3><a href="/search/research-and-statistics" class="govuk-link">Research and statistics</a></h3>
-                      <p class="govuk-body">Reports, analysis and official statistics</p>
-                    </li>
-                    <li>
-                      <div class="xpl-chevron" aria-hidden="true"></div>
-                      <h3><a href="/search/policy-papers-and-consultations" class="govuk-link">Policy papers and consultations</a></h3>
-                      <p class="govuk-body">Consultations and strategy</p>
-                    </li>
-                    <li>
-                      <div class="xpl-chevron" aria-hidden="true"></div>
-                      <h3><a href="/search/transparency-and-freedom-of-information-releases" class="govuk-link">Transparency documents</a></h3>
-                      <p class="govuk-body">Government data, freedom of information releases and corporate reports</p>
-                    </li>
-                  </ul>
-                </div>
+
+                {{ blocks.list("Government activity", "Find out about and get involved with what the government is doing",
+                  [ { title: "News", link:"/search/news-and-communications", description: "News articles, speeches and correspondance" },
+                    { title: "Guidance and regulation", link: "/search/guidance-and-regulation", description: "Detailed guidance, rules and regulation" },
+                    { title: "Research and statistics", link: "/search/research-and-statistics", description: "Reports, analysis and official statistics" },
+                    { title: "Policy papers and consultations", link: "/search/policy-papers-and-consultations", description: "Consultations and strategy" },
+                    { title: "Transparency documents", link: "/search/transparency-and-freedom-of-information-releases", description: "Government data, freedom of information releases and corporate reports" }
+                  ]
+                )}}
               </div>
             </div>
+
 
             <div class="govuk-grid-column-one-third">
               <div class="departments-and-policy" aria-labelledby="departments-and-policy-label">

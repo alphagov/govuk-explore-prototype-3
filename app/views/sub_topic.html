@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+{% import "includes/blocklist.html" as blocks %}
 
 {% block pageTitle %}
   {{ title }}
@@ -64,60 +65,15 @@
     {% endset -%}
 
     {% set governmentHtml %}
-      <section class="xpl-topics">
-        <h2 class="govuk-heading-l">Browse by content type</h2>
-        <p>Find out what the government is doing in this topic</p>
-        <ul class="govuk-list">
-          <li>
-            <a class="govuk-link" href="/search/news-and-communications?parent={{topicSlug}}&amp;{{taxon_search_filter}}">
-              <div>
-                <div class="xpl-chevron" aria-hidden="true"></div>
-                <h3 class="xpl-topic-heading">News</h3>
-                <p>News articles, speeches and correspondence</p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a class="govuk-link" href="/search/policy-papers-and-consultations?{{ taxon_search_filter }}&amp;order=updated-newest">
-              <div>
-                <div class="xpl-chevron" aria-hidden="true"></div>
-                <h3 class="xpl-topic-heading">Policy papers and consultations</h3>
-                <p>Consultations and strategy</p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a class="govuk-link" href="/search/guidance-and-regulation?{{ taxon_search_filter }}&amp;order=most-viewed">
-              <div>
-                <div class="xpl-chevron" aria-hidden="true"></div>
-                <h3 class="xpl-topic-heading">Guidance and regulation</h3>
-                <p>Detailed guidance, rules and regulation</p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a class="govuk-link" href="/search/research-and-statistics?content_store_document_type=statistics_published&amp;{{ taxon_search_filter }}&amp;order=updated-newest">
-              <div>
-                <div class="xpl-chevron" aria-hidden="true"></div>
-                <h3 class="xpl-topic-heading">Research and statistics</h3>
-                <p>Research, analysis and official statistics</p>
-              </div>
-            </a>
-          </li>
-
-          <li>
-            <a class="govuk-link" href="/search/transparency-and-freedom-of-information-releases?{{ taxon_search_filter }}&amp;order=updated-newest">
-              <div>
-                <div class="xpl-chevron" aria-hidden="true"></div>
-                <h3 class="xpl-topic-heading">Transparency</h3>
-                <p>Government data, freedom of information releases and corporate reports</p>
-              </div>
-            </a>
-          </li>
-        </ul>
+      <section>
+        {{ blocks.list("Browse by content type", "Find out what the government is doing in this topic",
+          [ { title: "News", link:"/search/news-and-communications?parent="+topicSlug+"&amp;"+taxon_search_filter, description: "News articles, speeches and correspondance" },
+            { title: "Guidance and regulation", link: "/search/policy-papers-and-consultations?"+taxon_search_filter+"&amp;order=updated-newest", description: "Detailed guidance, rules and regulation" },
+            { title: "Research and statistics", link: "/search/guidance-and-regulation?"+taxon_search_filter+"&amp;order=most-viewed", description: "Reports, analysis and official statistics" },
+            { title: "Policy papers and consultations", link: "/search/research-and-statistics?content_store_document_type=statistics_published&amp;"+taxon_search_filter+"&amp;order=updated-newest", description: "Consultations and strategy" },
+            { title: "Transparency documents", link: "/search/transparency-and-freedom-of-information-releases?"+taxon_search_filter+"&amp;order=updated-newest", description: "Government data, freedom of information releases and corporate reports" }
+          ]
+        )}}
       </section>
 
       <section>
