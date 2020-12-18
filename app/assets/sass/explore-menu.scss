@@ -127,9 +127,19 @@ $wide-width: 1300px;
       color: black;
       margin-top: 0;
       padding-top: 30px;
+      margin-bottom: 30px;
+    }
+    ul.govuk-list {
+      font-size: 18px;
+      font-weight: bold;
+      color: $govuk-link-colour;
+      li {
+        margin-top: 1em;
+      }
     }
     .xpl-search-input {
-      width: 80%;
+      width: 103%;
+      margin-bottom: 20px;
       input {
         vertical-align: top;
         height: 44px;
@@ -151,6 +161,9 @@ $wide-width: 1300px;
         text-indent: -5000px;
         overflow: hidden;
       }
+    }
+    ul li {
+      margin-bottom: 30px;
     }
   }
 
