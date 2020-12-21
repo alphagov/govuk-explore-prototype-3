@@ -63,12 +63,6 @@ $wide-width: 1300px;
   }
 
 
-  .xpl-nav-menu--open {
-    > * {
-      display: block;
-    }
-  }
-
   .xpl-frame2 ul {
     list-style-type: none;
     padding: 0;
@@ -383,12 +377,6 @@ $wide-width: 1300px;
     }
   }
 
-  .xpl-nav-menu--open {
-    > * {
-      display: block;
-    }
-  }
-
   .xpl-menu__button {
     font-family: "GDS Transport", nta, Arial, sans-serif;
     background: none;
@@ -462,24 +450,62 @@ $wide-width: 1300px;
 
         &#xpl-topics-menu-item, &#xpl-activity-menu-item {
           padding-right: 45px;
-        }
-        &.menu-item-open {
-          button:after {
-            -webkit-transform: rotate(317deg);
-            -ms-transform: rotate(317deg);
-            transform: rotate(317deg);
-            border: solid;
-            border-width: 2.5px 2.5px 0 0;
-            border-color: black;
-            clip-path: none;
-            top: 7px;
+          button {
+            font-family: "GDS Transport", nta, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-weight: 700;
+            font-size: 16px;
+            white-space: nowrap;
+            position: relative;
             cursor: pointer;
+            &:focus {
+              outline: none;
+            }
+            &:after {
+              content: "";
+              display: block;
+              position: absolute;
+              top: 4px;
+              right: -24px;
+              width: 6px;
+              height: 6px;
+              -webkit-transform: rotate(137deg);
+              -ms-transform: rotate(137deg);
+              transform: rotate(137deg);
+              border: solid;
+              border-width: 2.5px 2.5px 0 0;
+              border-color: white;
+              clip-path: none;
+            }
+          }
+          &.menu-item-open {
+            button:after {
+              -webkit-transform: rotate(317deg);
+              -ms-transform: rotate(317deg);
+              transform: rotate(317deg);
+              border: solid;
+              border-width: 2.5px 2.5px 0 0;
+              border-color: black;
+              clip-path: none;
+              top: 7px;
+              cursor: pointer;
+            }
           }
         }
         &#xpl-search-menu-item {
           padding: 0;
           position: relative;
           top: 0;
+          &.menu-item-open {
+            button {
+              background: white;
+              background-image: url(/public/images/black-cross.png);
+              background-size: 15px auto;
+              background-repeat: no-repeat;
+              background-position: 50% 50%;
+            }
+          }
           button {
             right: 0;
             width: 60px;
@@ -492,35 +518,6 @@ $wide-width: 1300px;
             background-color: #1d70b8;
             text-indent: -5000px;
             overflow: hidden;
-          }
-        }
-        button {
-          font-family: "GDS Transport", nta, Arial, sans-serif;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          font-weight: 700;
-          font-size: 16px;
-          white-space: nowrap;
-          position: relative;
-          cursor: pointer;
-          &:after {
-            content: "";
-            display: block;
-            position: absolute;
-            top: 4px;
-            right: -24px;
-            width: 6px;
-            height: 6px;
-            -webkit-transform: rotate(137deg);
-            -ms-transform: rotate(137deg);
-            transform: rotate(137deg);
-            border: solid;
-            border-width: 2.5px 2.5px 0 0;
-            border-color: white;
-            clip-path: none;
-          }
-          &:focus {
-            outline: none;
           }
         }
       }

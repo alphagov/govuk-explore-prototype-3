@@ -1,10 +1,4 @@
-$('#xpl-topics-button').on('click', event => {
-  $(event.target).hide();
-  $(event.target).next('.xpl-frame2').show();
-  $(event.target).parent().nextAll('li').hide();
-});
-
-
+// Desktop: when the Topics header button is clicked
 $('#xpl-topics-menu-item, #xpl-topics-button-desktop').on('click', event => {
   event.stopPropagation();
   const menuLabel = $('#xpl-topics-button-desktop');
@@ -17,10 +11,11 @@ $('#xpl-topics-menu-item, #xpl-topics-button-desktop').on('click', event => {
     $('.xpl-backdrop').show();
   }
   $('#xpl-frame2-topics').toggle();
+  $('#xpl-frame2-search').hide();
   $('#xpl-frame2-activity').hide();
 });
 
-
+// Desktop: when the Government activity header button is clicked
 $('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => {
   event.stopPropagation();
   const menuLabel = $('#xpl-activity-button-desktop');
@@ -33,8 +28,28 @@ $('#xpl-activity-menu-item, #xpl-activity-button-desktop').on('click', event => 
     $('.xpl-backdrop').show();
   }
   $('#xpl-frame2-topics').hide();
+  $('#xpl-frame2-search').hide();
   $('#xpl-frame2-activity').toggle();
 });
+
+// Desktop: when the Search header button is clicked
+$('#xpl-search-menu-item, #xpl-search-button-desktop').on('click', event => {
+  event.stopPropagation();
+  const menuLabel = $('#xpl-search-button-desktop');
+  if (menuLabel.parent().hasClass('menu-item-open')) {
+    menuLabel.closest('ul').children('li').removeClass('menu-item-open');
+    $('.xpl-backdrop').hide();
+  } else {
+    menuLabel.closest('ul').children('li').removeClass('menu-item-open');
+    menuLabel.parent('li').addClass('menu-item-open');
+    $('.xpl-backdrop').show();
+  }
+  $('#xpl-frame2-topics').hide();
+  $('#xpl-frame2-activity').hide();
+  $('#xpl-frame2-search').toggle();
+});
+
+
 
 
 // Mobile -- button to show or hide the menu
