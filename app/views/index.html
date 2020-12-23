@@ -17,27 +17,29 @@
             <h1 class="govuk-heading-xl">
               Welcome to GOV.UK
             </h1>
-            <p class="home-top__intro">The best place to find government services and information</p>
-            <p class="home-top__intro home-top__intro--simpler">Simpler, clearer, faster</p>
-          </div><div class="home-top__links-outer">
-            <div class="home-top__links">
-              <h2 class="home-top__links-title govuk-heading-m">Popular on GOV.UK</h2>
-              <ul class="home-top__links-list">
-                <li class="home-top__links-item"><a href="/coronavirus" class="home-top__links-link">Coronavirus (COVID‑19): guidance and support</a></li>
-                <li class="home-top__links-item"><a href="/guidance/travel-advice-novel-coronavirus" class="home-top__links-link">Travel advice: coronavirus (COVID‑19)</a></li>
-                <li class="home-top__links-item"><a href="/transition" class="home-top__links-link">The UK has left the EU: check the new rules for January 2021</a></li>
-                <li class="home-top__links-item"><a href="/jobsearch" class="home-top__links-link">Find a job</a></li>
-                <li class="home-top__links-item"><a href="/sign-in-universal-credit" class="home-top__links-link">Sign in to your Universal Credit account</a></li>
-              </ul>
-            </div>
+            <p>The best place to find government services and information</p>
+            <p class="xpl-hero-simpler">Simpler, clearer, faster</p>
           </div>
         </div>
       </section>
 
       <section>
+        <div class="xpl-section-inner xpl-most-viewed">
+          <h2 class="govuk-heading-l">Most viewed</h2>
+          <ul class="govuk-list">
+            <li><a href="/coronavirus">Coronavirus (COVID‑19): guidance and support</a></li>
+            <li><a href="/guidance/travel-advice-novel-coronavirus">Travel advice: coronavirus (COVID‑19)</a></li>
+            <li><a href="/transition">The UK has left the EU: check the new rules for January 2021</a></li>
+            <li><a href="/jobsearch">Find a job</a></li>
+            <li><a href="/sign-in-universal-credit">Sign in to your Universal Credit account</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
         <div class="xpl-section-inner">
-              {{ blocks.list("Topics", "",
-              [ {
+          {{ blocks.list("Popular topics", "",
+            [ {
               title: "Benefits",
               link: "/browse/benefits",
               description: "Includes eligibility, appeals, tax credits and Universal Credit"

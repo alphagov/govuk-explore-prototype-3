@@ -182,69 +182,34 @@ $wide-width: 1300px;
 
 
   .xpl-hero {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     padding-top: 15px;
     background: govuk-colour("blue");
     margin-top: -10px;
-
-    &.govuk-grid-row {
-      padding-left: 10px;
-      padding-right: 10px;
-      padding: 0;
-    }
     h1 {
       padding-top: 30px;
       margin-bottom: 30px;
-    }
-    h1, p {
       color: govuk-colour("white");
     }
-    a:link {
-      font-weight: normal;
-    }
-    .home-top__intro {
+    p {
       font-size: 20px;
-      margin-bottom: 20px;
-    }
-
-    .home-top__links-outer {
-      padding-right: 0;
-      padding-left: 0;
-    }
-
-    .home-top__links {
-      margin-top: 15px;
-      padding: 0;
-      background: govuk-colour("blue");
-    }
-    .home-top__links-item {
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-    .home-top__links-title {
-      padding-bottom: 5px;
-      margin-top: 60px;
       color: govuk-colour("white");
     }
-    .gem-c-search {
-      margin-top: 30px;
+    p.xpl-hero-simpler {
+      font-weight: bold;
     }
-    &.govuk-grid-row {
-      padding: 0;
-    }
-//    .xpl-hero-inner {
-//      max-width: 960px;
-//      margin-left: auto;
-//      margin-right: auto;
-//      padding-left: 25px;
-//      padding-right: 25px;
-//      .govuk-grid-column-two-thirds {
-//        padding: 0;
-//      }
-//    }
   }
 
 
+  .xpl-most-viewed {
+    ul.govuk-list li {
+      margin-bottom: 30px;
+      a:link, a:visited {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
 
   .xpl-featured {
     p {
@@ -458,6 +423,14 @@ $wide-width: 1300px;
       border-width: 5px;
     }
 
+    .xpl-most-viewed {
+      ul.govuk-list li {
+        a:link, a:visited {
+          font-size: 19px;
+        }
+      }
+    }
+
     &.js-enabled .govuk-tabs__list-item {
       padding: 20px 20px 19px 20px;
       margin-top: -20px;
@@ -488,18 +461,18 @@ $wide-width: 1300px;
     }
 
     .xpl-hero {
-      padding-bottom: 0;
+      padding-bottom: 40px;
       .xpl-hero-column-left {
         display: inline-block;
         vertical-align: top;
         width: 66.666%;
       }
-      .home-top__links-outer {
+      .xpl-most-viewed__links-outer {
         width: 33.333%;
         display: inline-block;
         vertical-align: top;
       }
-      .home-top__links {
+      .xpl-most-viewed__links {
         position:relative;
         z-index:1;
         margin-top:5px;
