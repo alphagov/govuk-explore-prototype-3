@@ -429,8 +429,12 @@ $wide-width: 1300px;
     .xpl-nav--desktop {
       display: block;
       background: govuk-colour("black");
-      button, a:link, a:visited {
+      button {
         color: govuk-colour("white");
+        font-size: 16px;
+      }
+      a:link, a:visited {
+        color: $govuk-link-colour;
         font-size: 16px;
       }
       .govuk-header__navigation {
