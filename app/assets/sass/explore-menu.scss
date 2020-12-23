@@ -62,7 +62,6 @@ $wide-width: 1300px;
     display: none;
   }
 
-
   .xpl-frame2 ul {
     list-style-type: none;
     padding: 0;
@@ -105,12 +104,7 @@ $wide-width: 1300px;
   }
 
   #xpl-popup-search, #xpl-popup-menu {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    margin: 0 -20px 0 -20px;
     background: govuk-colour("white");
   }
 
@@ -137,12 +131,11 @@ $wide-width: 1300px;
   }
 
   .xpl-search-input {
-    width: 103%;
     margin-bottom: 20px;
     input {
       vertical-align: top;
       height: 44px;
-      width: 80%;
+      width: calc(100% - 58px);
       border: 2px solid black;
       font-size: 22px;
     }
@@ -352,8 +345,8 @@ $wide-width: 1300px;
   }
   nav {
     background: govuk-colour("white");
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -25px;
+    margin-right: -25px;
     padding-left: 20px;
     padding-right: 20px;
 
@@ -536,9 +529,7 @@ $wide-width: 1300px;
 
         &-inner {
           max-width: 960px;
-          margin-left: auto;
-          margin-right: auto;
-          margin-bottom: 60px;
+          margin: 40px auto 60px auto;
 
           a:link, a:visited {
             color: govuk-colour("blue");
@@ -572,7 +563,6 @@ $wide-width: 1300px;
           .xpl-dropdown-intro {
             color: black;
             font-size: 22px;
-            padding-top: 30px;
             vertical-align: top;
           }
         }
