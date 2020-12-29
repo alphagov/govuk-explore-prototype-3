@@ -51,7 +51,7 @@
   {% endset -%}
 
   {% set governmentHtml %}
-  <section>
+  <section class="xpl-activity-browse">
     {{ blocks.list("Browse by content type", "Find out what the government is doing in this topic",
       [ { title: "News", link:"/search/news-and-communications?parent="+topicSlug+"&amp;"+taxon_search_filter, description: "News articles, speeches and correspondance" },
         { title: "Guidance and regulation", link: "/search/policy-papers-and-consultations?"+taxon_search_filter+"&amp;order=updated-newest", description: "Detailed guidance, rules and regulation" },
@@ -62,7 +62,7 @@
     )}}
     </section>
 
-    <section>
+    <section class="xpl-departments">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
           <h2 class="govuk-heading-l">Departments and organisations</h2>

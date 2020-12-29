@@ -18,24 +18,9 @@ $wide-width: 1300px;
 // Move to govuk.css?
 
 #global-header-bar {
-  height: 10px;
+  height: 7px;
   background-color: #005ea5;
 }
-
-
-// check with non-explore pages
-
-.govuk-main-wrapper--auto-spacing:first-child {
-  padding: 0;
-}
-
-.app-c-inverse-header {
-  background-color: #283135;
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-}
-
 
 
 //==============================================================================
@@ -44,6 +29,27 @@ $wide-width: 1300px;
 
 
 .explore-page {
+
+  // check with non-explore pages
+
+  .govuk-main-wrapper--auto-spacing:first-child {
+    padding: 0;
+  }
+
+  .app-c-inverse-header {
+    background-color: #283135;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    &.app-c-inverse-header--padding-top {
+      padding-top: 30px;
+    }
+    &.app-c-inverse-header--full-width {
+      padding-bottom: 60px;
+    }
+  }
+
+
   .govuk-heading-l {
     font-size: 22px;
     padding: 30px 0 30px 0;
@@ -82,7 +88,7 @@ $wide-width: 1300px;
     margin-left: 30px;
     margin-bottom: 0;
     li {
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
     li::before {
       margin-left: -30px;
@@ -129,12 +135,17 @@ $wide-width: 1300px;
     }
   }
 
+  section.subtopics {
+    .xpl-topics ul li {
+      min-height: 122px;
+      margin-bottom: 30px;
+    }
+  }
 
   .xpl-organisation {
     border-bottom: 1px solid $govuk-border-colour;
     padding-bottom: 30px;
     margin-bottom: 30px;
-    margin-top: 30px;
 
     .xpl-organisation__inner {
       border-left: 3px solid black;
@@ -314,11 +325,19 @@ $wide-width: 1300px;
     border-top: 2px solid govuk-colour("black");
   }
 
-  .xpl-activity {
-    &__intro {
+  .xpl-activity-browse {
+    .xpl-topics__intro {
+      display: none;
       font-size: 22px;
       margin-bottom: 30px;
     }
+    .xpl-topics ul.govuk-list li {
+      margin-bottom: 30px;
+      min-height: 130px;
+    }
+  }
+
+  .xpl-activity {
     li {
       min-height: 65px;
     }
@@ -336,6 +355,9 @@ $wide-width: 1300px;
     section {
       margin-left: 0;
       margin-right: 0;
+    }
+    .govuk-tabs__panel h2 {
+      padding-top: 0;
     }
   }
 
@@ -390,7 +412,7 @@ $wide-width: 1300px;
         background-position: 0px 4px;
         font-size: 18px;
         padding-left: 20px;
-        margin-bottom: 0;
+        margin: 0;
       }
     }
   }
@@ -509,6 +531,9 @@ $wide-width: 1300px;
       padding-left: 25px;
       padding-right: 25px;
       max-width: 960px;
+      .govuk-tabs__panel h2 {
+        padding-top: 0;
+      }
     }
 
     .app-c-back-link-inverse {
@@ -578,6 +603,15 @@ $wide-width: 1300px;
     }
 
 
+    .xpl-activity-browse {
+      .xpl-topics__intro {
+        display: block;
+        font-size: 22px;
+        margin-bottom: 30px;
+      }
+    }
+
+
     .xpl-subsubtopics-section {
       margin-left: auto;
       margin-right: auto;
@@ -621,6 +655,7 @@ $wide-width: 1300px;
       padding-right: 0;
       p.lede {
         font-size: 22px;
+        margin-bottom: 60px;
       }
     }
   }
