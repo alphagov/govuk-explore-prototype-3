@@ -32,14 +32,14 @@
                 <ul class="govuk-list">
                   <li><a href="/coronavirus">Coronavirus: find your area's tier</a></li>
                   <li><a href="/guidance/travel-advice-novel-coronavirus">Coronavirus: travel advice</a></li>
-                  <li><a href="/sign-in-universal-credit">Sign in to Universal Credit</a></li>
                   <li><a href="/coronavirus">Coronavirus: social distancing rules</a></li>
+                  <li><a href="/sign-in-universal-credit">Sign in to Universal Credit</a></li>
                   <li><a href="/transition">Brexit transition: check the new rules for January 2021</a></li>
                 </ul>
               </div>
             </div>
             <div class="govuk-grid-column-one-third xpl-search-section">
-              <h2 class="govuk-heading-l">Search on GOV.UK</h2>
+              <h2 class="govuk-heading-l">Search</h2>
               <form action="/search/all" method="get" class="xpl-search-input">
                 <input type="text" name="keywords" /><button  class="xpl-menu__button xpl-search-button" type="submit">Search</button>
               </form>
@@ -50,7 +50,7 @@
 
       <section>
         <div class="xpl-section-inner">
-          {{ blocks.list("Popular topics", "",
+          {{ blocks.list("Topics", "",
             [ {
               title: "Benefits",
               link: "/browse/benefits",
@@ -179,11 +179,11 @@
 
               <div class="xpl-activity">
 
-                {{ blocks.list("Government activity", "Find out about and get involved with what the government is doing",
+                {{ blocks.list("Government activity", "Find out what the government is doing and how to get involved",
                   [ { title: "News", link:"/search/news-and-communications", description: "News articles, speeches and correspondance" },
                     { title: "Guidance and regulation", link: "/search/guidance-and-regulation", description: "Detailed guidance, rules and regulation" },
-                    { title: "Research and statistics", link: "/search/research-and-statistics", description: "Reports, analysis and official statistics" },
                     { title: "Policy papers and consultations", link: "/search/policy-papers-and-consultations", description: "Consultations and strategy" },
+                    { title: "Research and statistics", link: "/search/research-and-statistics", description: "Reports, analysis and official statistics" },
                     { title: "Transparency documents", link: "/search/transparency-and-freedom-of-information-releases", description: "Government data, freedom of information releases and corporate reports" }
                   ]
                 )}}
