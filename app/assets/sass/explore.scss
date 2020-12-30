@@ -18,8 +18,13 @@ $wide-width: 1300px;
 // Move to govuk.css?
 
 #global-header-bar {
+  position: relative;
   height: 7px;
+  z-index: 2;
   background-color: #005ea5;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -532,28 +537,18 @@ $wide-width: 1300px;
       padding-right: 25px;
       max-width: 960px;
       .govuk-tabs__panel h2 {
-        padding-top: 0;
+        padding-top: 10px;
       }
     }
 
-    .app-c-back-link-inverse {
-      padding-top: 60px;
-      a.govuk-back-link {
-        font-size: 22px;
-        background-position: 0 7px;
-      }
-    }
-
-    .app-c-back-link-inverse-inner {
-      padding-left: 0;
-    }
 
     .xpl-hero {
       padding-bottom: 40px;
-      .xpl-hero-column-left {
-        display: inline-block;
-        vertical-align: top;
-        width: 66.666%;
+      position: relative;
+      z-index: 2;
+      h1 {
+        margin-top: 3px;
+        padding-top: 60px;
       }
     }
 
@@ -564,6 +559,39 @@ $wide-width: 1300px;
       padding-left: 25px;
       padding-right: 25px;
     }
+
+    .xpl-topics-page {
+      header {
+        position: relative;
+        top: -7px;
+        margin-bottom: 60px;
+        h1 {
+          padding-top: 51px;
+          margin-bottom: 122px;
+        }
+      }
+      .govuk-tabs {
+        margin-top: -112px;
+      }
+      &.xpl-topic-page {
+        .app-c-back-link-inverse {
+          padding-top: 50px;
+          a.govuk-back-link {
+            font-size: 22px;
+            background-position: 0 7px;
+          }
+        }
+
+        .app-c-back-link-inverse-inner {
+          padding-left: 0;
+        }
+        h1 {
+          padding-top: 10px;
+          margin-bottom: 0;
+        }
+      }
+    }
+
 
     .xpl-topics {
       &-inner {

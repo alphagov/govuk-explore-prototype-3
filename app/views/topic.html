@@ -7,16 +7,13 @@
 
 
 {% block main %}
-  {% block beforeContent %}
-    <div class="app-c-back-link-inverse">
-      <div class="app-c-back-link-inverse-inner">
-        <a class="govuk-back-link" href="/topic">Topics</a>
+  <div class="xpl-topics-page xpl-topic-page {{containerClasses}}">
+    <header class="app-c-inverse-header app-c-inverse-header--full-width app-c-inverse-header--padding-top">
+      <div class="app-c-back-link-inverse">
+        <div class="app-c-back-link-inverse-inner">
+          <a class="govuk-back-link" href="/topic">Topics</a>
+        </div>
       </div>
-    </div>
-  {% endblock %}
-
-  {% block content %}
-    <header class=" app-c-inverse-header app-c-inverse-header--full-width app-c-inverse-header--padding-top">
       <div class="header-inner">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
@@ -107,5 +104,5 @@
     {{ topicsHtml | safe }}
   {% endif %}
 
-  {% endblock %}
+  </div>
 {% endblock %}
