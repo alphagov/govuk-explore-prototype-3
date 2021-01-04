@@ -1,0 +1,107 @@
+/*
+Tabs
+*/
+
+$module: "xpl-tabs";
+
+$text-colour: #000;
+$border-colour: #ddd;
+$toggle-colour: #efedeb;
+$grey-2: #222;
+$white: #fff;
+
+$mobile-width:  320px;
+$tablet-width:  740px;
+$desktop-width: 768px;
+$wide-width: 1300px;
+
+.#{$module} {
+
+  font-family: "GDS Transport", nta, Arial, sans-serif;
+
+  // global treatment
+  &__toggle {
+    display: block;
+    padding: 10px 15px;
+
+    &[aria-selected=true] {
+      color: $text-colour;
+      text-decoration: none;
+    }
+
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  // mobile
+  @media (max-width: $mobile-width) {
+
+    &__list {
+      border-bottom: 1px solid $border-colour;
+      margin-left: - 15px;
+      margin-right: - 15px;
+    }
+
+    &__toggle {
+      border-top: 1px solid $border-colour;
+
+      &:focus {
+        color: $text-colour;
+        outline: none;
+      }
+
+    }
+
+  }
+
+  // tablet and above
+  @media (min-width: $tablet-width) {
+
+    margin-top: -100px;
+
+    &__panel {
+      clear: both;
+      overflow: hidden;
+    }
+
+    &__list {
+      float: left;
+      padding-inline-start: 0;
+    }
+
+    &__item {
+      float: left;
+      position: relative; bottom: -1px;
+      font-size: 18px;
+      font-weight: bold;
+      a:link, a:visited {
+        color: black;
+      }
+    }
+
+    &__toggle {
+      background-color: $toggle-colour;
+      border-bottom: 1px solid black;
+      float: left;
+      text-decoration: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-right: 20px;
+      padding: 20px;
+
+      &--selected,
+      &[aria-selected=true] {
+        background-color: $white;
+//        border: 1px solid transparent;
+        border: 1px solid transparent;
+        border-bottom: 0;
+        border-color: $grey-2;
+      }
+
+    }
+
+  }
+
+}

@@ -1,3 +1,7 @@
+.hidden, .js-enabled .js-hidden {
+  display: none;
+}
+
 .gem-c-subscription-links .gem-c-subscription-links__link,
 .gem-c-step-nav-related__link,
 .gem-c-related-navigation__section-link,

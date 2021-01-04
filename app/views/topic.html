@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% import "includes/blocklist.html" as blocks %}
+{% import "includes/xpl-tabs-macros.njk" as tabs %}
 
 {% block pageTitle %}
   {{ title }}
@@ -29,22 +30,23 @@
 
     {% set topicsHtml %}
       {% if featured %}
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-l xpl-topics-title">Most viewed</h2>
-            <ul class="featured-list govuk-list">
-              {% for feature in featured %}
-                <li><a href="{{feature.link}}">{{ feature.title }}</a></li>
-              {% endfor %}
-            </ul>
+              <h2 class="govuk-heading-l xpl-topics-title">Most viewed</h2>
+              <ul class="featured-list govuk-list">
+                {% for feature in featured %}
+                  <li><a href="{{feature.link}}">{{ feature.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
-        </div>
+
       {% endif %}
 
-      <section class="subtopics">
+
         {{ blocks.list("Sub-topics", "", subtopics) }}
-      </section>
+
   {% endset -%}
 
   {% set governmentHtml %}
@@ -81,28 +83,37 @@
     </section>
   {% endset -%}
 
+  <section>
+    <div class="xpl-section-inner">
+
   {% if taxon_search_filter %}
-    {{ govukTabs({
-      items: [
-        {
-          label: "Topics",
-          id: "topics",
-          panel: {
-            html: topicsHtml
-          }
-        },
-        {
-          label: "Government activity",
-          id: "government-activity",
-          panel: {
-            html: governmentHtml
-          }
-        }
-      ]
-    }) }}
+
+
+    <div class="xpl-tabs" data-js="xpl-tabs">
+      {% call tabs.list() %}
+        {{ tabs.selectedItem("Topics", panelId="topics") }}
+        {{ tabs.item("Government activity", panelId="government-activity") }}
+      {% endcall %}
+
+      {% call tabs.content() %}
+	{%- call tabs.panel(id="topics") -%}
+          {{ topicsHtml | safe }}
+        {%- endcall -%}
+
+	{%- call tabs.panel(id="government-activity") -%}
+          {{ governmentHtml | safe }}
+        {%- endcall -%}
+      {% endcall %}
+    </div>
+
   {% else %}
     {{ topicsHtml | safe }}
   {% endif %}
+
+    </div>
+</section>
+
+
 
   </div>
 {% endblock %}

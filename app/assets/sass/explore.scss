@@ -430,20 +430,20 @@ $wide-width: 1300px;
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
-    margin-bottom: 30px;
+    margin-bottom: 0; // 30px;
     &.app-c-inverse-header--padding-top {
       padding-top: 30px;
     }
     &.app-c-inverse-header--full-width {
-      padding-bottom: 60px;
+      padding-bottom: 87px;
     }
   }
 
-  @media (min-width: 40.0625em) {
-    .app-c-inverse-header {
-      margin-bottom: 25px;;
-    }
-  }
+  // @media (min-width: 40.0625em) {
+  //   .app-c-inverse-header {
+  //     margin-bottom: 25px;;
+  //   }
+  // }
 
 
   .header-inner {
@@ -584,7 +584,7 @@ $wide-width: 1300px;
       header {
         position: relative;
         top: -7px;
-        margin-bottom: 60px;
+//        margin-bottom: 60px;
         h1 {
           padding-top: 51px;
           margin-bottom: 122px;
