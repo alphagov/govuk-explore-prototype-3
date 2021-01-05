@@ -173,6 +173,12 @@ $wide-width: 1300px;
     }
   }
 
+
+  .govuk-tabs__panel--hidden {
+    display: none;
+  }
+
+
   li.govuk-tabs__list-item {
     margin-left: 0;
     margin-right: 20px;
@@ -442,6 +448,12 @@ $wide-width: 1300px;
   @media (min-width: 40.0625em) {
     .app-c-inverse-header {
       margin-bottom: 25px;;
+    }
+  }
+
+  @media (max-width: 40.0625em) {
+    .govuk-tabs {
+      margin-top: 0;
     }
   }
 
