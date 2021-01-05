@@ -147,9 +147,9 @@ router.get('/*', function(req,res) {
   request(newurl, function (error, response, body) {
     if (error) throw error;
 
-    const headerString = fs.readFileSync('app/views/header.html', 'utf8');
+    const headerString = fs.readFileSync('app/views/explore-header.html', 'utf8');
     const headerStringWithCss = `
-  <link href="/public/stylesheets/explore-menu.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/explore-header.css" media="all" rel="stylesheet" type="text/css" />
   <link href="/public/css/accordion.css" media="all" rel="stylesheet" type="text/css" />
   ` + headerString + `
   <script src="/public/javascripts/accordion.js"></script>
@@ -160,7 +160,7 @@ router.get('/*', function(req,res) {
     const newBody = body
           .replace(/(href|src)="\//g, '$1="https://www.gov.uk/')
           .replace(/<header[^]+?<\/header>/, headerStringWithCss)
-          .replace(/<\/body>/,'<script src="/public/javascripts/newmenu.js"></script>\n</body>')
+          .replace(/<\/body>/,'<script src="/public/javascripts/explore-header.js"></script>\n</body>')
           .replace(/<a(.*) href\s*=\s*(['"])\s*(https:)?\/\/www.gov.uk\//g,'<a $1 href=$2/');
 
     res.send(newBody);
