@@ -98,6 +98,6 @@ document.getElementById('xpl-search-button').addEventListener('click', event => 
 
 $('.xpl-backdrop').on('click', function(event) {
   $(this).hide();
-  $('#xpl-frame2-topics, #xpl-frame2-activity').hide();
+  $('.xpl-frame2').hide();
   $('#navigation-desktop li').removeClass('menu-item-open');
 });
