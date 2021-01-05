@@ -1,5 +1,5 @@
-{% macro list(title, subtitle, blocks) %}
-  <div class="xpl-topics">
+{% macro list(title, subtitle, accent, blocks) %}
+  <div class="xpl-topics xpl-topics--accent-{{accent}}">
     {% if title %}
       <h2 class="govuk-heading-l">{{ title }}</h2>
     {% endif %}

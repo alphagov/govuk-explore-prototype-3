@@ -479,6 +479,20 @@ $wide-width: 1300px;
   }
 
   .xpl-topics {
+
+    &.xpl-topics--accent-black ul.govuk-list li {
+      border-top: 1px solid #000000;
+      .xpl-chevron {
+        background-image: url('/public/images/chevron-right-000000.svg');
+      }
+    }
+    &.xpl-topics--accent-grey ul.govuk-list li {
+      border-top: 1px solid #BBBDBF;
+      .xpl-chevron {
+        background-image: url('/public/images/chevron-right-979797.svg');
+      }
+    }
+
     ul.govuk-list {
       li {
         min-height: 180px;

@@ -43,13 +43,13 @@
       {% endif %}
 
       <section class="subtopics">
-        {{ blocks.list("Sub-topics", "", subtopics) }}
+        {{ blocks.list("Sub-topics", "", "black", subtopics) }}
       </section>
   {% endset -%}
 
   {% set governmentHtml %}
   <section class="xpl-activity-browse">
-    {{ blocks.list("Browse by content type", "Find out what the government is doing in this topic",
+    {{ blocks.list("Browse by content type", "Find out what the government is doing in this topic", "grey",
       [ { title: "News", link:"/search/news-and-communications?parent="+topicSlug+"&amp;"+taxon_search_filter, description: "News articles, speeches and correspondance" },
         { title: "Guidance and regulation", link: "/search/policy-papers-and-consultations?"+taxon_search_filter+"&amp;order=updated-newest", description: "Detailed guidance, rules and regulation" },
         { title: "Research and statistics", link: "/search/guidance-and-regulation?"+taxon_search_filter+"&amp;order=most-viewed", description: "Reports, analysis and official statistics" },
