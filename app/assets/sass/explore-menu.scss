@@ -103,7 +103,6 @@ $wide-width: 1300px;
       color: black;
       margin-top: 0;
       padding-top: 30px;
-      margin-bottom: 30px;
     }
     ul.govuk-list {
       font-size: 18px;
@@ -119,7 +118,6 @@ $wide-width: 1300px;
   }
 
   .xpl-menu-search-input {
-    margin-bottom: 20px;
     input {
       vertical-align: top;
       height: 44px;
@@ -522,6 +520,10 @@ $wide-width: 1300px;
         &-inner {
           max-width: 960px;
           margin: 40px auto 60px auto;
+
+          h2:first-of-type {
+            padding-top: 0;
+          }
 
           a:link, a:visited {
             color: govuk-colour("blue");
