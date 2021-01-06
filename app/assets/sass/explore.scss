@@ -106,14 +106,11 @@ $wide-width: 1300px;
 
   .xpl-search-input {
     input {
-      vertical-align: top;
-      height: 44px;
-      width: calc(100% - 58px);
-      border: 2px solid black;
+      height: 50px;
+      width: calc(100% - 50px);
       font-size: 22px;
     }
     button {
-      border: none;
       vertical-align: top;
       display: inline-block;
       width: 50px;
