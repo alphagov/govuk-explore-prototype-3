@@ -520,6 +520,8 @@ $wide-width: 1300px;
         &-inner {
           max-width: 960px;
           margin: 40px auto 60px auto;
+          padding-left: 20px;
+          padding-right: 20px;
 
           h2:first-of-type {
             padding-top: 0;
