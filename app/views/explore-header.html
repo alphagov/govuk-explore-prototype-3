@@ -127,9 +127,16 @@
         <!-- Desktop search menu -->
         <div class="xpl-frame2" id="xpl-frame2-search" style="display: none">
           <div class="xpl-frame2-inner">
-            <h2 class="govuk-heading-l">Search GOV.UK</h2>
             <form action="/search/all" method="get" class="xpl-menu-search-input">
-              <input type="text" name="keywords" /><button  class="xpl-menu__button xpl-menu-search-button" type="submit">Search</button>
+              <div class="govuk-form-group">
+                <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+                  Search GOV.UK
+                </label>
+                </h2>
+                <div class="govuk-input__wrapper"><input class="govuk-input" id="weight" name="weight" type="text" spellcheck="false">
+                  <button class="govuk-input__suffix" aria-hidden="true">kg</button>
+                </div>
+              </div>
             </form>
             <h2 class="govuk-heading-l">Most viewed</h2>
             <ul class="govuk-list">
