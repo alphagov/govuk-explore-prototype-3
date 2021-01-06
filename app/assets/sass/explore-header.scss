@@ -527,11 +527,10 @@ $wide-width: 1300px;
             padding-top: 0;
           }
 
-          a:link, a:visited {
-            color: govuk-colour("blue");
-            font-size: 16px;
+          a:link {
             font-weight: bold;
           }
+
           a:hover {
             color: $link-hover-colour;
           }
@@ -546,7 +545,7 @@ $wide-width: 1300px;
             li {
               margin-bottom: 15px;
               a:link, a:visited {
-                font-size: 19px;
+                font-size: 16px;
                 display: block;
               }
             }
@@ -560,6 +559,11 @@ $wide-width: 1300px;
             color: black;
             font-size: 22px;
             vertical-align: top;
+          }
+        }
+        &#xpl-frame2-search {
+          a:link, a:visited {
+            font-size: 19px;
           }
         }
       }
