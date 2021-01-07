@@ -417,10 +417,6 @@ $wide-width: 1300px;
         color: govuk-colour("white");
         font-size: 16px;
       }
-      a:link, a:visited {
-        color: $govuk-link-colour;
-        font-size: 16px;
-      }
       .govuk-header__navigation {
         min-height: unset;
         position: absolute;
@@ -430,7 +426,15 @@ $wide-width: 1300px;
         padding: 20px 30px 0 20px;
         margin-right: 0;
         cursor: pointer;
-
+        a:link, a:visited {
+          color: govuk-colour("white");
+          font-size: 16px;
+        }
+        &--active {
+          a:link, a:visited {
+            color: $govuk-link-colour;
+          }
+        }
         &#xpl-topics-menu-item, &#xpl-activity-menu-item {
           padding-right: 45px;
           button {

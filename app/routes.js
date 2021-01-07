@@ -5,6 +5,8 @@ const fs = require('fs')
 const request = require('request');
 const govukTopics = require('./govuk-topics');
 const url = require('url');
+const nunjucks = require('nunjucks');
+
 // Add your routes here - above the module.exports line
 
 if (!process.env.API_URL) {
@@ -147,7 +149,8 @@ router.get('/*', function(req,res) {
   request(newurl, function (error, response, body) {
     if (error) throw error;
 
-    const headerString = fs.readFileSync('app/views/explore-header.html', 'utf8');
+    const headerTemplate = fs.readFileSync('app/views/explore-header.html', 'utf8');
+    const headerString = nunjucks.renderString(headerTemplate, {req});
     const headerStringWithCss = `
   <link href="/public/stylesheets/explore-header.css" media="all" rel="stylesheet" type="text/css" />
   <link href="/public/css/accordion.css" media="all" rel="stylesheet" type="text/css" />
