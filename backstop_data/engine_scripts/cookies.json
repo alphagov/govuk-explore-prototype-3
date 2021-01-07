@@ -1,0 +1,14 @@
+[
+  {
+    "domain": "localhost",
+    "path": "/",
+    "name": "seen_cookie_message",
+    "value": "yes",
+    "expirationDate": 1736243802,
+    "hostOnly": false,
+    "httpOnly": false,
+    "secure": false,
+    "session": false,
+    "sameSite": "no_restriction"
+  }
+]

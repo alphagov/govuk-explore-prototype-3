@@ -10,7 +10,7 @@
     },
     {
       "label": "desktop",
-      "width": 1124,
+      "width": 1024,
       "height": 768
     }
   ],
@@ -18,23 +18,12 @@
     {
       "label": "Explore Homepage",
       "url": "http://localhost:3000/",
-      "misMatchThreshold" : 0.1
+      "misMatchThreshold" : 0.1,
     },
     {
       "label": "Explore Specialist Topics Page",
       "url": "http://localhost:3000/topic",
-      "misMatchThreshold" : 0.1
-    },
-    {
-      "label": "Benefits specialist topics Page",
-      "url": "http://localhost:3000/topic/benefits-credits",
-      "misMatchThreshold" : 0.1
-    },
-    {
-      "label": "Benefits specialist topics Page (activity tab)",
-      "url": "http://localhost:3000/topic/benefits-credits",
-      "clickSelector": "#tab_government-activity",
-      "misMatchThreshold" : 0.1
+      "misMatchThreshold" : 0.1,
     },
     {
       "label": "Explore Homepage with Search dropdown open (Desktop)",
@@ -44,7 +33,7 @@
       "viewports": [
         {
           "label": "desktop",
-          "width": 1124,
+          "width": 1024,
           "height": 768
         }
       ]
@@ -83,7 +72,7 @@
       "viewports": [
         {
           "label": "desktop",
-          "width": 1124,
+          "width": 1024,
           "height": 768
         }
       ]
@@ -96,7 +85,7 @@
       "viewports": [
         {
           "label": "desktop",
-          "width": 1124,
+          "width": 1024,
           "height": 768
         }
       ]

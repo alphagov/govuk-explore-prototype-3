@@ -12,4 +12,5 @@ node_modules/*
 .tmuxp.*
 package-lock.json
 
-/backstop_data/
+/backstop_data/bitmaps_*
+/backstop_data/html_report
