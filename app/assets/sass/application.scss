@@ -148,16 +148,6 @@ li.topic-link {
   margin-bottom: 5px;
 }
 
-.js-enabled .govuk-tabs__list,.js-enabled .govuk-tabs__list-item--selected {
-  border: none;
-}
-
-.js-enabled .govuk-tabs__panel {
-  border: none;
-  padding-left: 0;
-  padding-right: 0;
-}
-
 // Typography
 .govuk-heading-m {
   margin-bottom: 25px;
@@ -210,15 +200,6 @@ li.topic-link {
   font-weight: bold;
 }
 
-
-// Tabs
-.govuk-tabs {
-    margin-top: -75px;
-}
-
-.govuk-tabs__list-item {
-  min-width: 80px;
-}
 
 /* Tab padding - making accordions appear full width */
 .js-enabled .govuk-accordion__section-header {
@@ -345,3 +326,4 @@ img {
 
 @import "explore-header";
 @import "explore";
+@import "xpl-tabs";

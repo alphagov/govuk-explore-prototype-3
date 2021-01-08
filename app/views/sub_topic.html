@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% import "includes/blocklist.html" as blocks %}
+{% import "includes/xpl-tabs.njk" as tabs %}
 
 {% block pageTitle %}
   {{ title }}
@@ -28,8 +29,7 @@
     </header>
 
     {% set topicsHtml %}
-    <section class="xpl-subsubtopics-section">
-      <div class="xpl-section-inner">
+      <div class="xpl-subsubtopics-section">
         {% if subtopic_sections %}
           {% if subtopic_sections.items.length === 1 %}
             <h2 class="govuk-heading-m">{{ subtopic_sections.items[0].heading.text }}</h2>
@@ -59,7 +59,6 @@
           </div>
         {% endif %}
       </div>
-    </section>
     {% endset -%}
 
     {% set governmentHtml %}
@@ -97,24 +96,27 @@
 
 
     {% if taxon_search_filter %}
-      {{ govukTabs({
-        items: [
-          {
-            label: "Topics",
-            id: "topics",
-            panel: {
-              html: topicsHtml
-            }
-          },
-          {
-            label: "Government activity",
-            id: "government-activity",
-            panel: {
-              html: governmentHtml
-            }
-          }
-        ]
-      }) }}
+      <section>
+        <div class="xpl-section-inner">
+
+          <div class="xpl-tabs" data-js="xpl-tabs">
+            {% call tabs.list() %}
+              {{ tabs.selectedItem("Topics", panelId="topics") }}
+              {{ tabs.item("Government activity", panelId="government-activity") }}
+            {% endcall %}
+
+            {% call tabs.content() %}
+              {%- call tabs.panel(id="topics") -%}
+                {{ topicsHtml | safe }}
+              {%- endcall -%}
+
+              {%- call tabs.panel(id="government-activity") -%}
+                {{ governmentHtml | safe }}
+              {%- endcall -%}
+            {% endcall %}
+          </div>
+        </div>
+      </section>
     {% else %}
       {{ topicsHtml | safe }}
     {% endif %}

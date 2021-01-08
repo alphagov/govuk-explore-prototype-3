@@ -1,0 +1,123 @@
+/*
+Tabs
+*/
+
+$module: "xpl-tabs";
+
+$text-colour: #000;
+$border-colour: #ddd;
+$toggle-colour: #efedeb;
+$grey-2: #222;
+$white: #fff;
+
+$mobile-width:  350px;
+$tablet-width:  640px;
+$desktop-width: 768px;
+$wide-width: 1300px;
+
+
+.#{$module} {
+
+  font-family: "GDS Transport", nta, Arial, sans-serif;
+
+  &__toggle:focus {
+    box-shadow: none;
+  }
+
+
+  // global treatment
+  &__toggle {
+    display: block;
+    padding: 10px 15px;
+    &:link, &:visited {
+      color: $text-colour;
+    }
+
+    &[aria-selected=true] {
+      color: $text-colour;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__toggle--selected[aria-selected=true]:focus {
+    color: $text-colour;
+    outline: none;
+    box-shadow: inset 0 0 0 10px #fd0;
+  }
+
+
+  // mobile
+  @media (max-width: $mobile-width) {
+    margin-top: -100px;
+    &__list {
+      border-bottom: 1px solid $border-colour;
+      margin-left: - 15px;
+      margin-right: - 15px;
+    }
+
+    &__toggle {
+      border-top: 1px solid $border-colour;
+    }
+
+  }
+
+
+
+  // tablet and above
+  @media (min-width: $mobile-width) {
+
+    margin-top: -110px;
+
+    &__panel {
+      clear: both;
+      overflow: hidden;
+    }
+
+    &__list {
+      float: left;
+      padding-inline-start: 0;
+      margin-bottom: 0;
+    }
+
+    &__item {
+      float: left;
+      position: relative; bottom: -1px;
+      font-size: 18px;
+      font-weight: bold;
+//      a:link, a:visited {
+//        color: black;
+//      }
+    }
+
+    &__toggle {
+      background-color: $toggle-colour;
+      border-bottom: 1px solid black;
+      float: left;
+      text-decoration: none;
+      margin-bottom: 0;
+      margin-top: 0;
+      margin-right: 20px;
+      padding: 20px;
+
+      &--selected,
+      &[aria-selected=true] {
+        background-color: $white;
+        border: 1px solid transparent;
+//        border-bottom: 0;
+//        border-color: $grey-2;
+      }
+
+    }
+
+  }
+
+  // desktop and above
+  @media (min-width: $desktop-width) {
+    margin-top: -117px;
+  }
+
+}

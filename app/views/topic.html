@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% import "includes/blocklist.html" as blocks %}
+{% import "includes/xpl-tabs.njk" as tabs %}
 
 {% block pageTitle %}
   {{ title }}
@@ -9,10 +10,8 @@
 {% block main %}
   <div class="xpl-topics-page xpl-topic-page {{containerClasses}}">
     <header class="inverse-header inverse-header--full-width inverse-header--padding-top">
-      <div class="back-link-inverse">
-        <div class="back-link-inverse-inner">
-          <a class="govuk-back-link" href="/topic">Topics</a>
-        </div>
+      <div class="header-inner">
+        <a class="govuk-back-link" href="/topic">Topics</a>
       </div>
       <div class="header-inner">
         <div class="govuk-grid-row">
@@ -32,7 +31,7 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
 
-            <h2 class="govuk-heading-l xpl-topics-title">Most viewed</h2>
+            <h2 class="govuk-heading-l">Most viewed</h2>
             <ul class="featured-list govuk-list">
               {% for feature in featured %}
                 <li><a href="{{feature.link}}">{{ feature.title }}</a></li>
@@ -45,64 +44,66 @@
       <section class="subtopics">
         {{ blocks.list("Sub-topics", "", "black", subtopics) }}
       </section>
-  {% endset -%}
+    {% endset -%}
 
-  {% set governmentHtml %}
-  <section class="xpl-activity-browse">
-    {{ blocks.list("Latest activity", "", "grey",
-      [ { title: "News", link:"/search/news-and-communications?parent="+topicSlug+"&amp;"+taxon_search_filter, description: "News articles, speeches and correspondance" },
-        { title: "Guidance and regulation", link: "/search/policy-papers-and-consultations?"+taxon_search_filter+"&amp;order=updated-newest", description: "Detailed guidance, rules and regulation" },
-        { title: "Research and statistics", link: "/search/guidance-and-regulation?"+taxon_search_filter+"&amp;order=most-viewed", description: "Reports, analysis and official statistics" },
-        { title: "Policy papers and consultations", link: "/search/research-and-statistics?content_store_document_type=statistics_published&amp;"+taxon_search_filter+"&amp;order=updated-newest", description: "Consultations and strategy" },
-        { title: "Transparency documents", link: "/search/transparency-and-freedom-of-information-releases?"+taxon_search_filter+"&amp;order=updated-newest", description: "Government data, freedom of information releases and corporate reports" }
-      ]
-    )}}
-    </section>
+    {% set governmentHtml %}
+      <section class="xpl-activity-browse">
+        {{ blocks.list("Latest activity", "", "grey",
+          [ { title: "News", link:"/search/news-and-communications?parent="+topicSlug+"&amp;"+taxon_search_filter, description: "News articles, speeches and correspondance" },
+            { title: "Guidance and regulation", link: "/search/policy-papers-and-consultations?"+taxon_search_filter+"&amp;order=updated-newest", description: "Detailed guidance, rules and regulation" },
+            { title: "Research and statistics", link: "/search/guidance-and-regulation?"+taxon_search_filter+"&amp;order=most-viewed", description: "Reports, analysis and official statistics" },
+            { title: "Policy papers and consultations", link: "/search/research-and-statistics?content_store_document_type=statistics_published&amp;"+taxon_search_filter+"&amp;order=updated-newest", description: "Consultations and strategy" },
+            { title: "Transparency documents", link: "/search/transparency-and-freedom-of-information-releases?"+taxon_search_filter+"&amp;order=updated-newest", description: "Government data, freedom of information releases and corporate reports" }
+          ]
+        )}}
+      </section>
 
-    <section class="xpl-departments">
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">Departments and organisations</h2>
-          <ul class="govuk-list">
 
-            {% for organisation in organisations %}
-              <li class="xpl-organisation">
-                <a href="{{organisation.url}}">
-                  <div class="xpl-organisation__inner xpl-org {{organisation.slug}}">
-                    <img src="/public/images/org_logos/{{organisation.crest}}_crest_18px_x2.png" alt=organisation logo"/>
-                    <p class="govuk-body">{{organisation.title}}</p>
-                  </div>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+      <section class="xpl-departments">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Departments and organisations</h2>
+            <ul class="govuk-list">
+
+              {% for organisation in organisations %}
+                <li class="xpl-organisation">
+                  <a href="{{organisation.url}}">
+                    <div class="xpl-organisation__inner xpl-org {{organisation.slug}}">
+                      <img src="/public/images/org_logos/{{organisation.crest}}_crest_18px_x2.png" alt=organisation logo"/>
+                      <p class="govuk-body">{{organisation.title}}</p>
+                    </div>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
-  {% endset -%}
+      </section>
+    {% endset -%}
 
-  {% if taxon_search_filter %}
-    {{ govukTabs({
-      items: [
-        {
-          label: "Topics",
-          id: "topics",
-          panel: {
-            html: topicsHtml
-          }
-        },
-        {
-          label: "Government activity",
-          id: "government-activity",
-          panel: {
-            html: governmentHtml
-          }
-        }
-      ]
-    }) }}
-  {% else %}
-    {{ topicsHtml | safe }}
-  {% endif %}
+    {% if taxon_search_filter %}
+      <section>
+        <div class="xpl-section-inner">
+          <div class="xpl-tabs" data-js="xpl-tabs">
+            {% call tabs.list() %}
+              {{ tabs.selectedItem("Topics", panelId="topics") }}
+              {{ tabs.item("Government activity", panelId="government-activity") }}
+            {% endcall %}
 
+            {% call tabs.content() %}
+              {%- call tabs.panel(id="topics") -%}
+                {{ topicsHtml | safe }}
+              {%- endcall -%}
+
+              {%- call tabs.panel(id="government-activity") -%}
+                {{ governmentHtml | safe }}
+              {%- endcall -%}
+            {% endcall %}
+          </div>
+        </div>
+      </section>
+    {% else %}
+      {{ topicsHtml | safe }}
+    {% endif %}
   </div>
 {% endblock %}

@@ -41,10 +41,22 @@
       "misMatchThreshold" : 0.1
     },
     {
+      "label": "Benefits specialist topics Page",
+      "url": "http://localhost:3000/topic/benefits-credits",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Specialist topic page (no tabs)",
+      "url": "http://localhost:3000/topic/further-education-skills",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "misMatchThreshold" : 0.1
+    },
+    {
       "label": "Benefits specialist topics Page (activity tab)",
       "url": "http://localhost:3000/topic/benefits-credits",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
-      "clickSelector": "#tab_government-activity",
+      "clickSelector": "a[href='#government-activity']",
       "misMatchThreshold" : 0.1
     },
     {
