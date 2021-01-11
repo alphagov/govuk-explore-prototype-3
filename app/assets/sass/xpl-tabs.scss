@@ -10,7 +10,7 @@ $toggle-colour: #efedeb;
 $grey-2: #222;
 $white: #fff;
 
-$mobile-width:  350px;
+$mobile-width:  400px;
 $tablet-width:  640px;
 $desktop-width: 768px;
 $wide-width: 1300px;
@@ -23,7 +23,6 @@ $wide-width: 1300px;
   &__toggle:focus {
     box-shadow: none;
   }
-
 
   // global treatment
   &__toggle {
@@ -43,22 +42,28 @@ $wide-width: 1300px;
     list-style-type: none;
   }
 
+  &__item {
+    position: relative; bottom: -1px;
+  }
+
   &__toggle--selected[aria-selected=true]:focus {
     color: $text-colour;
     outline: none;
-    box-shadow: inset 0 0 0 10px #fd0;
+//    box-shadow: inset 0 0 0 10px #fd0;
+    background: #fd0;
+    border-bottom: 3px solid black;
   }
 
 
   // mobile
   @media (max-width: $mobile-width) {
-    margin-top: -100px;
+    margin-top: 0;
     &__list {
       border-bottom: 1px solid $border-colour;
-      margin-left: - 15px;
-      margin-right: - 15px;
+      margin-left: -15px;
+      margin-right: -15px;
+      padding-left: 0;
     }
-
     &__toggle {
       border-top: 1px solid $border-colour;
     }
@@ -85,12 +90,9 @@ $wide-width: 1300px;
 
     &__item {
       float: left;
-      position: relative; bottom: -1px;
+//      position: relative; bottom: 0px;
       font-size: 18px;
       font-weight: bold;
-//      a:link, a:visited {
-//        color: black;
-//      }
     }
 
     &__toggle {
@@ -118,6 +120,9 @@ $wide-width: 1300px;
   // desktop and above
   @media (min-width: $desktop-width) {
     margin-top: -117px;
+    &__item {
+      position: relative; bottom: 0;
+    }
   }
 
 }
