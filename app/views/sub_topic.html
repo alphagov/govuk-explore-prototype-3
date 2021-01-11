@@ -8,12 +8,14 @@
 
 
 {% block main %}
+  <div id="global-header-bar-outer">
+    <div id="global-header-bar"></div>
+  </div>
+
   <div class="xpl-topics-page xpl-topic-page {{containerClasses}}">
     <header class="inverse-header inverse-header--full-width inverse-header--padding-top">
-      <div class="back-link-inverse">
-        <div class="back-link-inverse-inner">
-          <a class="govuk-back-link" href="{{ parent.link }}">{{ parent.title }}</a>
-        </div>
+      <div class="header-inner">
+        <a class="govuk-back-link" href="{{ parent.link }}">{{ parent.title }}</a>
       </div>
 
       <div class="header-inner">
@@ -96,27 +98,22 @@
 
 
     {% if taxon_search_filter %}
-      <section>
-        <div class="xpl-section-inner">
+      <div class="xpl-tabs" data-js="xpl-tabs">
+        {% call tabs.list() %}
+          {{ tabs.selectedItem("Topics", panelId="topics") }}
+          {{ tabs.item("Government activity", panelId="government-activity") }}
+        {% endcall %}
 
-          <div class="xpl-tabs" data-js="xpl-tabs">
-            {% call tabs.list() %}
-              {{ tabs.selectedItem("Topics", panelId="topics") }}
-              {{ tabs.item("Government activity", panelId="government-activity") }}
-            {% endcall %}
+        {% call tabs.content() %}
+          {%- call tabs.panel(id="topics") -%}
+            {{ topicsHtml | safe }}
+          {%- endcall -%}
 
-            {% call tabs.content() %}
-              {%- call tabs.panel(id="topics") -%}
-                {{ topicsHtml | safe }}
-              {%- endcall -%}
-
-              {%- call tabs.panel(id="government-activity") -%}
-                {{ governmentHtml | safe }}
-              {%- endcall -%}
-            {% endcall %}
-          </div>
-        </div>
-      </section>
+          {%- call tabs.panel(id="government-activity") -%}
+            {{ governmentHtml | safe }}
+          {%- endcall -%}
+        {% endcall %}
+      </div>
     {% else %}
       {{ topicsHtml | safe }}
     {% endif %}

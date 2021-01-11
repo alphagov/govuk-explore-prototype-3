@@ -1,9 +1,13 @@
 {%- macro list() -%}
+  <div class="xpl-tabs__list-outer">
     <ul class="xpl-tabs__list">{{ caller() }}</ul>
+  </div>
 {%- endmacro -%}
 
 {%- macro content() -%}
+  <div class="xpl-tabs__content-outer">
     <div class="xpl-tabs__content">{{ caller() }}</div>
+  </div>
 {%- endmacro -%}
 
 {%- macro link(text, panelId) -%}

@@ -38,18 +38,42 @@ $wide-width: 1300px;
     }
   }
 
+  &__list-outer {
+    background: #283135;
+  }
+
   &__list {
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 960px;
+    height: 64px;
+    margin: 0 auto 0 auto;
     list-style-type: none;
   }
+
+  &__content {
+    max-width: 960px;
+    margin: 0 auto 0 auto;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
 
   &__item {
     position: relative; bottom: -1px;
   }
 
+  &__toggle {
+    background: #efedeb;
+  }
+
+  &__toggle--selected {
+    background: white;
+  }
+
   &__toggle--selected[aria-selected=true]:focus {
     color: $text-colour;
     outline: none;
-//    box-shadow: inset 0 0 0 10px #fd0;
     background: #fd0;
     border-bottom: 3px solid black;
   }
@@ -57,12 +81,8 @@ $wide-width: 1300px;
 
   // mobile
   @media (max-width: $mobile-width) {
-    margin-top: 0;
     &__list {
       border-bottom: 1px solid $border-colour;
-      margin-left: -15px;
-      margin-right: -15px;
-      padding-left: 0;
     }
     &__toggle {
       border-top: 1px solid $border-colour;
@@ -72,19 +92,15 @@ $wide-width: 1300px;
 
 
 
-  // tablet and above
+  // phone and above
   @media (min-width: $mobile-width) {
-
-    margin-top: -110px;
-
     &__panel {
       clear: both;
       overflow: hidden;
+      margin-top: 40px;
     }
 
     &__list {
-      float: left;
-      padding-inline-start: 0;
       margin-bottom: 0;
     }
 
@@ -119,7 +135,6 @@ $wide-width: 1300px;
 
   // desktop and above
   @media (min-width: $desktop-width) {
-    margin-top: -117px;
     &__item {
       position: relative; bottom: 0;
     }

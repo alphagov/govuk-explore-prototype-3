@@ -15,16 +15,18 @@ $desktop-width: 768px;
 $wide-width: 1300px;
 
 
-// Move to govuk.css?
 
-#global-header-bar {
-  position: relative;
-  height: 7px;
-  z-index: 2;
-  background-color: #005ea5;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+
+#global-header-bar-outer {
+  background: #283135;
+
+  #global-header-bar {
+    height: 7px;
+    background-color: #005ea5;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 
@@ -220,11 +222,9 @@ $wide-width: 1300px;
   }
 
   .xpl-hero {
-    position: relative;
     z-index: 2;
     padding-bottom: 40px;
     background: govuk-colour("blue");
-    margin-top: -10px;
     h1 {
       padding-top: 30px;
       margin-bottom: 30px;
@@ -410,24 +410,25 @@ $wide-width: 1300px;
 
   .govuk-back-link {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-top: 45px;
     padding-left: 20px;
     background-position: 0 5px;
   }
 
   .inverse-header {
     background-color: #283135;
-    min-height: 240px;
+    min-height: 210px;
     position: relative;
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     &.inverse-header--padding-top {
       padding-top: 30px;
     }
     &.inverse-header--full-width {
-      padding-bottom: 30px;
+      padding-bottom: 0;
     }
   }
 
@@ -525,7 +526,7 @@ $wide-width: 1300px;
     .xpl-hero {
       padding-bottom: 40px;
       h1 {
-        margin-top: 3px;
+        margin-top: 0;
         padding-top: 60px;
       }
     }
@@ -539,10 +540,10 @@ $wide-width: 1300px;
     }
 
     .xpl-topics-page {
-      header {
-        position: relative;
-        top: -7px;
-      }
+//      header {
+//        position: relative;
+//        top: -7px;
+//      }
       &.xpl-topic-page {
         .back-link-inverse {
           padding-top: 50px;
@@ -556,8 +557,10 @@ $wide-width: 1300px;
           padding-left: 0;
         }
         h1 {
-          padding-top: 10px;
+          padding-top: 0;
+          padding-bottom: 20px;
           margin-bottom: 0;
+          margin-top: 0;
         }
       }
     }
@@ -658,7 +661,7 @@ $wide-width: 1300px;
       padding-right: 0;
       p.lede {
         font-size: 22px;
-        margin-bottom: 60px;
+        margin-bottom: 0;
       }
     }
   }
