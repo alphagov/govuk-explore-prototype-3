@@ -103,6 +103,7 @@ $wide-width: 1300px;
       color: black;
       margin-top: 0;
       padding-top: 30px;
+      font-size: 22px;
     }
     ul.govuk-list {
       font-size: 18px;
@@ -123,6 +124,10 @@ $wide-width: 1300px;
       width: calc(100% - 50px);
       font-size: 22px;
     }
+    label {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
     button {
       vertical-align: top;
       display: inline-block;
@@ -136,6 +141,12 @@ $wide-width: 1300px;
       background-color: black;
       text-indent: -5000px;
       overflow: hidden;
+    }
+    .govuk-form-group {
+      margin-bottom: 40px;
+    }
+    .govuk-heading-l {
+      margin-bottom: 30px;
     }
   }
 
@@ -525,6 +536,10 @@ $wide-width: 1300px;
           padding-left: 20px;
           padding-right: 20px;
 
+          h2 {
+            font-size: 22px;
+          }
+
           h2:first-of-type {
             padding-top: 0;
           }
@@ -566,6 +581,9 @@ $wide-width: 1300px;
         &#xpl-frame2-search {
           a:link, a:visited {
             font-size: 19px;
+          }
+          h2.govuk-heading-l {
+            padding-bottom: 30px;
           }
         }
       }
