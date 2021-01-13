@@ -441,6 +441,9 @@ $wide-width: 1300px;
           color: govuk-colour("white");
           font-size: 16px;
         }
+        a:focus {
+          color: govuk-colour("black");
+        }
         &--active {
           a:link, a:visited {
             color: $govuk-link-colour;
@@ -458,7 +461,11 @@ $wide-width: 1300px;
             position: relative;
             cursor: pointer;
             &:focus {
-              outline: none;
+              outline: 3px solid transparent;
+              color: #0b0c0c;
+              background-color: #ffdd00;
+              box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+              text-decoration: none;
             }
             &:after {
               content: "";
