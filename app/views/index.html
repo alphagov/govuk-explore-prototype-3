@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% import "includes/blocklist.html" as blocks %}
+{% import "includes/xpl-cards.html" as cards %}
 
 {% block pageTitle %}
   Welcome to GOV.UK
@@ -50,73 +50,76 @@
 
       <section>
         <div class="xpl-section-inner">
-          {{ blocks.list("Popular topics", "", "black",
-            [ {
-              title: "Benefits",
-              link: "/browse/benefits",
-              description: "Includes eligibility, appeals, tax credits and Universal Credit"
-            }, {
-              title: "Births, deaths, marriages and care",
-              link: "/browse/births-deaths-marriages",
-              description: "Parenting, civil partnerships, divorce and Lasting Power of Attorney"
-            }, {
-              title: "Business and self-employed",
-              link: "/browse/business",
-              description: "Tools and guidance for businesses"
-            }, {
-              title: "Childcare and parenting",
-              link: "/browse/childcare-parenting",
-              description: "Includes giving birth, fostering, adopting, benefits for children, childcare and schools"
-            }, {
-              title: "Citizenship and living in the UK",
-              link: "/browse/citizenship",
-              description: "Voting, community participation, life in the UK, international projects"
-            }, {
-              title: "Crime, justice and the law",
-              link: "/browse/justice",
-              description: "Legal processes, courts and the police"
-            }, {
-              title: "Disabled people",
-              link: "/browse/disabilities",
-              description: "Includes carers, your rights, benefits and the Equality Act"
-            }, {
-              title: "Driving and transport",
-              link: "/browse/driving",
-              description: "Includes vehicle tax, MOT and driving licences"
-            }, {
-              title: "Education and learning",
-              link: "/browse/education",
-              description: "Includes student loans, admissions and apprenticeships"
-            }, {
-              title: "Employing people",
-              link: "/browse/employing-people",
-              description: "Includes pay, contracts and hiring"
-            }, {
-              title: "Environment and countryside",
-              link: "/browse/environment-countryside",
-              description: "Includes flooding, recycling and wildlife"
-            }, {
-              title: "Housing and local services",
-              link: "/browse/housing-local-services",
-              description: "Owning or renting and council services"
-            }, {
-              title: "Money and tax",
-              link: "/browse/tax",
-              description: "Includes debt and Self Assessment"
-            }, {
-              title: "Passports, travel and living abroad",
-              link: "/browse/abroad",
-              description: "Includes renewing passports and travel advice by country"
-            }, {
-              title: "Visas and immigration",
-              link: "/browse/",
-              description: "Visas, asylum and sponsorship"
-            }, {
-              title: "Working, jobs and pensions",
-              link: "/browse/working",
-              description: "Includes holidays and finding a job"
-            }
-          ])
+          {{ cards.list({
+            title: "Popular topics",
+            accent: "black",
+            cards: [
+              {
+                title: "Benefits",
+                link: "/browse/benefits",
+                description: "Includes eligibility, appeals, tax credits and Universal Credit"
+              }, {
+                title: "Births, deaths, marriages and care",
+                link: "/browse/births-deaths-marriages",
+                description: "Parenting, civil partnerships, divorce and Lasting Power of Attorney"
+              }, {
+                title: "Business and self-employed",
+                link: "/browse/business",
+                description: "Tools and guidance for businesses"
+              }, {
+                title: "Childcare and parenting",
+                link: "/browse/childcare-parenting",
+                description: "Includes giving birth, fostering, adopting, benefits for children, childcare and schools"
+              }, {
+                title: "Citizenship and living in the UK",
+                link: "/browse/citizenship",
+                description: "Voting, community participation, life in the UK, international projects"
+              }, {
+                title: "Crime, justice and the law",
+                link: "/browse/justice",
+                description: "Legal processes, courts and the police"
+              }, {
+                title: "Disabled people",
+                link: "/browse/disabilities",
+                description: "Includes carers, your rights, benefits and the Equality Act"
+              }, {
+                title: "Driving and transport",
+                link: "/browse/driving",
+                description: "Includes vehicle tax, MOT and driving licences"
+              }, {
+                title: "Education and learning",
+                link: "/browse/education",
+                description: "Includes student loans, admissions and apprenticeships"
+              }, {
+                title: "Employing people",
+                link: "/browse/employing-people",
+                description: "Includes pay, contracts and hiring"
+              }, {
+                title: "Environment and countryside",
+                link: "/browse/environment-countryside",
+                description: "Includes flooding, recycling and wildlife"
+              }, {
+                title: "Housing and local services",
+                link: "/browse/housing-local-services",
+                description: "Owning or renting and council services"
+              }, {
+                title: "Money and tax",
+                link: "/browse/tax",
+                description: "Includes debt and Self Assessment"
+              }, {
+                title: "Passports, travel and living abroad",
+                link: "/browse/abroad",
+                description: "Includes renewing passports and travel advice by country"
+              }, {
+                title: "Visas and immigration",
+                link: "/browse/",
+                description: "Visas, asylum and sponsorship"
+              }, {
+                title: "Working, jobs and pensions",
+                link: "/browse/working",
+                description: "Includes holidays and finding a job"
+              }]
+            })
           }}
         </div>
       </section>
@@ -176,17 +179,20 @@
         <div class="xpl-section-inner">
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-
               <div class="xpl-activity">
-
-                {{ blocks.list("Government activity", "Find out what the government is doing and how to get involved", "grey",
-                  [ { title: "News", link:"/search/news-and-communications", description: "News articles, speeches and correspondance" },
+                {{ cards.list({
+                  title: "Government activity",
+                  subtitle: "Find out what the government is doing and how to get involved",
+                  accent: "grey",
+                  cols: 2,
+                  cards: [
+                    { title: "News", link:"/search/news-and-communications", description: "News articles, speeches and correspondance" },
                     { title: "Guidance and regulation", link: "/search/guidance-and-regulation", description: "Detailed guidance, rules and regulation" },
                     { title: "Policy papers and consultations", link: "/search/policy-papers-and-consultations", description: "Consultations and strategy" },
                     { title: "Research and statistics", link: "/search/research-and-statistics", description: "Reports, analysis and official statistics" },
                     { title: "Transparency documents", link: "/search/transparency-and-freedom-of-information-releases", description: "Government data, freedom of information releases and corporate reports" }
-                  ]
-                )}}
+                  ]})
+                }}
               </div>
             </div>
 

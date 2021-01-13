@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% import "includes/blocklist.html" as blocks %}
+{% import "includes/xpl-cards.html" as cards %}
 {% import "includes/xpl-tabs.njk" as tabs %}
 
 {% block pageTitle %}
@@ -65,13 +65,16 @@
 
     {% set governmentHtml %}
       <section>
-        {{ blocks.list("Latest activity", "", "grey",
-          [ { title: "News", link:"/search/news-and-communications?parent="+topicSlug+"&amp;"+taxon_search_filter, description: "News articles, speeches and correspondance" },
+        {{ cards.list({
+          title: "Latest activity",
+          accent: "grey",
+          cards: [
+            { title: "News", link:"/search/news-and-communications?parent="+topicSlug+"&amp;"+taxon_search_filter, description: "News articles, speeches and correspondance" },
             { title: "Guidance and regulation", link: "/search/policy-papers-and-consultations?"+taxon_search_filter+"&amp;order=updated-newest", description: "Detailed guidance, rules and regulation" },
             { title: "Research and statistics", link: "/search/guidance-and-regulation?"+taxon_search_filter+"&amp;order=most-viewed", description: "Reports, analysis and official statistics" },
             { title: "Policy papers and consultations", link: "/search/research-and-statistics?content_store_document_type=statistics_published&amp;"+taxon_search_filter+"&amp;order=updated-newest", description: "Consultations and strategy" },
             { title: "Transparency documents", link: "/search/transparency-and-freedom-of-information-releases?"+taxon_search_filter+"&amp;order=updated-newest", description: "Government data, freedom of information releases and corporate reports" }
-          ]
+          ]}
         )}}
       </section>
 

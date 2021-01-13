@@ -1,5 +1,5 @@
 {% extends "layout.html" %}
-{% import "includes/blocklist.html" as blocks %}
+{% import "includes/xpl-cards.html" as cards %}
 
 {% block pageTitle %}
   {{ title }}
@@ -25,7 +25,10 @@
 
     <section>
       <div class="xpl-section-inner">
-        {{ blocks.list("", "", "black", subtopics) }}
+        {{ cards.list({
+          accent: "black",
+          cards: subtopics
+        }) }}
       </div>
     </section>
   </div>
