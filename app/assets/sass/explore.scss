@@ -178,6 +178,7 @@ $wide-width: 1300px;
     .govuk-accordion__section {
       button {
         color: govuk-colour("black");
+        padding-right: 40px;
       }
       &:hover {
         background-color: #f3f2f1;
