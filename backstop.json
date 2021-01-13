@@ -71,6 +71,21 @@
       "misMatchThreshold" : 0.1
     },
     {
+      "label": "Finder page with search menu open",
+      "url": "http://localhost:3000/search/all?keywords=benefits",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "clickSelector": "#xpl-search-button",
+      "misMatchThreshold" : 0.1,
+      "viewports": [
+        {
+          "label": "mobile",
+          "width": 512,
+          "height": 480
+        }
+      ]
+    },
+
+    {
       "label": "Explore Homepage with Search dropdown open (Desktop)",
       "url": "http://localhost:3000/",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
