@@ -20,6 +20,10 @@ $wide-width: 1300px;
 
   font-family: "GDS Transport", nta, Arial, sans-serif;
 
+  &__title {
+    display: none;
+  }
+
   &__toggle:focus {
     box-shadow: none;
   }
@@ -43,19 +47,19 @@ $wide-width: 1300px;
   }
 
   &__list {
+    margin: 0 auto 0 auto;
     padding-left: 25px;
     padding-right: 25px;
     max-width: 960px;
     height: 64px;
-    margin: 0 auto 0 auto;
     list-style-type: none;
   }
 
   &__content {
-    max-width: 960px;
     margin: 0 auto 0 auto;
     padding-left: 25px;
     padding-right: 25px;
+    max-width: 960px;
   }
 
 
@@ -81,13 +85,29 @@ $wide-width: 1300px;
 
   // mobile
   @media (max-width: $mobile-width) {
+    &__title {
+      display: block;
+      margin: 30px auto 10px auto;
+      padding-left: 25px;
+      padding-right: 25px;
+      font-size: 18px;
+      font-weight: bold;
+    }
     &__list {
-      border-bottom: 1px solid $border-colour;
+      padding-left: 50px;
+      height: auto;
+      list-style-type: disc;
+      &-outer {
+        background: white;
+      }
     }
     &__toggle {
-      border-top: 1px solid $border-colour;
+      background: white;
+      padding-left: 0;
+      &--selected[aria-selected=true] {
+        font-weight: bold;
+      }
     }
-
   }
 
 

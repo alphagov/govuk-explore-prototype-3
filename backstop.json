@@ -4,6 +4,11 @@
   "onReadyScript": "puppet/onReady.js",
   "viewports": [
     {
+      "label": "very narrow",
+      "width": 350,
+      "height": 480
+    },
+    {
       "label": "mobile",
       "width": 512,
       "height": 480
@@ -57,6 +62,12 @@
       "url": "http://localhost:3000/topic/benefits-credits",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "clickSelector": "a[href='#government-activity']",
+      "misMatchThreshold" : 0.1
+    },
+    {
+      "label": "Benefits mainstream topics page with tabs (very narrow)",
+      "url": "http://localhost:3000/browse/benefits",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "misMatchThreshold" : 0.1
     },
     {
