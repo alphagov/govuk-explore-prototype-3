@@ -101,3 +101,7 @@ $('.xpl-backdrop').on('click', function(event) {
   $('.xpl-frame2').hide();
   $('#navigation-desktop li').removeClass('menu-item-open');
 });
+
+
+const cookieBanner = document.getElementById('global-cookie-message');
+cookieBanner.parentNode.removeChild(cookieBanner);
