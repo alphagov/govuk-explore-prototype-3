@@ -3,7 +3,8 @@
 $module: "xpl-cards";
 
 $govuk-link-colour: govuk-colour("blue") !default;
-$govuk-border-colour: govuk-colour("mid-grey");
+$govuk-border-colour: #b1b4b6;
+$govuk-secondary-text-colour: #505a5f;
 $link-hover-colour: #003078;
 $menu-hover-colour: #005ff8;
 
@@ -74,18 +75,18 @@ $wide-width: 1300px;
     a {
       min-height: 110px;
     }
-    .xpl-chevron {
+    .#{$module}__chevron {
       background-image: url('/public/images/chevron-right-000000.svg');
     }
   }
   &.#{$module}--accent-grey ul.govuk-list li {
-    border-top: 1px solid #BBBDBF;
+    border-top: 1px solid $govuk-border-colour;
     a {
       min-height: 70px;
     }
 
-    .xpl-chevron {
-      background-image: url('/public/images/chevron-right-979797.svg');
+    .#{$module}__chevron {
+      background-image: url('/public/images/chevron-right-505a5f.svg');
     }
   }
 
