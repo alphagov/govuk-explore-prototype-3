@@ -5,7 +5,12 @@
   "viewports": [
     {
       "label": "very narrow",
-      "width": 350,
+      "width": 320,
+      "height": 480
+    },
+    {
+      "label": "narrow",
+      "width": 360,
       "height": 480
     },
     {

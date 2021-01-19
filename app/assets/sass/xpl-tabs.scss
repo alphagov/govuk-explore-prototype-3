@@ -20,6 +20,11 @@ $medium-width: 380px;
 
   font-family: "GDS Transport", nta, Arial, sans-serif;
 
+  &__banner {
+    padding: 63px 0 0 0;
+    background: #283135;
+  }
+
   &__toggle:focus {
     box-shadow: none;
   }
@@ -56,6 +61,9 @@ $medium-width: 380px;
 
   // medium and above
   @media (min-width: $small-width) {
+    &__banner {
+      padding: 9px 0 0 0;
+    }
 
     &__toggle {
       display: block;
@@ -84,7 +92,7 @@ $medium-width: 380px;
 
     &__list-outer {
       background: #283135;
-      height: 54px;
+      height: 55px;
     }
 
 
@@ -135,6 +143,10 @@ $medium-width: 380px;
 
     // large
     @media (min-width: $medium-width) {
+
+      &__banner {
+        display: none;
+      }
 
       &__item {
         position: relative; bottom: 0;
