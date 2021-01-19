@@ -140,15 +140,16 @@ $wide-width: 1300px;
 
     .xpl-organisation__inner {
       border-left: 3px solid black;
-      padding-left: 15px;
+      padding-left: 8px;
       img {
-        max-width: 60px;
+        height: 26px;
+        width: auto;
       }
 
       p {
-        font-size: 22px;
+        font-family: Helvetica, "GDS Transport", Arial, sans-serif;
+        font-size: 18px;
         margin-bottom: 0;
-        position: relative;
         padding-right: 20px;
         &:after {
           content: url(/public/images/chevron-right.svg);
@@ -451,10 +452,9 @@ $wide-width: 1300px;
       }
     }
 
-
-
-
-
+    .explore-page .xpl-organisation .xpl-organisation__inner p {
+      font-size: 19px;
+    }
 
     .xpl-subsubtopics-section {
       margin-left: auto;
