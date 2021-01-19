@@ -10,49 +10,18 @@ $toggle-colour: #efedeb;
 $grey-2: #222;
 $white: #fff;
 
-$mobile-width:  400px;
-$tablet-width:  640px;
-$desktop-width: 768px;
-$wide-width: 1300px;
+$small-width: 340px;
+$medium-width: 380px;
 
 
 .#{$module} {
 
-  font-family: "GDS Transport", nta, Arial, sans-serif;
+  // small and above
 
-  &__title {
-    display: none;
-  }
+  font-family: "GDS Transport", nta, Arial, sans-serif;
 
   &__toggle:focus {
     box-shadow: none;
-  }
-
-  // global treatment
-  &__toggle {
-    display: block;
-    padding: 10px 15px;
-    &:link, &:visited {
-      color: $text-colour;
-    }
-
-    &[aria-selected=true] {
-      color: $text-colour;
-      text-decoration: none;
-    }
-  }
-
-  &__list-outer {
-    background: #283135;
-  }
-
-  &__list {
-    margin: 0 auto 0 auto;
-    padding-left: 25px;
-    padding-right: 25px;
-    max-width: 960px;
-    height: 64px;
-    list-style-type: none;
   }
 
   &__content {
@@ -62,102 +31,131 @@ $wide-width: 1300px;
     max-width: 960px;
   }
 
+  &__list-outer {
+    padding-left: 25px;
+    padding-right: 25px;
 
-  &__item {
-    position: relative; bottom: -1px;
+  }
+
+  &__list {
+    padding-left: 1em;
+  }
+
+  &__title {
+    padding-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
   }
 
   &__toggle {
-    background: #efedeb;
+    &--selected,
+    &[aria-selected=true] {
+      font-weight: bold;
+    }
   }
 
-  &__toggle--selected {
-    background: white;
-  }
+  // medium and above
+  @media (min-width: $small-width) {
 
-  &__toggle--selected[aria-selected=true]:focus {
-    color: $text-colour;
-    outline: none;
-    background: #fd0;
-    border-bottom: 3px solid black;
-  }
-
-
-  // mobile
-  @media (max-width: $mobile-width) {
-    &__title {
+    &__toggle {
       display: block;
-      margin: 30px auto 10px auto;
-      padding-left: 25px;
-      padding-right: 25px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    &__list {
-      padding-left: 50px;
-      height: auto;
-      list-style-type: disc;
-      &-outer {
-        background: white;
-      }
-    }
-    &__toggle {
-      background: white;
-      padding-left: 0;
-      &--selected[aria-selected=true] {
-        font-weight: bold;
-      }
-    }
-  }
-
-
-
-  // phone and above
-  @media (min-width: $mobile-width) {
-    &__panel {
-      clear: both;
-      overflow: hidden;
-      margin-top: 40px;
-    }
-
-    &__list {
-      margin-bottom: 0;
-    }
-
-    &__item {
       float: left;
-//      position: relative; bottom: 0px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    &__toggle {
-      background-color: $toggle-colour;
       border-bottom: 1px solid black;
-      float: left;
+      padding: 17px;
+      background-color: $toggle-colour;
+      font-size: 16px;
       text-decoration: none;
-      margin-bottom: 0;
-      margin-top: 0;
-      margin-right: 20px;
-      padding: 20px;
+
+      &:link, &:visited {
+        color: $text-colour;
+      }
 
       &--selected,
       &[aria-selected=true] {
         background-color: $white;
         border: 1px solid transparent;
-//        border-bottom: 0;
-//        border-color: $grey-2;
       }
 
+      &[aria-selected=true] {
+        color: $text-colour;
+        text-decoration: none;
+      }
     }
 
-  }
+    &__list-outer {
+      background: #283135;
+      height: 54px;
+    }
 
-  // desktop and above
-  @media (min-width: $desktop-width) {
+
+    &__list {
+      max-width: 960px;
+      margin: 0 auto 0 auto;
+      padding: 0;
+      list-style-type: none;
+    }
+
+
     &__item {
-      position: relative; bottom: 0;
+      position: relative; bottom: -1px;
+      float: left;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    &__item + &__item {
+      margin-left: 20px;
+    }
+
+    &__toggle--selected {
+      background: white;
+    }
+
+    &__toggle--selected[aria-selected=true]:focus {
+      color: $text-colour;
+      outline: none;
+      background: #fd0;
+      border-bottom: 3px solid black;
+    }
+
+    &__title {
+      display: none;
+    }
+
+    &__panel {
+      clear: both;
+      overflow: hidden;
+      h2.govuk-heading-l {
+        padding: 40px 0 40px 0;
+
+      }
+    }
+
+    // large
+    @media (min-width: $medium-width) {
+
+      &__item {
+        position: relative; bottom: 0;
+      }
+
+      &__toggle {
+        display: block;
+        padding: 20px;
+        font-size: 18px;
+      }
+
+      &__list-outer {
+        height: 63px;
+
+      }
+
+      &__list {
+        max-width: 960px;
+        margin: 0 auto 0 auto;
+        padding: 0;
+      }
     }
   }
-
 }
