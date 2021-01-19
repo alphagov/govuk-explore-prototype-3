@@ -104,4 +104,6 @@ $('.xpl-backdrop').on('click', function(event) {
 
 
 const cookieBanner = document.getElementById('global-cookie-message');
-cookieBanner.parentNode.removeChild(cookieBanner);
+if (cookieBanner) {
+  cookieBanner.parentNode.removeChild(cookieBanner);
+}
