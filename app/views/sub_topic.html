@@ -86,7 +86,8 @@
               {% for organisation in organisations %}
                 <li class="xpl-organisation">
                   <a href="{{organisation.url}}">
-                    <div class="xpl-organisation__inner xpl-org {{organisation.slug}}">
+                    <div class="xpl-organisation__chevron"></div>
+                    <div class="xpl-organisation__inner {{organisation.slug}}">
                       <img src="/public/images/org_logos/{{organisation.crest}}_crest_18px_x2.png" alt=organisation logo"/>
                       <p class="govuk-body">{{organisation.title}}</p>
                     </div>

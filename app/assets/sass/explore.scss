@@ -138,7 +138,14 @@ $wide-width: 1300px;
     padding-bottom: 30px;
     margin-bottom: 30px;
 
-    .xpl-organisation__inner {
+    &__chevron {
+      background-image: url(/public/images/chevron-right.svg);
+      float: right;
+      width: 15px;
+      height: 15px;
+    }
+
+    &__inner {
       border-left: 3px solid black;
       padding-left: 8px;
       img {
@@ -151,12 +158,8 @@ $wide-width: 1300px;
         font-size: 18px;
         margin-bottom: 0;
         padding-right: 20px;
-        &:after {
-          content: url(/public/images/chevron-right.svg);
-          position: absolute;
-          right: 0px;
-        }
       }
+
     }
   }
 
@@ -456,10 +459,6 @@ $wide-width: 1300px;
           margin-top: 0;
         }
       }
-    }
-
-    .explore-page .xpl-organisation .xpl-organisation__inner p {
-      font-size: 19px;
     }
 
     .xpl-subsubtopics-section {
