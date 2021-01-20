@@ -51,6 +51,12 @@
       "misMatchThreshold" : 0.1
     },
     {
+      "label": "Universal credit mainstream subtopic",
+      "url": "http://localhost:3000/browse/benefits/universal-credit",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "misMatchThreshold" : 0.1
+    },
+    {
       "label": "Benefits specialist topics Page",
       "url": "http://localhost:3000/topic/benefits-credits",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
