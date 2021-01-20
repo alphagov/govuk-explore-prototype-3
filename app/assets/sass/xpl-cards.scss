@@ -33,7 +33,10 @@ $wide-width: 1300px;
     padding: 0 0 10px 0;
     margin: 0;
   }
-  .govuk-list {
+  &__list {
+    margin: 0;
+    padding-left: 0;
+    list-style-type: none;
     li {
       margin: 0;
       a {
@@ -70,7 +73,7 @@ $wide-width: 1300px;
     background-size: 16px;
   }
 
-  &.#{$module}--accent-black ul.govuk-list li {
+  &.#{$module}--accent-black ul li {
     border-top: 1px solid #000000;
     a {
       min-height: 110px;
@@ -79,10 +82,11 @@ $wide-width: 1300px;
       background-image: url('/public/images/chevron-right-000000.svg');
     }
   }
-  &.#{$module}--accent-grey ul.govuk-list li {
+  &.#{$module}--accent-grey ul li {
     border-top: 1px solid $govuk-border-colour;
     a {
       min-height: 70px;
+      margin-bottom: 30px;
     }
 
     .#{$module}__chevron {
@@ -114,7 +118,7 @@ $wide-width: 1300px;
       line-height: 1.1em;
     }
 
-    ul.govuk-list {
+    &__list {
       margin-left: -15px;
       margin-right: -15px;
       li {
@@ -136,20 +140,3 @@ $wide-width: 1300px;
     }
   }
 }
-
-/*
-@include govuk-media-query ($from: $desktop-width) {
-  .xpl-activity .#{$module} > ul > li {
-    width: 45%;
-    min-height: 160px;
-  }
-
-  .xpl-activity-browse {
-    .#{$module}__intro {
-      display: block;
-      font-size: 22px;
-      margin-bottom: 30px;
-    }
-  }
-}
-*/

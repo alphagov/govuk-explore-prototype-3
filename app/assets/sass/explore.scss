@@ -252,9 +252,9 @@ $wide-width: 1300px;
     h3 {
       padding-bottom: 0;
     }
-    p {
-      margin-bottom: 60px;
-    }
+//    p {
+//      margin-bottom: 60px;
+//    }
   }
 
 
@@ -274,6 +274,7 @@ $wide-width: 1300px;
 
   .xpl-activity, .xpl-featured, .departments-and-policy {
     border-top: 2px solid govuk-colour("black");
+    margin-top: 60px;
   }
 
 
@@ -344,6 +345,11 @@ $wide-width: 1300px;
     padding-bottom: 30px;
     margin-bottom: 0;
   }
+
+  footer {
+    margin-top: 50px;
+  }
+
 
 }
 

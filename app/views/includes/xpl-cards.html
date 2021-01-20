@@ -8,7 +8,7 @@
         <p class="xpl-cards__intro">{{ options.subtitle }}</p>
       {% endif %}
     </div>
-    <ul class="govuk-list">
+    <ul class="xpl-cards__list">
       {% for card in options.cards %}
         <li {{ "class=xpl-cards--two-cols" if options.cols == 2 }}>
           <a class="govuk-link" href="{{ card.link }}">
