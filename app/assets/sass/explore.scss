@@ -85,6 +85,7 @@ $wide-width: 1300px;
     margin: 0 0 30px 0;
     li {
       padding-left: 30px;
+      padding-bottom: 5px;
       background-image: url('/public/images/arrow.svg');
       background-repeat: no-repeat;
       background-position: 0 0;
@@ -247,15 +248,17 @@ $wide-width: 1300px;
         font-weight: bold;
       }
     }
+   &--topic {
+     h2.govuk-heading-l {
+       padding: 40px 0 30px 0;
+     }
+   }
   }
 
   .xpl-featured {
     h3 {
       padding-bottom: 0;
     }
-//    p {
-//      margin-bottom: 60px;
-//    }
   }
 
 
