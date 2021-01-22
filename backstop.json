@@ -38,8 +38,15 @@
       "misMatchThreshold" : 0.1
     },
     {
-      "label": "Explore Specialist Topics Page",
+      "label": "Specialist Topics Page",
       "url": "http://localhost:3000/topic",
+      "cookiePath": "backstop_data/engine_scripts/cookies.json",
+      "misMatchThreshold" : 0.1,
+      "requireSameDimensions" : false
+    },
+    {
+      "label": "Births Mainstream Topics Page",
+      "url": "http://localhost:3000/browse/births-deaths-marriages",
       "cookiePath": "backstop_data/engine_scripts/cookies.json",
       "misMatchThreshold" : 0.1,
       "requireSameDimensions" : false
