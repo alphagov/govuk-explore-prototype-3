@@ -103,7 +103,8 @@ $('.xpl-backdrop').on('click', function(event) {
 });
 
 
-const cookieBanner = document.getElementById('global-cookie-message');
-if (cookieBanner) {
-  cookieBanner.parentNode.removeChild(cookieBanner);
-}
+const cookieBanners = [
+  document.getElementById('global-cookie-message'),
+  document.querySelector('.app-cookie-banner')
+];
+cookieBanners.forEach(banner => banner && banner.parentNode.removeChild(banner));
