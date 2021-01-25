@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const fs = require('fs')
-const request = require('request');
+const request = require('request').defaults({ jar: true });
 const govukTopics = require('./govuk-topics');
 const url = require('url');
 const nunjucks = require('nunjucks');
@@ -144,7 +144,7 @@ router.get('/*', function(req,res) {
   //modify the url in any way you want
   var url_parts = url.parse(req.url, false);
   var query = url_parts.query;
-  var newurl = 'https://www.gov.uk' + req.path + '?' + query;
+  var newurl = 'https://www.gov.uk' + req.path + (query? '?' + query : '');
 
   request(newurl, function (error, response, body) {
     if (error) throw error;
