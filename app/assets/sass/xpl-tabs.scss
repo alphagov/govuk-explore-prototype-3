@@ -78,7 +78,7 @@ $medium-width: 380px;
       display: block;
       float: left;
       border-bottom: 1px solid black;
-      padding: 17px;
+      padding: 17px 17px 16px 17px;
       background-color: $toggle-colour;
       font-size: 16px;
       text-decoration: none;
@@ -90,7 +90,7 @@ $medium-width: 380px;
       &--selected,
       &[aria-selected=true] {
         background-color: $white;
-        border: 1px solid transparent;
+        border: 2px solid transparent;
       }
 
       &[aria-selected=true] {
@@ -114,7 +114,6 @@ $medium-width: 380px;
 
 
     &__item {
-      position: relative; bottom: -1px;
       float: left;
       margin: 0;
       padding: 0;
@@ -161,13 +160,9 @@ $medium-width: 380px;
         display: none;
       }
 
-      &__item {
-        position: relative; bottom: 0;
-      }
-
       &__toggle {
         display: block;
-        padding: 20px;
+        padding: 20px 20px 19px 20px;
         font-size: 18px;
       }
 
