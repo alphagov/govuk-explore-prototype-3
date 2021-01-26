@@ -153,7 +153,6 @@ router.get('/*', function(req,res) {
     const headerString = nunjucks.renderString(headerTemplate, {req});
     const headerStringWithCss = `
   <link href="/public/stylesheets/explore-header.css" media="all" rel="stylesheet" type="text/css" />
-  <link href="/public/css/accordion.css" media="all" rel="stylesheet" type="text/css" />
   ` + headerString;
 
     // Make all src and ref attributes absolute, or the server will try to
