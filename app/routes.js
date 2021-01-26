@@ -154,9 +154,7 @@ router.get('/*', function(req,res) {
     const headerStringWithCss = `
   <link href="/public/stylesheets/explore-header.css" media="all" rel="stylesheet" type="text/css" />
   <link href="/public/css/accordion.css" media="all" rel="stylesheet" type="text/css" />
-  ` + headerString + `
-  <script src="/public/javascripts/accordion.js"></script>
-`;
+  ` + headerString;
 
     // Make all src and ref attributes absolute, or the server will try to
     // fetch its own version
