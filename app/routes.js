@@ -138,33 +138,53 @@ router.get('/', function (req, res) {
 });
 
 
+// ==================================================
 // All other URLs
-router.get('/*', function(req,res) {
 
-  //modify the url in any way you want
-  var url_parts = url.parse(req.url, false);
-  var query = url_parts.query;
-  var newurl = 'https://www.gov.uk' + req.path + (query? '?' + query : '');
+// Modifies the body of all pages returned from gov.uk to add the Explore elements
+const augmentedBody = function (req, response, body) {
 
-  request(newurl, function (error, response, body) {
-    if (error) throw error;
-
-    const headerTemplate = fs.readFileSync('app/views/explore-header.html', 'utf8');
-    const headerString = nunjucks.renderString(headerTemplate, {req});
-    const headerStringWithCss = `
+  const headerTemplate = fs.readFileSync('app/views/explore-header.html', 'utf8');
+  const headerString = nunjucks.renderString(headerTemplate, {req});
+  const headerStringWithCss = `
   <link href="/public/stylesheets/explore-header.css" media="all" rel="stylesheet" type="text/css" />
   ` + headerString;
 
-    // Make all src and ref attributes absolute, or the server will try to
-    // fetch its own version
-    const newBody = body
-          .replace(/(href|src)="\//g, '$1="https://www.gov.uk/')
-          .replace(/<header[^]+?<\/header>/, headerStringWithCss)
-          .replace(/<\/body>/,'<script src="/public/javascripts/explore-header.js"></script>\n</body>')
-          .replace(/<a(.*) href\s*=\s*(['"])\s*(https:)?\/\/www.gov.uk\//g,'<a $1 href=$2/');
+  // Make all src and ref attributes absolute, or the server will try to
+  // fetch its own version
+  return body
+    .replace(/(href|src)="\//g, '$1="https://www.gov.uk/')
+    .replace(/<header[^]+?<\/header>/, headerStringWithCss)
+    .replace(/<\/body>/,'<script src="/public/javascripts/explore-header.js"></script>\n</body>')
+    .replace(/<a(.*) href\s*=\s*(['"])\s*(https:)?\/\/www.gov.uk\//g,'<a $1 href=$2/');
+};
 
-    res.send(newBody);
 
+// Constructs the URL to get the page body from on gov.uk
+const govUkUrl = function(req) {
+  var url_parts = url.parse(req.url, false);
+  var query = url_parts.query;
+  return 'https://www.gov.uk' + req.path + (query? '?' + query : '');
+};
+
+
+router.get('/*', function(req,res) {
+  request(govUkUrl(req), function (error, response, body) {
+    if (error) throw error;
+    res.send(augmentedBody(req, response, body));
+  });
+});
+
+
+router.post('/*', function(req, res) {
+  request.post({
+    url: govUkUrl(req),
+    followAllRedirects: true,
+    formData: req.body
+  }, function (error, response, body) {
+    if (error) throw error;
+
+    res.send(augmentedBody(req, response, body));
   });
 });
 
