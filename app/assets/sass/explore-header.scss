@@ -143,16 +143,14 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
     h2 {
       color: black;
       margin-top: 0;
-      padding-top: 30px;
+      padding: 40px 0 0 0;
+      margin-bottom: 30px;
       font-size: 22px;
     }
     ul.govuk-list {
       font-size: 18px;
       font-weight: bold;
       color: $govuk-link-colour;
-      li {
-        margin-top: 1em;
-      }
     }
     ul li {
       margin-bottom: 30px;
@@ -654,7 +652,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
             margin: 0;
             vertical-align: top;
             li {
-              margin-bottom: 10px;
+              margin-bottom: 30px;
               a:link, a:visited {
                 font-size: 16px;
                 display: block;
