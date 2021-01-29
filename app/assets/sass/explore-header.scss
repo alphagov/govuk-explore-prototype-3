@@ -66,11 +66,12 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
 
   .govuk-header__container {
     border-bottom: none;
-    padding-left: 25px;
-    padding-right: 25px;
-    padding-top: 10px;
+    padding: 10px 25px 0 25px;
     margin-left: 0;
     margin-right: 0;
+    &--old-page {
+      padding: 10px 15px 0 15px;
+    }
   }
 
   .govuk-header__link--homepage {
@@ -494,6 +495,9 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
       margin-left: auto;
       margin-right: auto;
       max-width: 960px;
+      &--old-page {
+        padding: 0 30px 0 30px;
+      }
     }
 
     .govuk-header__logo {
