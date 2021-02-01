@@ -534,8 +534,13 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
             color: $govuk-link-colour;
           }
         }
-        &#xpl-topics-menu-item, &#xpl-activity-menu-item {
+        &#xpl-topics-menu-item {
+          padding-right: 55px;
+        }
+        &#xpl-activity-menu-item {
           padding-right: 45px;
+        }
+        &#xpl-topics-menu-item, &#xpl-activity-menu-item {
           button {
             font-family: $font;
             -webkit-font-smoothing: antialiased;
