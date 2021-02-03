@@ -8,7 +8,7 @@ $govuk-border-colour: govuk-colour("mid-grey");
 $link-hover-colour: #003078;
 $menu-hover-colour: #005ff8;
 
-$mobile-width:  320px;
+$mobile-width:  360px;
 $tablet-width:  740px;
 $desktop-width: 768px;
 $wide-width: 1300px;
@@ -109,7 +109,6 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
     margin-right: auto;
     max-width: 960px;
   }
-
 
   .xpl-menu__button {
     font-family: "GDS Transport", nta, Arial, sans-serif;
@@ -481,6 +480,29 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
   }
 
 
+}
+
+// Very small width
+@include govuk-media-query ($until: $mobile-width) {
+  .explore-header {
+    .govuk-header__logo {
+      width: 500px;
+      padding-right: 0;
+    }
+    .govuk-header__container {
+      min-height: 96px;
+    }
+    .govuk-header__menu-button {
+      margin-top: 51px;
+      border-top: 1px solid #666;
+      &:focus {
+        border-bottom: 0;
+      }
+    }
+    #xpl-popup-menu, #xpl-popup-search {
+      margin-top: 51px;
+    }
+  }
 }
 
 
