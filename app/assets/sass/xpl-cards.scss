@@ -8,8 +8,8 @@ $govuk-secondary-text-colour: #505a5f;
 $link-hover-colour: #003078;
 $menu-hover-colour: #005ff8;
 
-$mobile-width:  320px;
-$tablet-width:  740px;
+$mobile-width: 320px;
+$tablet-width: 740px;
 $desktop-width: 768px;
 //$desktop-width: 960px;
 $wide-width: 1000px;
@@ -67,7 +67,7 @@ $wide-width: 1000px;
     padding: 0 6px 0 0;
     height: 30px;
     width: 10px;
-    background-image: url('/public/images/chevron-right.svg');
+    background-image: url("/public/images/chevron-right.svg");
     background-repeat: no-repeat;
     background-position: 0 6px;
     background-size: 16px;
@@ -82,7 +82,7 @@ $wide-width: 1000px;
       min-height: 110px;
     }
     .#{$module}__chevron {
-      background-image: url('/public/images/chevron-right-000000.svg');
+      background-image: url("/public/images/chevron-right-000000.svg");
     }
   }
   &.#{$module}--accent-grey ul li {
@@ -96,7 +96,7 @@ $wide-width: 1000px;
     }
 
     .#{$module}__chevron {
-      background-image: url('/public/images/chevron-right-505a5f.svg');
+      background-image: url("/public/images/chevron-right-505a5f.svg");
     }
   }
 
