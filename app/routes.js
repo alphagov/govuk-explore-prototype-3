@@ -174,7 +174,11 @@ const govUkUrl = function(req) {
 router.get('/*', function(req,res) {
   request(govUkUrl(req), function (error, response, body) {
     if (error) throw error;
-    res.send(augmentedBody(req, response, body));
+    if (response.headers['content-type'].indexOf('application/json') !== -1) {
+      res.json(JSON.parse(body));
+    } else {
+      res.send(augmentedBody(req, response, body));
+    }
   });
 });
 
