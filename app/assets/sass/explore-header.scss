@@ -8,11 +8,11 @@ $govuk-border-colour: govuk-colour("mid-grey");
 $link-hover-colour: #003078;
 $menu-hover-colour: #005ff8;
 
-$mobile-width:  360px;
-$tablet-width:  740px;
+$mobile-width: 360px;
+$tablet-width: 740px;
 $desktop-width: 768px;
 $wide-width: 1300px;
-$font: 'GDS Transport', nta, Arial, sans-serif;
+$font: "GDS Transport", nta, Arial, sans-serif;
 
 /*! Copyright (c) 2011 by Margaret Calvert & Henrik Kubel. All rights reserved. The font has been customised for exclusive use on gov.uk. This cut is not commercially available. */
 /* stylelint-disable-line scss/comment-no-loud  */
@@ -122,7 +122,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
     border: 0;
     background: none;
     &::before {
-      content: "< "
+      content: "< ";
     }
     font-size: 18px;
     color: #8c8c8c;
@@ -169,7 +169,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
       width: 50px;
       height: 50px;
       cursor: pointer;
-      background-image: url(/public/images/magnifying-glass.png);
+      background-image: url("/public/images/magnifying-glass.png");
       background-repeat: no-repeat;
       background-position: 6px 6px;
       background-size: 35px;
@@ -198,7 +198,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
       width: 16px;
       height: 16px;
       margin-top: -8px;
-      background-image: url(/public/images/chevron-down.svg);
+      background-image: url("/public/images/chevron-down.svg");
     }
     &__section:hover, &__section-link:hover {
       background: #f3f2f1;
@@ -206,7 +206,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
     &__section--expanded {
       background: #f3f2f1;
       .xpl-accordion__icon {
-        background-image: url(/public/images/chevron-up.svg);
+        background-image: url("/public/images/chevron-up.svg");
       }
       .xpl-accordion__section-content {
         display: block;
@@ -304,7 +304,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
     font-family: $font;
     top: 0;
     border-left: 1px solid #666;
-    padding: 20px 20px 16px 0px;
+    padding: 20px 20px 16px 0;
     font-size: 18px;
     line-height: 12px;
     font-weight: bold;
@@ -318,7 +318,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
         background: govuk-colour("white");
         border: none;
         color: govuk-colour("black");
-        padding-right: 0px;
+        padding-right: 0;
         font-size: 34px;
         font-weight: 100;
         &::after {
@@ -353,7 +353,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
       right: 0;
       width: 60px;
       cursor: pointer;
-      background-image: url(/public/images/magnifying-glass.png);
+      background-image: url("/public/images/magnifying-glass.png");
       background-repeat: no-repeat;
       background-position: 11px 11px;
       background-size: 35px auto;
@@ -407,7 +407,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
     hr {
       margin-left: -25px;
       margin-right: -25px;
-      border-color:  govuk-colour("black");
+      border-color: govuk-colour("black");
       border-width: 1px 0 0 0;
     }
   }
@@ -431,7 +431,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
     }
 
     .govuk-js-search-toggle {
-      background-image: url(/assets/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png);
+      background-image: url("/assets/frontend/govuk_publishing_components/search-button-ca89b2a79f944909ceb7370d3f0b78811d32b96e883348fcd8886f63dd619585.png");
       background-position: 105% 50%;
       background-size: 70px auto;
       text-indent: -5000px;
@@ -649,7 +649,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
             button {
               height: 55px;
               background: white;
-              background-image: url(/public/images/black-cross.png);
+              background-image: url("/public/images/black-cross.png");
               background-size: 15px auto;
               background-repeat: no-repeat;
               background-position: 50% 50%;
@@ -660,7 +660,7 @@ $font: 'GDS Transport', nta, Arial, sans-serif;
             width: 54px;
             height: 54px;
             cursor: pointer;
-            background-image: url(/public/images/magnifying-glass.png);
+            background-image: url("/public/images/magnifying-glass.png");
             background-repeat: no-repeat;
             background-position: 10px 11.2px;
             background-size: 35px;
