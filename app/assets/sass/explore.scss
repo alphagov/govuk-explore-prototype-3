@@ -60,6 +60,12 @@ $wide-width: 1300px;
     margin: 0;
   }
 
+  .govuk-input__suffix:focus {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 4px #0b0c0c;
+  }
+
   .xpl-section-inner {
     max-width: 960px;
     margin-left: auto;

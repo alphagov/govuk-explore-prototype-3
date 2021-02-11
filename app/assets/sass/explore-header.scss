@@ -382,6 +382,11 @@ $font: "GDS Transport", nta, Arial, sans-serif;
       font-size: 22px;
       color: govuk-colour("blue");
     }
+    button.xpl-search-button:focus {
+      outline: 3px solid #fd0;
+      outline-offset: 0;
+      box-shadow: inset 0 0 0 4px #0b0c0c;
+    }
     .govuk-list &-2 {
       padding-bottom: 28px;
       a:link, a:visited {
@@ -738,6 +743,11 @@ $font: "GDS Transport", nta, Arial, sans-serif;
           h2.govuk-heading-l {
             padding-bottom: 30px;
             margin-bottom: 0;
+          }
+          button.govuk-input__suffix:focus {
+            outline: 3px solid #fd0;
+            outline-offset: 0;
+            box-shadow: inset 0 0 0 4px #0b0c0c;
           }
         }
       }
